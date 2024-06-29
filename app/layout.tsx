@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Inter as FontSans } from "next/font/google"
+import { cn } from "@/lib/utils"
+import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/theme-provider";
+import VerticalNavbar from "@/components/VerticalNavbar";
+import ToggleTheme from "@/components/ToggleTheme";
 
-const inter = Inter({ subsets: ["latin"] });
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +24,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(
+        "min-h-screen w-screen font-sans antialiased overflow-x-hidden",
+        fontSans.variable
+      )}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <VerticalNavbar />
+          <div className='fixed right-10 top-10'> <ToggleTheme /> </div>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
