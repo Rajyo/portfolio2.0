@@ -2,17 +2,27 @@
 
 import { Github, Linkedin } from "lucide-react"
 import Link from "next/link"
-import { useEffect } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { LinkPreview } from "./ui/link-preview";
 
-let deviceHeight = "790px";
 export default function VerticalNavbar() {
+  const [windowSize, setWindowSize] = useState(790)
+  
+  const handleWindowResize = useCallback(() => {
+    setWindowSize(window.innerHeight);
+  }, []);
+  
   useEffect(() => {
-    deviceHeight = window?.innerHeight + "px"
-    console.log(deviceHeight)
-  }, [])
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, [handleWindowResize]);
+
+  console.log(windowSize)
+  
   return (
-    <nav className={`fixed -mt-[58px] w-[${deviceHeight}] rotate-[90deg] origin-bottom-left flex justify-between py-2 px-10 mx-10`}>
+    <nav className={`fixed -mt-[58px] w-[790px] rotate-[90deg] origin-bottom-left flex justify-between py-2 px-10 mx-10 z-50`}>
       <div className='flex items-center rotate-180'>
         <Link href={'/'}>
           <p>Logo</p>
@@ -35,18 +45,18 @@ export default function VerticalNavbar() {
       </div>
 
       <div className='flex gap-x-3 items-center'>
-        <p className='-rotate-90 p-2.5'>
+        <div className='-rotate-90 p-2.5'>
           <LinkPreview url="https://github.com/Rajyo" className="hover:text-[#00eeff] dark:hover:text-[#00eeff]">
             <Github className='h-[1.5rem] w-[1.5rem]' />
           </LinkPreview>
-        </p>
-        <p className='-rotate-90 p-2.5'>
+        </div>
+        <div className='-rotate-90 p-2.5'>
           <LinkPreview url="https://in.linkedin.com/in/prajyot-khadse" className="hover:text-[#00eeff] dark:hover:text-[#00eeff]">
             <Linkedin className='h-[1.5rem] w-[1.5rem]' />
           </LinkPreview>
-        </p>
+        </div>
       </div>
-      
+
     </nav >
   )
 }

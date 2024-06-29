@@ -4,16 +4,13 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 export default function ToggleTheme() {
-  const { setTheme } = useTheme()
-
-  if (localStorage.getItem("theme") === "system" || null) {
-    setTheme("light")
-  }
+  const { setTheme, theme } = useTheme()
+  console.log(theme)
 
   return (
-    <section onClick={localStorage.getItem("theme") === "light" ? () => setTheme("dark") : () => setTheme("light")} className="p-3 rounded-br-2xl cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-100/10 ">
+    <section onClick={theme === "light" ? () => setTheme("dark") : () => setTheme("light")} className="p-3 rounded-br-2xl cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-100/10">
       {
-        localStorage.getItem("theme") === "light"
+        theme === "light"
           ? <Moon className="h-[2rem] w-[2rem] dark:rotate-90 dark:scale-0 transition-all rotate-0 scale-100 " />
           : <Sun className="h-[2rem] w-[2rem] dark:rotate-0 dark:scale-100 transition-all -rotate-90 scale-0 " />
       }

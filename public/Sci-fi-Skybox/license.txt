@@ -1,0 +1,11 @@
+Model Information:
+* title:	Free - Colorful Sci Fi Skybox
+* source:	https://sketchfab.com/3d-models/free-colorful-sci-fi-skybox-1e67ffe2c1974cc3b6882f413e45ab02
+* author:	Saqib Ali (https://sketchfab.com/Syed.Saqib.Kazmi)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Free - Colorful Sci Fi Skybox" (https://sketchfab.com/3d-models/free-colorful-sci-fi-skybox-1e67ffe2c1974cc3b6882f413e45ab02) by Saqib Ali (https://sketchfab.com/Syed.Saqib.Kazmi) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
