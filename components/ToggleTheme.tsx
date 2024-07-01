@@ -5,7 +5,6 @@ import { useTheme } from "next-themes"
 
 export default function ToggleTheme() {
   const { setTheme, theme } = useTheme()
-  console.log(theme)
 
   return (
     <section onClick={theme === "light" ? () => setTheme("dark") : () => setTheme("light")} className="p-3 rounded-br-2xl cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-100/10">

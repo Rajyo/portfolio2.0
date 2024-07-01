@@ -22,7 +22,8 @@ export default function VerticalNavbar() {
   console.log(windowSize)
   
   return (
-    <nav className={`fixed -mt-[58px] w-[790px] rotate-[90deg] origin-bottom-left flex justify-between py-2 px-10 mx-10 z-50`}>
+    <nav className={`fixed -mt-[58px] w-[790px] rotate-[90deg] origin-bottom-left hidden md:flex justify-between py-2 px-10 mx-10 z-50`}>
+      
       <div className='flex items-center rotate-180'>
         <Link href={'/'}>
           <p>Logo</p>

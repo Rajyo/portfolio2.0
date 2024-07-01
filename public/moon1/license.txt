@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ganymede (moon)
+* source:	https://sketchfab.com/3d-models/ganymede-moon-7021e376ecb04b89b11fcbe017e48e8c
+* author:	SebastianSosnowski (https://sketchfab.com/SebastianSosnowski)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ganymede (moon)" (https://sketchfab.com/3d-models/ganymede-moon-7021e376ecb04b89b11fcbe017e48e8c) by SebastianSosnowski (https://sketchfab.com/SebastianSosnowski) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

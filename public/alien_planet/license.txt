@@ -1,0 +1,11 @@
+Model Information:
+* title:	Alien Planet
+* source:	https://sketchfab.com/3d-models/alien-planet-bbb2e0eeb0b34247b8a70655c780fad5
+* author:	dnslv (https://sketchfab.com/deny.s.trevisan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Alien Planet" (https://sketchfab.com/3d-models/alien-planet-bbb2e0eeb0b34247b8a70655c780fad5) by dnslv (https://sketchfab.com/deny.s.trevisan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
