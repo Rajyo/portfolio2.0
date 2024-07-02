@@ -1,6 +1,6 @@
 "use client"
 
-import EarthCanvas from "@/components/EarthCanvas";
+import EarthCanvas from "@/components/canvas/EarthCanvas";
 
 const Contact = () => {
 

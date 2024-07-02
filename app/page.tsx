@@ -3,7 +3,7 @@ import LandingPage from "@/components/LandingPage";
 export default function Home() {
 
   return (
-    <main className="w-[100vw]">
+    <main className="w-screen">
 
       <LandingPage />
 

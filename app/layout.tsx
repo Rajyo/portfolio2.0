@@ -3,9 +3,9 @@ import "./globals.css";
 import { Inter as FontSans } from "next/font/google"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider";
-import VerticalNavbar from "@/components/VerticalNavbar";
 import dynamic from "next/dynamic";
 const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), { ssr: false })
+const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false })
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -34,8 +34,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <VerticalNavbar />
-          <div className='fixed right-10 top-10 z-50'> <ToggleTheme /> </div>
+          <Navbar />
+          <div className='fixed hidden md:flex right-10 top-10 z-50'> <ToggleTheme /> </div>
           {children}
         </ThemeProvider>
       </body>

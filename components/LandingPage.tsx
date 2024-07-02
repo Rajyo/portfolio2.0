@@ -4,12 +4,12 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { TypeAnimation } from "react-type-animation";
 import { SparklesCore } from "./ui/sparkles";
 import { useTheme } from "next-themes";
-import Light3DCanvas from "./Light3DCanvas";
-import Dark3DCanvas from "./Dark3DCanvas";
+import Light3DCanvas from "./canvas/Light3DCanvas";
+import Dark3DCanvas from "./canvas/Dark3DCanvas";
 import { motion } from "framer-motion";
 import { AuroraBackground } from "./ui/aurora-background";
 import { Spotlight } from "./ui/spotlight";
-import MobileCanvas from "./MobileCanvas";
+import MobileCanvas from "./canvas/MobileCanvas";
 
 
 export default function LandingPage() {
@@ -23,8 +23,9 @@ export default function LandingPage() {
             <div className="w-full inset-0 h-screen top-0">
 
                 <div className="max-w-[100%] md:max-w-[86%] w-full absolute mx-auto h-screen flex">
-                    <div className="flex flex-col md:items-start items-center md:ml-auto sm:w-[75%] md:w-[69%] m-auto sm:h-[45%] xl:h-[40%]">
-                        <h1 className="pl-[6px] py-2 text-2xl font-semibold uppercase flex gap-7 text-gray-600 dark:text-gray-400 tracking-tight z-30">
+                    <div className="flex flex-col md:items-start items-center max-[400px]:w-[95%] w-[90%] sm:w-[75%] md:w-[69%] m-auto h-[35%] sm:h-[45%] xl:h-[40%]">
+                        
+                        <h1 className="pl-[6px] py-2 max-[400px]:text-xl text-2xl font-semibold uppercase flex gap-7 text-gray-800 md:text-gray-600 dark:text-gray-400 tracking-tight z-30 flex-wrap">
                             <span>p r a j y o t</span> <span>k h a d s e</span>
                         </h1>
 
@@ -38,7 +39,7 @@ export default function LandingPage() {
                             ]}
                             wrapper="span"
                             speed={50}
-                            className="sm:text-[4em] lg:text-[5em] text-center md:text-start font-bold inline-block h-full w-full py-2 z-30"
+                            className="text-[3em] sm:text-[4em] lg:text-[5em] text-center md:text-start font-bold inline-block h-full w-full py-2 z-30"
                             repeat={Infinity}
                         />
 
@@ -51,10 +52,14 @@ export default function LandingPage() {
                 </div>
 
                 {/* Mobile */}
-                {/* <Spotlight className="-top-20 left-0 md:left-100 md:-top-40 md:hidden dark:hidden" fill="red" />
-                <Spotlight className="top-60 left-0 md:left-60 md:-top-20 md:hidden dark:hidden" fill="blue" />
+                <div className="absolute w-screen h-screen md:hidden z-10">
+                    <MobileCanvas />
+                </div>
 
-                <AuroraBackground className="md:hidden">
+                {/* <Spotlight className="-top-20 left-0 md:left-100 md:-top-40 md:hidden dark:hidden" fill="red" />
+                <Spotlight className="top-60 left-0 md:left-60 md:-top-20 md:hidden dark:hidden" fill="blue" /> */}
+
+                {/* <AuroraBackground className="md:hidden">
                     <motion.div
                         initial={{ opacity: 0.0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -67,10 +72,6 @@ export default function LandingPage() {
                     >
                     </motion.div>
                 </AuroraBackground> */}
-
-                <div className="absolute w-screen h-screen md:hidden">
-                    <MobileCanvas />
-                </div>
 
 
                 {/* Web */}
