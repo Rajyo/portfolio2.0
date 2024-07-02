@@ -2,7 +2,6 @@
 
 import { LinkPreview } from "@/components/ui/link-preview";
 import { TypeAnimation } from "react-type-animation";
-import { SparklesCore } from "./ui/sparkles";
 import { useTheme } from "next-themes";
 import Light3DCanvas from "./canvas/Light3DCanvas";
 import Dark3DCanvas from "./canvas/Dark3DCanvas";
@@ -10,16 +9,15 @@ import { motion } from "framer-motion";
 import { AuroraBackground } from "./ui/aurora-background";
 import { Spotlight } from "./ui/spotlight";
 import MobileCanvas from "./canvas/MobileCanvas";
+import Sparkles from "./Sparkles";
 
 
 export default function LandingPage() {
     const { theme } = useTheme()
-    const currentTheme = theme === "light" ? "#000000" : "FFFFFF"
-    const currentDensity = theme === "light" ? 200 : 100
 
     return (
 
-        <section className="w-full relative bg-white dark:bg-black">
+        <section className="w-full relative bg-[#f2f2f2] dark:bg-[#111111]">
             <div className="w-full inset-0 h-screen top-0">
 
                 <div className="max-w-[100%] md:max-w-[86%] w-full absolute mx-auto h-screen flex">
@@ -75,15 +73,7 @@ export default function LandingPage() {
 
 
                 {/* Web */}
-                <SparklesCore id="tsparticlesfullpage"
-                    background="transparent"
-                    minSize={0.6}
-                    maxSize={1.4}
-                    particleDensity={currentDensity}
-                    className="w-full h-full absolute z-10 hidden md:flex"
-                    particleColor={currentTheme}
-                />
-
+                <Sparkles />
 
                 <div className="absolute max-[767px]:hidden md:-right-[40rem] xl:-right-[50rem] -top-[7rem] z-20">
                     {

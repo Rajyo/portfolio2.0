@@ -53,6 +53,7 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Web Header View */}
       <header className={cn("fixed origin-bottom-left hidden md:flex justify-between py-2 px-10 mx-10 z-50", windowSize && windowSize > 750 ? "rotate-90 -mt-[58px] w-[790px]" : "rotate-0 mt-10 w-[85%] h-14")}>
 
         <div className={cn('flex items-center', windowSize && windowSize > 750 ? "rotate-180" : "rotate-0")}>
@@ -71,7 +72,7 @@ export default function Navbar() {
           }
         </nav>
 
-        <div className={cn('flex gap-x-3 items-center', windowSize && windowSize > 750 ? "rotate-180" : "rotate-0 hidden")}>
+        <div className={cn('flex gap-x-3 items-center', windowSize && windowSize > 750 ? "rotate-180" : "rotate-0")}>
           <div className={cn('p-2.5', windowSize && windowSize > 750 ? "rotate-90" : "rotate-0")}>
             <LinkPreview url="https://in.linkedin.com/in/prajyot-khadse" className="hover:text-[#00eeff] dark:hover:text-[#00eeff]">
               <Linkedin className='h-[1.5rem] w-[1.5rem]' />
@@ -87,6 +88,7 @@ export default function Navbar() {
       </header >
 
 
+      {/* Mobile Header View */}
       <header className="fixed md:hidden top-5 w-[100%] flex justify-between px-5 z-50 items-center">
         <div>
           <Link href={'/'}>Home</Link>
