@@ -13,7 +13,7 @@ export default function About() {
     useEffect(() => {
         setTimeout(() => {
             setTimer(true)
-        }, 12000)
+        }, 12250)
     }, [timer])
 
 

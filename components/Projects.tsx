@@ -1,0 +1,32 @@
+"use client"
+
+import React, { useState } from "react";
+import { ProjectCard } from "./ProjectCard";
+import { project } from "@/lib/constants";
+import { ProjectDropdown } from "./ProjectDropdown";
+
+export default function Projects() {
+    const [techStack, setTechStack] = useState("reactExpress");
+
+    const handleTechStack = (stack: string) => {
+        setTechStack(stack)
+    }
+
+    return (
+        <section className='m-auto h-auto max-w-[100%] md:max-w-[86%]'>
+            <div className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-around p-4 '>
+                <div className="flex justify-between w-full p-5">
+                    <h1 className='text-5xl'>Projects</h1>
+                    <ProjectDropdown techStack={techStack} handleTechStack={handleTechStack} />
+                </div>
+                <div className="flex flex-wrap justify-around gap-5">
+                    {
+                        project.map((item, index) => (
+                            <ProjectCard item={item} technicalStack={techStack} key={index} />
+                        ))
+                    }
+                </div>
+            </div>
+        </section >
+    )
+}

@@ -1,7 +1,10 @@
 
 import About from "@/components/About";
+import Education from "@/components/Education";
 import LandingPage from "@/components/LandingPage";
+import Projects from "@/components/Projects";
 import Sparkles from "@/components/Sparkles";
+import ToolsAndTechnology from "@/components/ToolsAndTechnology";
 
 
 export default function Home() {
@@ -13,6 +16,12 @@ export default function Home() {
       <LandingPage />
 
       <About />
+
+      <ToolsAndTechnology />
+
+      <Education />
+
+      <Projects />
     </main>
   );
 }

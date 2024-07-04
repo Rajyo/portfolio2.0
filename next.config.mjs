@@ -7,7 +7,10 @@ const nextConfig = {
             },
             {
                 hostname: "unsplash.com"
-            }
+            },
+            {
+                hostname: "images.unsplash.com"
+            },
         ],
     },
 };
