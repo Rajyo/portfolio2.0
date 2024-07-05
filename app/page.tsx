@@ -5,6 +5,7 @@ import LandingPage from "@/components/LandingPage";
 import Projects from "@/components/Projects";
 import Sparkles from "@/components/Sparkles";
 import ToolsAndTechnology from "@/components/ToolsAndTechnology";
+import Contact from "./contact/page";
 
 
 export default function Home() {
@@ -22,6 +23,8 @@ export default function Home() {
       <Education />
 
       <Projects />
+
+      <Contact />
     </main>
   );
 }

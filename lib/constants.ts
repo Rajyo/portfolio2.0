@@ -385,11 +385,22 @@ export const project = [
     ],
     mainStack: 'reactExpress',
     info: [
-      'Developed a responsive portfolio web application from scratch using React JS and Tailwind CSS.',
-      'Used Three JS to implement custom 3D models and used React Three to implement pre-build models in the project.',
-      'Used Framer motion for animation and created custom animations from scratch and integrated React Typical.',
-      'Used Context API for global state management, integrated React vertical timeline and Email JS to contact the developer.',
-      'Deployed the project on Vercel.'
+      {
+        text: 'Developed a responsive portfolio web application from scratch using React JS and Tailwind CSS.'
+      },
+      {
+        text: 'Used Three JS to implement custom 3D models and used React Three to implement pre-build models in the project.'
+      },
+      {
+        text: 'Used Framer motion for animation and created custom animations from scratch and integrated React Typical.'
+      },
+      {
+        text: 'Used Context API for global state management, integrated React vertical timeline and Email JS to contact the developer.'
+      },
+      { text: 'Deployed the project on Vercel.' },
+      {
+        text: 'TECH STACK: ReactJs, Tailwind CSS, Three JS, Framer Motion, Context API, React Three, Email JS, React Typical, Vercel'
+      }
     ],
     mininfo: [
       'Developed a responsive portfolio web application from scratch using React JS and Tailwind CSS and used Three JS to implement custom 3D models and used React Three to implement pre-build models in the project.'
@@ -441,10 +452,21 @@ export const project = [
     ],
     mainStack: 'reactExpress',
     info: [
-      'Developed a responsive hotel booking web application using Vite, Tailwind CSS and ExpressJS enabling users to create, read, update and delete hotels',
-      'Used Stripe to enable secure, seamless payment processing for booking hotels and MongoDB for data storage and retrieval',
-      'Used JWT for user authentication, authorization and integrated Axios and EmailJS for contact.',
-      'Deployed ReactJS Frontend on Vercel and ExpressJS backend on Render.'
+      {
+        text: 'Developed a responsive hotel booking web application using Vite, Tailwind CSS and ExpressJS enabling users to create, read, update and delete hotels'
+      },
+      {
+        text: 'Used Stripe to enable secure, seamless payment processing for booking hotels and MongoDB for data storage and retrieval'
+      },
+      {
+        text: 'Used JWT for user authentication, authorization and integrated Axios and EmailJS for contact.'
+      },
+      {
+        text: 'Deployed ReactJS Frontend on Vercel and ExpressJS backend on Render.'
+      },
+      {
+        text: 'TECH STACK: Vite, NodeJS, ExpressJS, Stripe, Tailwind CSS, Axios, EmailJS, JWT, MongoDB'
+      }
     ],
     mininfo: [
       'Developed a responsive hotel booking web application using ReactJS, Tailwind CSS and ExpressJS enabling users to create, read, update and delete hotels, integrated Stripe for booking hotels and MongoDB as a database.'
@@ -496,9 +518,18 @@ export const project = [
     ],
     mainStack: 'reactNative',
     info: [
-      'Developed a responsive pet adoption mobile application using React Native, Expo and ExpressJS enabling users to add a pet to favorites and later choose a pet for adoption and used Expo Router for navigation.',
-      'Used Axios for fetching API’s from the backend and MongoDB as a database for data storage and retrieval.',
-      'Used Async Storage as a local storage and Context API for state management and JWT for user authentication.'
+      {
+        text: 'Developed a responsive pet adoption mobile application using React Native, Expo and ExpressJS enabling users to add a pet to favorites and later choose a pet for adoption and used Expo Router for navigation.'
+      },
+      {
+        text: 'Used Axios for fetching API’s from the backend and MongoDB as a database for data storage and retrieval.'
+      },
+      {
+        text: 'Used Async Storage as a local storage and Context API for state management and JWT for user authentication.'
+      },
+      {
+        text: 'TECH STACK: React Native, Expo, TypeScript, ExpressJS, Context API, Tailwind CSS, Axios, JWT, MongoDB'
+      }
     ],
     mininfo: [
       'Developed a responsive pet adoption mobile application using React Native, Expo and ExpressJS, used Expo Router for navigation, Async Storage as a local storage, Context API for state management, JWT for authentication and MongoDB as a database'
@@ -549,10 +580,21 @@ export const project = [
     ],
     mainStack: 'reactExpress',
     info: [
-      'Developed a responsive blogging web application using ReactJS , NodeJS, ExpressJS enabling users to create, read, update and delete blog posts and used Cloudinary for storing images on the cloud.',
-      'Used MongoDB for data storage and retrieval, and used JWT for user authentication, authorization.',
-      'Integrated React Toastify for displaying notifications and integrated EmailJS to send email to developer.',
-      'Deployed ReactJS Frontend on Vercel, NodeJS and ExpressJS backend on Render.'
+      {
+        text: 'Developed a responsive blogging web application using ReactJS , NodeJS, ExpressJS enabling users to create, read, update and delete blog posts and used Cloudinary for storing images on the cloud.'
+      },
+      {
+        text: 'Used MongoDB for data storage and retrieval, and used JWT for user authentication, authorization.'
+      },
+      {
+        text: 'Integrated React Toastify for displaying notifications and integrated EmailJS to send email to developer.'
+      },
+      {
+        text: 'Deployed ReactJS Frontend on Vercel, NodeJS and ExpressJS backend on Render.'
+      },
+      {
+        text: 'TECH STACK: ReactJs, NodeJS, ExpressJS, Axios, EmailJS, JWT, Cloudinary, MongoDB'
+      }
     ],
     mininfo: [
       'Developed a responsive blogging web application using ReactJS , NodeJS, ExpressJS enabling users to create, read, update and delete blog posts and used Cloudinary for storing images on the cloud and MongoDB as database'
@@ -602,9 +644,18 @@ export const project = [
     ],
     mainStack: 'angularExpress',
     info: [
-      'Developed a responsive article posting web application using Angular, GraphQL and ExpressJS enabling users to create, read, update and delete articles and used JWT for user authentication and MongoDB as a database.',
-      'Used GraphQL as a query language for API’s and a runtime for fulfilling those queries with existing data.',
-      'Deployed Angular Frontend on Vercel, NodeJS and ExpressJS backend on Render.'
+      {
+        text: 'Developed a responsive article posting web application using Angular, GraphQL and ExpressJS enabling users to create, read, update and delete articles and used JWT for user authentication and MongoDB as a database.'
+      },
+      {
+        text: 'Used GraphQL as a query language for API’s and a runtime for fulfilling those queries with existing data.'
+      },
+      {
+        text: 'Deployed Angular Frontend on Vercel, NodeJS and ExpressJS backend on Render.'
+      },
+      {
+        text: 'TECH STACK: Angular, TypeScript, ExpressJS, Tailwind CSS, GraphQL, JWT, MongoDB'
+      }
     ],
     mininfo: [
       'Developed a responsive CRUD article posting web application using Angular, GraphQL, ExpressJS and used JWT for user authentication, MongoDB as a database and GraphQL as a query language for API’s.'
@@ -646,9 +697,16 @@ export const project = [
     ],
     mainStack: 'reactExpress',
     info: [
-      'Developed a user-friendly, collaborative web application using ReactJS, ExpressJS and Tailwind CSS.',
-      'Used Socket.IO for enabling users to draw, erase, paint and chat real-time with multiple users.',
-      'Deployed ReactJS Frontend on Vercel, NodeJS and ExpressJS backend on Render.'
+      {
+        text: 'Developed a user-friendly, collaborative web application using ReactJS, ExpressJS and Tailwind CSS.'
+      },
+      {
+        text: 'Used Socket.IO for enabling users to draw, erase, paint and chat real-time with multiple users.'
+      },
+      {
+        text: 'Deployed ReactJS Frontend on Vercel, NodeJS and ExpressJS backend on Render.'
+      },
+      { text: 'TECH STACK: Vite, Socket.IO, Express, TypeScript, Tailwind CSS' }
     ],
     mininfo: [
       'Developed a user-friendly, collaborative web application using ReactJS, ExpressJS, used Socket.IO for enabling users to draw, erase, paint and chat real-time with multiple users and deployed on Vercel.'
@@ -697,9 +755,16 @@ export const project = [
     ],
     mainStack: 'next.js',
     info: [
-      'Developed a User CRUD web application with the T3 stack using Next.js, TypeScript and Tailwind CSS.',
-      'Used tRPC for end-to-end typesafe API’s, Prisma as an ORM for TypeScript, PostgreSQL as database enabling to create, read, update and delete user.',
-      'Deployed the full stck app on Vercel.'
+      {
+        text: 'Developed a User CRUD web application with the T3 stack using Next.js, TypeScript and Tailwind CSS.'
+      },
+      {
+        text: 'Used tRPC for end-to-end typesafe API’s, Prisma as an ORM for TypeScript, PostgreSQL as database enabling to create, read, update and delete user.'
+      },
+      { text: 'Deployed the full stck app on Vercel.' },
+      {
+        text: 'TECH STACK: Next.js, tRPC, TypeScript, Prisma, Tailwind CSS, PostgreSQL'
+      }
     ],
     mininfo: [
       'Developed a User CRUD web application with the T3 stack using Next.js, TypeScript and Tailwind CSS and used tRPC for end-to-end typesafe API’s, Prisma as an ORM for TypeScript and PostgreSQL as database.'
@@ -753,11 +818,24 @@ export const project = [
     ],
     mainStack: 'reactDRF',
     info: [
-      ' Developed a user-friendly, secure e-commerce web application using React JS and Django Rest Framework.',
-      ' Used Axios to integrate the Fake Store API, Redux Toolkit for global state management and Stripe for payment integration',
-      ' Used PostgreSQL in production for data storage and retrieval and used JWT for user authentication and authorization',
-      ' Used Reactstrap’s easy-to-use component and used React Toastify for displaying notifications for successful actions',
-      ' Deployed React JS Frontend on Vercel, Django Rest Framework backend and PostgreSQL Database on Railway'
+      {
+        text: ' Developed a user-friendly, secure e-commerce web application using React JS and Django Rest Framework.'
+      },
+      {
+        text: ' Used Axios to integrate the Fake Store API, Redux Toolkit for global state management and Stripe for payment integration'
+      },
+      {
+        text: ' Used PostgreSQL in production for data storage and retrieval and used JWT for user authentication and authorization'
+      },
+      {
+        text: ' Used Reactstrap’s easy-to-use component and used React Toastify for displaying notifications for successful actions'
+      },
+      {
+        text: ' Deployed React JS Frontend on Vercel, Django Rest Framework backend and PostgreSQL Database on Railway'
+      },
+      {
+        text: 'TECH STACK: ReactJs, DRF, Redux Toolkit, Stripe, Reactstrap, Axios, JWT, PostgreSQL, React Toastify, Vercel, Railway'
+      }
     ],
     mininfo: [
       ' Developed a user-friendly, secure e-commerce web application using React JS and Django Rest Framework and used Redux Toolkit for global state management, Stripe for payment integration and PostgreSQL as database'
@@ -806,10 +884,21 @@ export const project = [
     ],
     mainStack: 'reactDRF',
     info: [
-      ' Developed a combined OTT Platform and Chat App web application using Vite and Django Channels, enabling users to utilize the core functionality of the popular streaming platform and have an interactive chat experience',
-      ' Used Fetch to make API requests to the TMDB API and implement DRF’s build-in Token Authentication',
-      ' Implement a chat interface using Django Channels including message handling, broadcasting, CRUD operations and used SQLite as the database and implemented Redis as a storage layer for channel names and group names',
-      ' Used SCSS to apply custom styling and utilized Material UI for pre-built UI components and responsive design.'
+      {
+        text: 'Developed a combined OTT Platform and Chat App web application using Vite and Django Channels, enabling users to utilize the core functionality of the popular streaming platform and have an interactive chat experience'
+      },
+      {
+        text: 'Used Fetch to make API requests to the TMDB API and implement DRF’s build-in Token Authentication'
+      },
+      {
+        text: 'Implement a chat interface using Django Channels including message handling, broadcasting, CRUD operations and used SQLite as the database and implemented Redis as a storage layer for channel names and group names'
+      },
+      {
+        text: 'Used SCSS to apply custom styling and utilized Material UI for pre-built UI components and responsive design.'
+      },
+      {
+        text: 'TECH STACK: Vite, DRF, Django Channels, Fetch API, Material UI, Redis'
+      }
     ],
     mininfo: [
       ' Developed a combined OTT Platform and Chat App web application using Vite and Django Channels, enabling users to utilize the core functionality of the popular streaming platform and have an interactive chat experience'
@@ -859,10 +948,21 @@ export const project = [
     ],
     mainStack: 'reactDRF',
     info: [
-      ' Developed a responsive blogging web application using React JS and Django Rest Framework, enabling users to create, read, update and delete blog posts',
-      ' Implemented DRF’s Custom User Model, created RESTful API endpoints using DRF to handle requests, used PostgreSQL in production for data storage and retrieval, and used JWT for user authentication, authorization',
-      ' Use Axios to make API requests to the backend and implement views and serializers to handle CRUD operations.',
-      ' Integrated React Toastify for displaying notifications and integrated Email JS to send email notifications.'
+      {
+        text: 'Developed a responsive blogging web application using React JS and Django Rest Framework, enabling users to create, read, update and delete blog posts'
+      },
+      {
+        text: 'Implemented DRF’s Custom User Model, created RESTful API endpoints using DRF to handle requests, used PostgreSQL in production for data storage and retrieval, and used JWT for user authentication, authorization'
+      },
+      {
+        text: 'Use Axios to make API requests to the backend and implement views and serializers to handle CRUD operations.'
+      },
+      {
+        text: 'Integrated React Toastify for displaying notifications and integrated Email JS to send email notifications.'
+      },
+      {
+        text: 'TECH STACK: ReactJs, DRF, Email JS, Axios, JWT, React Toastify, Postgresql'
+      }
     ],
     mininfo: [
       ' Developed a responsive blogging web application using React JS and Django Rest Framework, enabling users to create, read, update and delete blog posts and integrated EmailJS and PostgreSQL as database'

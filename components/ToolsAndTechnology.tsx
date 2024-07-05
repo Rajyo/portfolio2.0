@@ -86,9 +86,9 @@ const ToolsAndTechnology = () => {
   ]
 
   return (
-    <section className='mx-auto h-screen max-w-[95%] md:max-w-[86%]'>
-      <h1 className='text-center w-[95%] mx-auto text-5xl font-semibold'>Tech Stack</h1>
-      <div className='relative flex h-[75%] w-[95%] flex-col p-2 pt-10 [perspective:1000px] md:float-end lg:float-none lg:mx-auto md:h-[90%] md:p-4 lg:p-6 xl:p-8'>
+    <section className='mx-auto h-[120vh] max-w-[95%] md:max-w-[86%] py-10'>
+      <h1 className='text-center w-[95%] mx-auto font-bold text-4xl md:text-5xl py-10'>My Tech Stack</h1>
+      <div className='relative flex h-[75%] w-[95%] flex-col p-2 pt-10 [perspective:1000px] md:float-end lg:float-none lg:mx-auto md:h-[80%] md:p-4 lg:p-6 xl:p-8'>
         <Tabs tabs={tabs} />
       </div>
     </section>
