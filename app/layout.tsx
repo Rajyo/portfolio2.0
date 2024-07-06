@@ -4,6 +4,7 @@ import { Inter as FontSans } from "next/font/google"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider";
 import dynamic from "next/dynamic";
+import { Toaster } from "@/components/ui/toaster";
 const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), { ssr: false })
 const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false })
 
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Navbar />
           <div className='fixed hidden md:flex right-10 top-10 z-50'> <ToggleTheme /> </div>
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

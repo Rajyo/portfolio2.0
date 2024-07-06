@@ -5,7 +5,7 @@ import LandingPage from "@/components/LandingPage";
 import Projects from "@/components/Projects";
 import Sparkles from "@/components/Sparkles";
 import ToolsAndTechnology from "@/components/ToolsAndTechnology";
-import Contact from "./contact/page";
+import Contact from "@/components/ContactPage";
 
 
 export default function Home() {

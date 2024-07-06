@@ -3,7 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-
+import emailjs from '@emailjs/browser'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -15,6 +15,10 @@ import {
 } from '@/components/ui/form'
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from '@/components/ui/input'
+import { useToast } from "@/components/ui/use-toast"
+import { Loader2 } from 'lucide-react'
+import { useState } from 'react'
+
 
 const formSchema = z.object({
   name: z
@@ -35,8 +39,8 @@ const formSchema = z.object({
     .min(2, {
       message: 'Email must be at least 2 characters.'
     })
-    .max(20, {
-      message: 'Email cannot be more than 20 characters.'
+    .max(30, {
+      message: 'Email cannot be more than 30 characters.'
     }),
   subject: z
     .string({
@@ -61,7 +65,10 @@ const formSchema = z.object({
 })
 
 export function ContactForm() {
-  // 1. Define your form.
+  const { toast } = useToast()
+  const [loading, setLoading] = useState(false)
+
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -72,18 +79,66 @@ export function ContactForm() {
     }
   })
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true)
     const result = formSchema.safeParse(values)
 
     if (!result.success) {
-      throw new Error('error')
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Invalid data type.",
+      })
+      setLoading(false)
     }
-    console.log(values)
+
+
+    const { name, email, subject, message } = values
+    const templateParams = {
+      user_name: name,
+      user_email: email,
+      user_subject: subject,
+      user_message: message
+    }
+
+
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    await emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE as string,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC as string,
+      )
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          toast({
+            title: "Success",
+            description: "Your message has been sent.",
+          })
+          form.reset()
+          setLoading(false)
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          toast({
+            variant: "destructive",
+            title: "Uh oh! Something went wrong.",
+            description: "There was a problem with your request.",
+          })
+          form.reset()
+          setLoading(false)
+        },
+      );
+
   }
 
+
+
   return (
-    <div className='mx-auto w-[80%] h-auto rounded-none bg-white p-4 shadow-input dark:bg-black md:rounded-2xl md:p-8'>
+    <div className='w-[90%] mx-auto min-[400px]:w-[80%] min-[500px]:w-[70%] min-[600px]:w-[60%] md:w-[100%] h-auto rounded-lg  px-2 py-4 sm:py-4 sm:px-2  shadow-input dark:bg-black md:rounded-2xl md:p-4 lg:p-8 self-center bg-white'>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -93,7 +148,7 @@ export function ContactForm() {
             control={form.control}
             name='name'
             render={({ field }) => (
-              <FormItem className='w-[80%]'>
+              <FormItem className='w-[90%] xl:w-[80%]'>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input placeholder='Enter Name' {...field} />
@@ -106,7 +161,7 @@ export function ContactForm() {
             control={form.control}
             name='email'
             render={({ field }) => (
-              <FormItem className='w-[80%]'>
+              <FormItem className='w-[90%] xl:w-[80%]'>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input placeholder='Enter Email' {...field} />
@@ -119,7 +174,7 @@ export function ContactForm() {
             control={form.control}
             name='subject'
             render={({ field }) => (
-              <FormItem className='w-[80%]'>
+              <FormItem className='w-[90%] xl:w-[80%]'>
                 <FormLabel>Subject</FormLabel>
                 <FormControl>
                   <Input placeholder='Enter Subject' {...field} />
@@ -132,7 +187,7 @@ export function ContactForm() {
             control={form.control}
             name='message'
             render={({ field }) => (
-              <FormItem className='w-[80%]'>
+              <FormItem className='w-[90%] xl:w-[80%]'>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea placeholder='Enter Message' {...field} />
@@ -141,175 +196,11 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-          <Button variant="default" className='w-[80%]' type='submit'>Send Message</Button>
-
+          {loading
+            ? (<Button disabled className='w-[90%] xl:w-[80%]'><Loader2 className="mr-2 h-4 w-4 animate-spin" />Please wait</Button>)
+            : (<Button variant="default" className='w-[90%] xl:w-[80%]' type="submit">Send Message</Button>)}
         </form>
       </Form>
     </div>
   )
 }
-
-// import { useForm } from 'react-hook-form'
-// import emailjs from 'emailjs-com'
-
-// const ContactForm = () => {
-//     const {
-//         register,
-//         handleSubmit,
-//         reset,
-//         formState: { errors }
-//     } = useForm()
-
-//     const onSubmit = async (data) => {
-//         const { name, email, message } = data
-//         try {
-//             const templateParams = {
-//                 user_name: name,
-//                 user_email: email,
-//                 user_message: message
-//             }
-
-//             await emailjs.send(
-//                 process.env.REACT_APP_EMAILJS_SERVICE ,
-//                 process.env.REACT_APP_EMAILJS_TEMPLATE ,
-//                 templateParams,
-//                 process.env.REACT_APP_EMAILJS_SECRET
-//             )
-
-//             reset()
-//         } catch (e) {
-//             console.log(e)
-//         }
-//     }
-
-//     return (
-//         <form
-//             id='contact-form'
-//             onSubmit={handleSubmit(onSubmit)}
-//             noValidate
-//             style={{
-//                 backgroundColor: "white",
-//                 padding: '1rem 2rem 2rem 2rem',
-//                 borderRadius: '1rem'
-//             }}
-//             className='xl:w-[500px]'
-//         >
-//             <div className='my-6'>
-//                 <label
-//                     htmlFor='name'
-//                     className='mb-2 block text-lg font-medium text-gray-900 dark:text-white'
-//                 >
-//                     Name
-//                 </label>
-//                 <input
-//                     type='text'
-//                     name='name'
-//                     className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
-//                     placeholder='Enter your name'
-//                     {...register('name', {
-//                         required: {
-//                             value: true,
-//                             message: 'Please enter your name'
-//                         },
-//                         maxLength: {
-//                             value: 30,
-//                             message: 'Please use 30 characters or less'
-//                         }
-//                     })}
-//                     required
-//                 />
-//                 {errors.name && (
-//                     <span className='errorMessage'>{errors.name.message}</span>
-//                 )}
-//             </div>
-
-//             <div className='mb-6'>
-//                 <label
-//                     htmlFor='email'
-//                     className='mb-2 block text-lg font-medium text-gray-900 dark:text-white'
-//                 >
-//                     Email
-//                 </label>
-//                 <input
-//                     type='email'
-//                     id='email'
-//                     className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
-//                     placeholder='Enter your email'
-//                     {...register('email', {
-//                         required: true,
-//                         pattern:
-//                             /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-//                     })}
-//                     required
-//                 />
-//                 {errors.email && (
-//                     <span className='errorMessage'>
-//                         Please enter a valid email address
-//                     </span>
-//                 )}
-//             </div>
-
-//             <div className='mb-6'>
-//                 <label
-//                     htmlFor='name'
-//                     className='mb-2 block text-lg font-medium text-gray-900 dark:text-white'
-//                 >
-//                     Subject
-//                 </label>
-//                 <input
-//                     type='text'
-//                     name='subject'
-//                     className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
-//                     placeholder='Enter subject'
-//                     {...register('subject', {
-//                         required: {
-//                             value: true,
-//                             message: 'Please enter a subject'
-//                         },
-//                         maxLength: {
-//                             value: 75,
-//                             message: 'Subject cannot exceed 75 characters'
-//                         }
-//                     })}
-//                     required
-//                 />
-//                 {errors.subject && (
-//                     <span className='errorMessage'>{errors.subject.message}</span>
-//                 )}
-//             </div>
-
-//             <div className='mb-6'>
-//                 <label
-//                     htmlFor='message'
-//                     className='mb-2 block text-lg font-medium text-gray-900 dark:text-white'
-//                 >
-//                     Message
-//                 </label>
-//                 <textarea
-//                     id='message'
-//                     name='message'
-//                     className='block h-28 w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
-//                     placeholder='Enter your message'
-//                     {...register('message', {
-//                         required: true
-//                     })}
-//                     required
-//                 />
-//                 {errors.message && (
-//                     <span className='errorMessage'>Please enter a message</span>
-//                 )}
-//             </div>
-
-//             <div className='flex justify-between'>
-//                 <button
-//                     className='w-full rounded-md bg-indigo-500 px-4 py-2 text-white hover:bg-indigo-400'
-//                     type='submit'
-//                 >
-//                     Submit
-//                 </button>
-//             </div>
-//         </form>
-//     )
-// }
-
-// export default ContactForm

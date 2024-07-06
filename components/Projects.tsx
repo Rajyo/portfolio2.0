@@ -13,9 +13,9 @@ export default function Projects() {
     }
 
     return (
-        <section className='m-auto h-auto max-w-[100%] md:max-w-[86%] py-10'>
+        <section className='m-auto h-auto max-w-[100%] md:max-w-[86%] sm:py-10'>
             <div className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-around p-4 '>
-                <div className="flex justify-between w-full p-5">
+                <div className="flex max-[550px]:flex-col flex-row max-[550px]:gap-y-5 items-center justify-between w-full p-10">
                     <h1 className='font-bold text-4xl md:text-5xl text-center'>My Projects</h1>
                     <ProjectDropdown techStack={techStack} handleTechStack={handleTechStack} />
                 </div>

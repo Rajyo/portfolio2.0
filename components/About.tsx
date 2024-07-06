@@ -18,7 +18,7 @@ export default function About() {
 
 
     return (
-        <section className="max-w-[100%] md:max-w-[86%] mx-auto h-auto md:h-[160vh] lg:h-[140vh] border border-orange-500/0 md:flex md:flex-col lg:flex-row lg:p-10">
+        <section className="max-w-[100%] md:max-w-[86%] mx-auto h-auto md:h-[160vh] lg:h-[140vh] border border-orange-500/0 md:flex md:flex-col lg:flex-row lg:p-10 p-2">
 
             <div className=' lg:basis-1/2 border border-red-500/0'>
                 <div className='md:p-4 lg:p-8 flex flex-col mx-auto md:float-end w-[95%] min-[400px]:w-[90%] h-full justify-start pt-10 md:pt-20'>
@@ -36,9 +36,9 @@ export default function About() {
                 </div>
             </div>
 
-            <div className='lg:basis-1/2 border border-green-500/0 md:flex flex-col gap-y-5 self-end pt-20 lg:pt-0'>
+            <div className='lg:basis-1/2 border border-green-500/0 md:flex flex-col gap-y-5 lg:self-end'>
                 <p className='w-[90%] mx-auto text-xl font-semibold text-[#00eeff] gap-x-2 hidden lg:flex'><Crown />About me</p>
-                <Image src={img} alt='skater' className='w-[80%] sm:w-[70%] lg:w-[90%] aspect-auto m-auto rounded-xl' />
+                <Image src={img} alt='skater' className='w-[80%] sm:w-[70%] lg:w-[90%] self-center aspect-auto my-5 m-auto rounded-xl' />
             </div>
         </section>
     )

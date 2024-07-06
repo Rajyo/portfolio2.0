@@ -5,9 +5,6 @@ import { TypeAnimation } from "react-type-animation";
 import { useTheme } from "next-themes";
 import Light3DCanvas from "./canvas/Light3DCanvas";
 import Dark3DCanvas from "./canvas/Dark3DCanvas";
-import { motion } from "framer-motion";
-import { AuroraBackground } from "./ui/aurora-background";
-import { Spotlight } from "./ui/spotlight";
 import MobileCanvas from "./canvas/MobileCanvas";
 import Sparkles from "./Sparkles";
 
@@ -22,7 +19,7 @@ export default function LandingPage() {
 
                 <div className="max-w-[100%] md:max-w-[86%] w-full absolute mx-auto h-screen flex">
                     <div className="flex flex-col md:items-start items-center max-[400px]:w-[95%] w-[90%] sm:w-[75%] md:w-[69%] m-auto h-[35%] sm:h-[45%] xl:h-[40%]">
-                        
+
                         <h1 className="pl-[6px] py-2 max-[400px]:text-xl text-2xl font-semibold uppercase flex gap-7 text-gray-800 md:text-gray-600 dark:text-gray-400 tracking-tight z-30 flex-wrap">
                             <span>p r a j y o t</span> <span>k h a d s e</span>
                         </h1>
