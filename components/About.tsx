@@ -1,11 +1,13 @@
-"use client"
+'use client'
 
 import { Crown, SendHorizonal } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { TextGenerateEffect } from './ui/text-generate-effect'
 import Link from 'next/link'
 import Image from 'next/image'
-import img from "@/public/lachlan-dempsey.jpg"
+import img from '@/public/lachlan-dempsey.jpg'
+import { StickyScroll } from './ui/sticky-scroll-reveal'
+import { InfiniteMovingCards } from './ui/infinite-moving-cards'
 
 export default function About() {
     const [timer, setTimer] = useState(false)
@@ -16,29 +18,93 @@ export default function About() {
         }, 12250)
     }, [timer])
 
+    const testimonials = [
+        {
+            name: 'NMIMS Global Access School for Continuing Education, Mumbai',
+            course: 'Post Graduate Diploma in Management',
+            major: 'Financial Management (Distance)',
+            percentage: '72.42%',
+            year: '2021-2023'
+        },
+        {
+            name: 'Government College of Engineering, Chandrapur',
+            course: 'Bachelors in Engineering',
+            major: 'Computer Science Engineering (Full-time)',
+            percentage: '75.68%',
+            year: '2017-2021'
+        },
+        {
+            name: 'Sri Chaitanya Vidya Niketan, Visakhapatnam',
+            course: 'Higher Secondary School Certificate',
+            major: 'Physics Chemistry Math (Full-time)',
+            percentage: '84.4%',
+            year: '2015-2017'
+        },
+        {
+            name: 'Bhonsala Military School, Nagpur',
+            course: 'Secondary School Certificate',
+            major: 'General (Full-time)',
+            percentage: '89.2%',
+            year: '2013-2015'
+        }
+    ]
 
     return (
-        <section className="max-w-[100%] md:max-w-[86%] mx-auto h-auto md:h-[160vh] lg:h-[140vh] border border-orange-500/0 md:flex md:flex-col lg:flex-row lg:p-10 p-2">
+        <section
+            id='about'
+            className='mx-auto h-auto max-w-[100%] border border-orange-500/0 p-2 md:max-w-[86%] lg:p-10'
+        >
+            <div className='w-full md:flex md:h-[160vh] md:flex-col lg:h-[140vh] lg:flex-row'>
+                <div className='border border-red-500/0 lg:basis-1/2'>
+                    <div className='mx-auto flex h-full w-[95%] flex-col justify-start pt-10 min-[400px]:w-[90%] md:float-end md:p-4 md:pt-20 lg:p-8'>
+                        <span className='text-2xl font-semibold text-gray-800 dark:text-gray-50 sm:text-3xl lg:text-4xl'>
+                            Hi there,
+                        </span>
+                        <br />
 
-            <div className=' lg:basis-1/2 border border-red-500/0'>
-                <div className='md:p-4 lg:p-8 flex flex-col mx-auto md:float-end w-[95%] min-[400px]:w-[90%] h-full justify-start pt-10 md:pt-20'>
-                    <span className='text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-gray-50'>Hi there,</span><br />
+                        <TextGenerateEffect
+                            words={`I'm Prajyot, a self-taught web developer, a tech enthusiast and a product builder with a knack for tackling tough technical challenges. As a jack-of-all-trades, I can learn any technology quickly and deliver high-quality results with an eye for detail and a focus on user experience. I take pride in owning my work and always striving for excellence.`}
+                        />
 
-                    <TextGenerateEffect words={`I'm Prajyot, a self-taught web developer, a tech enthusiast and a product builder with a knack for tackling tough technical challenges. As a jack-of-all-trades, I can learn any technology quickly and deliver high-quality results with an eye for detail and a focus on user experience. I take pride in owning my work and always striving for excellence.`} />
+                        {timer && (
+                            <TextGenerateEffect
+                                className='pt-4'
+                                words={`When I'm not exploring the latest tech trends, you'll find me indulging in my love for music or seeking out new and creative ways to solve problems.`}
+                            />
+                        )}
 
-                    {timer && <TextGenerateEffect className='pt-4' words={`When I'm not exploring the latest tech trends, you'll find me indulging in my love for music or seeking out new and creative ways to solve problems.`}
-                    />}
+                        <span className='flex items-center gap-2 pt-6 text-lg font-bold text-[#00eeff] sm:pt-10 sm:text-xl'>
+                            <SendHorizonal />
+                            <Link href={'#contact'}>Send me a message</Link>
+                        </span>
+                    </div>
+                </div>
 
-                    <span className='flex gap-2 pt-6 sm:pt-10 text-lg sm:text-xl text-[#00eeff] font-bold items-center'>
-                        <SendHorizonal />
-                        <Link href={'/contact'}>Send me a message</Link>
-                    </span>
+                <div className='flex-col gap-y-5 border border-green-500/0 md:flex lg:basis-1/2 lg:self-end'>
+                    <p className='mx-auto hidden w-[90%] gap-x-2 text-xl font-semibold text-[#00eeff] lg:flex'>
+                        <Crown />
+                        About me
+                    </p>
+                    <Image
+                        src={img}
+                        alt='skater'
+                        className='m-auto my-5 aspect-auto w-[80%] self-center rounded-xl sm:w-[70%] lg:w-[90%]'
+                    />
                 </div>
             </div>
 
-            <div className='lg:basis-1/2 border border-green-500/0 md:flex flex-col gap-y-5 lg:self-end'>
-                <p className='w-[90%] mx-auto text-xl font-semibold text-[#00eeff] gap-x-2 hidden lg:flex'><Crown />About me</p>
-                <Image src={img} alt='skater' className='w-[80%] sm:w-[70%] lg:w-[90%] self-center aspect-auto my-5 m-auto rounded-xl' />
+            {/* <div className='m-auto h-[70vh] max-w-[100%] md:max-w-[86%]'>
+                <div className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-evenly'>
+                    <StickyScroll />
+                </div>
+            </div> */}
+
+            <div className='dark:bg-grid-white/[0.05] relative flex h-[25rem] flex-col items-center justify-center overflow-hidden rounded-md antialiased'>
+                <InfiniteMovingCards
+                    items={testimonials}
+                    direction='right'
+                    speed='slow'
+                />
             </div>
         </section>
     )

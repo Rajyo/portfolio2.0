@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import { project } from "@/lib/constants";
 import { ProjectDropdown } from "./ProjectDropdown";
+import { Flame } from "lucide-react";
 
 export default function Projects() {
     const [techStack, setTechStack] = useState("reactExpress");
@@ -13,10 +14,10 @@ export default function Projects() {
     }
 
     return (
-        <section className='m-auto h-auto max-w-[100%] md:max-w-[86%] sm:py-10'>
-            <div className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-around p-4 '>
+        <section id="projects" className='m-auto h-auto max-w-[100%] md:max-w-[86%] sm:py-10'>
+            <div className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-around p-4 mr-5 md:mr-0'>
                 <div className="flex max-[550px]:flex-col flex-row max-[550px]:gap-y-5 items-center justify-between w-full p-10">
-                    <h1 className='font-bold text-4xl md:text-5xl text-center'>My Projects</h1>
+                    <h1 className='font-bold text-4xl md:text-5xl text-center flex justify-center'>My Projects <Flame /></h1>
                     <ProjectDropdown techStack={techStack} handleTechStack={handleTechStack} />
                 </div>
                 <div className="flex flex-wrap justify-around gap-5">

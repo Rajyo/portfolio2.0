@@ -45,7 +45,7 @@ export function ProjectCard({
     return (
         <>
             {mainStack === technicalStack && (
-                <div className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center overflow-hidden rounded-2xl border border-black/[0.1] bg-zinc-100 shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-700 dark:border-white/[0.1] dark:bg-black max-[550px]:h-[32rem] max-[550px]:w-[24rem] min-[350px]:px-2 max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] lg:h-[32rem] lg:w-[24rem] xl:h-[34rem] xl:w-[32rem]'>
+                <div className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center overflow-hidden rounded-2xl border border-black/[0.1] bg-zinc-100 transition duration-700 dark:border-white/[0.1] dark:bg-black max-[550px]:h-[32rem] max-[550px]:w-[24rem] min-[350px]:px-2 max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] lg:h-[32rem] lg:w-[24rem] xl:h-[34rem] xl:w-[32rem] shadow-xl hover:shadow-gray-400 hover:dark:shadow-neutral-800'>
 
                     <div className='flex h-[30rem] w-[30rem] flex-col min-[450px]px-2 tracking-tight text-slate-100/50 transition duration-500 ease-in-out group-hover/card:scale-[1.03] max-[550px]:h-[28rem] max-[550px]:w-[24rem] max-[450px]:h-[26rem] max-[450px]:w-[19rem] max-[350px]:h-[26rem] max-[350px]:w-[14rem] min-[350px]:px-4 lg:h-[28rem] lg:w-[24rem] xl:h-[30rem] xl:w-[30rem]'>
                         <PinContainer href={demo || repo} title={title} cover={cover} />

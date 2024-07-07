@@ -30,22 +30,22 @@ export default function Navbar() {
     {
       id: 1,
       title: "About",
-      link: "/about"
+      link: "#about"
     },
     {
       id: 2,
-      title: "Education",
-      link: "/education"
+      title: "Tech Stack",
+      link: "#toolsAndTechnology"
     },
     {
       id: 3,
       title: "Projects",
-      link: "/projects"
+      link: "#projects"
     },
     {
       id: 4,
       title: "Contact",
-      link: "/contact"
+      link: "#contact"
     },
   ]
 
@@ -89,7 +89,7 @@ export default function Navbar() {
       {/* Mobile Header View */}
       <header className="fixed md:hidden top-5 w-[100%] flex justify-between px-5 z-50 items-center">
         <div>
-          <Link href={'/'}>Home</Link>
+          <Link href={'/'}>Logo</Link>
         </div>
 
         <div className="flex items-center gap-x-2">
@@ -112,6 +112,18 @@ export default function Navbar() {
                     </Link>
                   ))
                 }
+                <div className='flex gap-x-3 items-center pt-10 w-full justify-around'>
+                  <div className='p-2.5'>
+                    <LinkPreview url="https://in.linkedin.com/in/prajyot-khadse" className="hover:text-[#00eeff] dark:hover:text-[#00eeff]">
+                      <Linkedin className='h-[1.5rem] w-[1.5rem]' />
+                    </LinkPreview>
+                  </div>
+                  <div className='p-2.5'>
+                    <LinkPreview url="https://github.com/Rajyo" className="hover:text-[#00eeff] dark:hover:text-[#00eeff]">
+                      <Github className='h-[1.5rem] w-[1.5rem]' />
+                    </LinkPreview>
+                  </div>
+                </div>
               </nav>
               <SheetFooter>
                 {/* <SheetClose asChild>

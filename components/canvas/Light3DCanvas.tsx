@@ -17,7 +17,7 @@ const Model = () => {
 
 const Light3DCanvas = () => {
     return (
-        <div className="h-[125vh] w-[125vw] flex items-center justify-center place-items-center cursor-grabbing">
+        <div className="md:h-[125vh] md:w-[125vw] flex items-center justify-center place-items-center cursor-grabbing">
             <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 30 }}>
                 <ambientLight intensity={7} />
                 <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />

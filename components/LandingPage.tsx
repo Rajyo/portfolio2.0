@@ -14,7 +14,7 @@ export default function LandingPage() {
 
     return (
 
-        <section className="w-full relative bg-[#f2f2f2] dark:bg-[#111111]">
+        <section id="home" className="w-full relative bg-[#f2f2f2] dark:bg-[#111111]">
             <div className="w-full inset-0 h-screen top-0">
 
                 <div className="max-w-[100%] md:max-w-[86%] w-full absolute mx-auto h-screen flex">
@@ -50,23 +50,6 @@ export default function LandingPage() {
                 <div className="absolute w-screen h-screen md:hidden z-10">
                     <MobileCanvas />
                 </div>
-
-                {/* <Spotlight className="-top-20 left-0 md:left-100 md:-top-40 md:hidden dark:hidden" fill="red" />
-                <Spotlight className="top-60 left-0 md:left-60 md:-top-20 md:hidden dark:hidden" fill="blue" /> */}
-
-                {/* <AuroraBackground className="md:hidden">
-                    <motion.div
-                        initial={{ opacity: 0.0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                            delay: 0.3,
-                            duration: 0.8,
-                            ease: "easeInOut",
-                        }}
-                        className="absolute"
-                    >
-                    </motion.div>
-                </AuroraBackground> */}
 
 
                 {/* Web */}
