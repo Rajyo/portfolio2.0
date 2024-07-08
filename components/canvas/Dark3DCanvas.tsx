@@ -2,27 +2,17 @@
 
 import React, { Suspense } from "react"
 import { Canvas, useLoader } from "@react-three/fiber"
-import { Environment, OrbitControls } from "@react-three/drei"
+import { Environment, OrbitControls, Preload } from "@react-three/drei"
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import CanvasLoader from "./CanvasLoader";
 
-// const Model = () => {
-//     //alien lava_planet planet
-//     const gltf = useLoader(GLTFLoader, "/lava_planet/scene.gltf");
-//     return (
-//         <primitive object={gltf.scene} scale={1} />
-//     );
-// };
+
 const Model = () => {
     const gltf = useLoader(GLTFLoader, "/mars/scene.gltf"); //red-mars
-    // const gltf = useLoader(GLTFLoader, "/moon1/scene.gltf"); //jupiter
-    // const gltf = useLoader(GLTFLoader, "/moon2/scene.gltf"); //smooth
     // const gltf = useLoader(GLTFLoader, "/the_moon/scene.gltf"); //raw
     return (
         <primitive object={gltf.scene} scale={0.14} />
-        // <primitive object={gltf.scene} scale={0.025} />
-        // <primitive object={gltf.scene} scale={0.14} />
-        // <primitive object={gltf.scene} scale={1} /> 
+        // <primitive object={gltf.scene} scale={1} />
     );
 };
 
@@ -35,6 +25,7 @@ const Dark3DCanvas = () => {
                 <Suspense fallback={<CanvasLoader />}>
                     <Model />
                     <Environment preset="city" />
+                    <Preload all />
                 </Suspense>
                 <OrbitControls autoRotate autoRotateSpeed={2} />
             </Canvas>

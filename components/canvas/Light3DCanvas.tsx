@@ -2,16 +2,14 @@
 
 import React, { Suspense } from "react"
 import { Canvas, useLoader } from "@react-three/fiber"
-import { Environment, OrbitControls } from "@react-three/drei"
+import { Environment, OrbitControls, Preload } from "@react-three/drei"
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import CanvasLoader from "./CanvasLoader";
 
 const Model = () => {
-    const gltf = useLoader(GLTFLoader, "/alien_planet/scene.gltf"); //light-blue
-    // const gltf = useLoader(GLTFLoader, "/earth/scene.gltf");
+    const gltf = useLoader(GLTFLoader, "/alien_planet/scene.gltf");
     return (
         <primitive object={gltf.scene} scale={1} />
-        // <primitive object={gltf.scene} scale={1} />
     );
 };
 
@@ -24,6 +22,7 @@ const Light3DCanvas = () => {
                 <Suspense fallback={<CanvasLoader />}>
                     <Model />
                     <Environment preset="city" />
+                    <Preload all />
                 </Suspense>
                 <OrbitControls autoRotate autoRotateSpeed={2} />
             </Canvas>
