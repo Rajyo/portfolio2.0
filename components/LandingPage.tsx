@@ -3,9 +3,16 @@
 import { LinkPreview } from '@/components/ui/link-preview'
 import { TypeAnimation } from 'react-type-animation'
 import { useTheme } from 'next-themes'
-import Light3DCanvas from './canvas/Light3DCanvas'
-import Dark3DCanvas from './canvas/Dark3DCanvas'
-import MobileCanvas from './canvas/MobileCanvas'
+import dynamic from 'next/dynamic'
+const Light3DCanvas = dynamic(() => import('./canvas/Light3DCanvas'), {
+    ssr: false
+})
+const Dark3DCanvas = dynamic(() => import('./canvas/Dark3DCanvas'), {
+    ssr: false
+})
+const MobileCanvas = dynamic(() => import('./canvas/MobileCanvas'), {
+    ssr: false
+})
 import Sparkles from './Sparkles'
 import { StaticMobileNavbar } from './Navbar'
 

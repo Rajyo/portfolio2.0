@@ -1,6 +1,9 @@
 "use client"
 
-import EarthCanvas from "@/components/canvas/EarthCanvas";
+import dynamic from "next/dynamic";
+const EarthCanvas = dynamic(() => import('@/components/canvas/EarthCanvas'), {
+    ssr: false
+})
 import { ContactForm } from "@/components/ContactForm";
 import { Navigation } from "lucide-react";
 
