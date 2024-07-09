@@ -10,6 +10,9 @@ const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), {
   ssr: false
 })
 const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false })
+import Footer from '@/components/Footer'
+
+
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -26,6 +29,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
   return (
     <html lang='en' suppressHydrationWarning>
       <body
@@ -47,6 +51,7 @@ export default function RootLayout({
             <ToggleTheme />{' '}
           </div>
           {children}
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>
