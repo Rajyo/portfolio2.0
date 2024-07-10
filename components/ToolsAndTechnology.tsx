@@ -105,7 +105,7 @@ const ToolsAndTechnology = () => {
         <h1 className='mx-auto w-[95%] flex justify-center text-center text-4xl font-bold min-[200px]:py-3 min-[400px]:py-5 sm:py-10 md:text-5xl'>
           My Tech Stack <Star />
         </h1>
-        <div className='relative mx-auto mr-6 flex h-[75%] w-[95%] flex-col self-center p-2 pt-10 [perspective:1000px] max-[300px]:p-1 md:mr-0 md:h-[90%] md:p-4 lg:w-[100%] lg:p-6 xl:p-8'>
+        <div className='relative mx-auto flex h-[75%] w-[95%] flex-col self-center p-2 pt-10 [perspective:1000px] max-[300px]:p-1 md:h-[90%] md:p-4 lg:w-[100%] lg:p-6 xl:p-8'>
           <Tabs tabs={tabs} />
         </div>
       </div>

@@ -10,11 +10,9 @@ const Light3DCanvas = dynamic(() => import('./canvas/Light3DCanvas'), {
 const Dark3DCanvas = dynamic(() => import('./canvas/Dark3DCanvas'), {
     ssr: false
 })
-const MobileCanvas = dynamic(() => import('./canvas/MobileCanvas'), {
-    ssr: false
-})
 import Sparkles from './Sparkles'
 import { StaticMobileNavbar } from './Navbar'
+import MobileLandingPage from './MobileLandingPage'
 
 
 export default function LandingPage() {
@@ -28,7 +26,7 @@ export default function LandingPage() {
             <StaticMobileNavbar />
 
             <div className='inset-0 top-0 h-screen w-full'>
-                <div className='absolute mx-auto flex h-screen w-full max-w-[100%] md:max-w-[86%]'>
+                <div className='absolute mx-auto hidden md:flex h-screen w-full max-w-[100%] md:max-w-[86%]'>
                     <div className='m-auto flex h-[35%] w-[90%] flex-col items-center max-[400px]:w-[95%] sm:h-[45%] sm:w-[75%] md:w-[69%] md:items-start xl:h-[40%]'>
                         <h1 className='z-30 flex flex-wrap gap-7 py-2 pl-[6px] text-2xl font-semibold uppercase tracking-tight text-gray-800 dark:text-gray-400 max-[400px]:text-xl md:text-gray-600'>
                             <span>p r a j y o t</span> <span>k h a d s e</span>
@@ -66,7 +64,7 @@ export default function LandingPage() {
 
                 {/* Mobile */}
                 <div className='absolute z-10 h-screen w-screen md:hidden'>
-                    <MobileCanvas />
+                    <MobileLandingPage />
                 </div>
 
                 {/* Web */}

@@ -47,8 +47,7 @@ export default function RootLayout({
           <Logo />
           <Navbar />
           <div className='fixed right-10 top-10 z-50 hidden md:flex'>
-            {' '}
-            <ToggleTheme />{' '}
+            <ToggleTheme />
           </div>
           {children}
           <Footer />

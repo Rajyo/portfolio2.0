@@ -128,7 +128,7 @@ export default function Navbar() {
 
 export const StaticMobileNavbar = () => {
   return (
-    <header className='absolute inset-x-0 top-0 z-[50] flex w-full items-center justify-between border border-transparent bg-white py-2 dark:border-white/[0.2] dark:bg-black md:hidden pr-2 pl-4'>
+    <header className='absolute inset-x-0 top-0 z-[50] flex w-full items-center justify-between border bg-transparent py-2 border-black/[0.2] dark:border-white/[0.2] md:hidden pr-6 pl-4'>
       <MobileNavbarContent />
     </header>
   )
