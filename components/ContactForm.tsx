@@ -138,7 +138,7 @@ export function ContactForm() {
 
 
   return (
-    <div className='w-[90%] mx-auto min-[400px]:w-[80%] min-[500px]:w-[70%] min-[600px]:w-[60%] md:w-[100%] h-auto rounded-lg  px-2 py-4 sm:py-4 sm:px-2  shadow-input dark:bg-black md:rounded-2xl md:p-4 lg:p-8 self-center bg-white'>
+    <div className='w-[90%] mx-auto min-[400px]:w-[80%] min-[500px]:w-[70%] min-[600px]:w-[60%] md:w-[100%] h-auto rounded-2xl  px-2 py-8 dark:bg-black md:p-4 lg:p-8 self-center bg-white shadow-xl shadow-slate-300 dark:shadow-neutral-800'>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

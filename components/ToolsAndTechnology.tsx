@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { Tabs } from './ui/tabs'
 import { technicalStack } from '@/lib/constants'
-import { Star } from 'lucide-react'
+import { Flame } from 'lucide-react'
 
 const DummyContent = ({ tab }: { tab: string }) => {
   return (
@@ -45,7 +45,7 @@ const ToolsAndTechnology = () => {
           <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
             Frontend Tab
           </p>
-          <DummyContent tab='frontend' />
+          <DummyContent tab='Frontend' />
         </div>
       )
     },
@@ -57,7 +57,7 @@ const ToolsAndTechnology = () => {
           <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
             Backend tab
           </p>
-          <DummyContent tab='backend' />
+          <DummyContent tab='Backend' />
         </div>
       )
     },
@@ -69,7 +69,7 @@ const ToolsAndTechnology = () => {
           <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
             Database tab
           </p>
-          <DummyContent tab='database' />
+          <DummyContent tab='Database' />
         </div>
       )
     },
@@ -81,7 +81,7 @@ const ToolsAndTechnology = () => {
           <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
             Deployment tab
           </p>
-          <DummyContent tab='deployment' />
+          <DummyContent tab='Deployment' />
         </div>
       )
     },
@@ -93,7 +93,7 @@ const ToolsAndTechnology = () => {
           <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
             Tools tab
           </p>
-          <DummyContent tab='tools' />
+          <DummyContent tab='Tools' />
         </div>
       )
     }
@@ -102,8 +102,8 @@ const ToolsAndTechnology = () => {
   return (
     <section id='toolsAndTechnology' className='mx-auto max-[300px]:h-[120vh] h-[110vh] min-[600px]:h-[100vh] sm:h-[110vh] md:h-[120vh] lg:h-[100vh] max-w-[95%]'>
       <div className='mx-auto h-full w-full py-10 md:max-w-[86%] lg:pt-0'>
-        <h1 className='mx-auto w-[95%] flex justify-center text-center text-4xl font-bold min-[200px]:py-3 min-[400px]:py-5 sm:py-10 md:text-5xl'>
-          My Tech Stack <Star />
+        <h1 className='mx-auto w-[95%] flex justify-center text-center text-4xl font-bold min-[200px]:py-3 min-[400px]:py-5 sm:py-10 md:text-5xl gap-2 flex-wrap'>
+          My Tech <span className="flex">Stack <Flame /></span>
         </h1>
         <div className='relative mx-auto flex h-[75%] w-[95%] flex-col self-center p-2 pt-10 [perspective:1000px] max-[300px]:p-1 md:h-[90%] md:p-4 lg:w-[100%] lg:p-6 xl:p-8'>
           <Tabs tabs={tabs} />

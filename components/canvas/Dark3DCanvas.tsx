@@ -8,11 +8,9 @@ import CanvasLoader from "./CanvasLoader";
 
 
 const Model = () => {
-    const gltf = useLoader(GLTFLoader, "/mars/scene.gltf"); //red-mars
-    // const gltf = useLoader(GLTFLoader, "/the_moon/scene.gltf"); //raw
+    const gltf = useLoader(GLTFLoader, "/mars/scene.gltf");
     return (
         <primitive object={gltf.scene} scale={0.14} />
-        // <primitive object={gltf.scene} scale={1} />
     );
 };
 

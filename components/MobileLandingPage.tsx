@@ -4,11 +4,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { LinkPreview } from "./ui/link-preview";
 import { TypeAnimation } from "react-type-animation";
-import { useTheme } from "next-themes";
 
 
-export default function MobileLandingPage() {
-    const { theme } = useTheme()
+export default function MobileLandingPage({ theme }: { theme: string }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,

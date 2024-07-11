@@ -10,9 +10,12 @@ const Light3DCanvas = dynamic(() => import('./canvas/Light3DCanvas'), {
 const Dark3DCanvas = dynamic(() => import('./canvas/Dark3DCanvas'), {
     ssr: false
 })
+const MobileLandingPage = dynamic(() => import('./MobileLandingPage'), {
+    ssr: false
+})
 import Sparkles from './Sparkles'
 import { StaticMobileNavbar } from './Navbar'
-import MobileLandingPage from './MobileLandingPage'
+
 
 
 export default function LandingPage() {
@@ -64,7 +67,7 @@ export default function LandingPage() {
 
                 {/* Mobile */}
                 <div className='absolute z-10 h-screen w-screen md:hidden'>
-                    <MobileLandingPage />
+                    {theme === 'light' ? <MobileLandingPage theme={"light"} /> : <MobileLandingPage theme={"dark"} />}
                 </div>
 
                 {/* Web */}

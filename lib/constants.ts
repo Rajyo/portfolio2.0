@@ -173,7 +173,7 @@ export const toolsAndTechnologies = [
 export const technicalStack = [
   {
     id: 1,
-    title: 'frontend',
+    title: 'Frontend',
     stack: [
       { name: 'React.js', link: react },
       { name: 'JavaScript', link: javascript },
@@ -185,11 +185,13 @@ export const technicalStack = [
       { name: 'Material UI', link: matrialUI },
       { name: 'SASS', link: sass },
       { name: 'Tailwind CSS', link: tailwindcss }
-    ]
+    ],
+    color: '#010203',
+    colorr: '#F8F9FA'
   },
   {
     id: 2,
-    title: 'backend',
+    title: 'Backend',
     stack: [
       { name: 'Django Rest Framework', link: drf },
       { name: 'Django', link: django },
@@ -201,33 +203,39 @@ export const technicalStack = [
       { name: 'Java', link: java },
       { name: 'C', link: c },
       { name: 'C++', link: cplus }
-    ]
+    ],
+    color: '#0A0A0A',
+    colorr: '#F1F3F4'
   },
   {
     id: 3,
-    title: 'database',
+    title: 'Database',
     stack: [
       { name: 'MySQL', link: mysql },
       { name: 'PostgreSQL', link: postgresql },
       { name: 'MongoDB', link: mongodb },
       { name: 'Redis', link: redis },
       { name: 'SQLite', link: sqlite }
-    ]
+    ],
+    color: '#0D0D0D',
+    colorr: '#E8EAED'
   },
   {
     id: 4,
-    title: 'deployment',
+    title: 'Deployment',
     stack: [
       { name: 'Vercel', link: vercel },
       { name: 'Railway', link: railway },
       { name: 'Firebase', link: firebase },
       { name: 'Heroku', link: heroku },
       { name: 'Netlify', link: netlify }
-    ]
+    ],
+    color: '#0E0E0E',
+    colorr: '#E0E0E0'
   },
   {
     id: 5,
-    title: 'tools',
+    title: 'Tools',
     stack: [
       { name: 'JWT', link: jwt },
       { name: 'Git', link: git },
@@ -239,7 +247,9 @@ export const technicalStack = [
       { name: 'npm', link: npm },
       { name: 'Docker', link: docker },
       { name: 'Github', link: github }
-    ]
+    ],
+    color: '#111111',
+    colorr: '#DADCE0'
   }
 ]
 

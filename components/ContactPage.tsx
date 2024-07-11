@@ -12,7 +12,7 @@ const Contact = () => {
 
     return (
         <div id="contact" className="max-w-[100%] md:max-w-[86%] md:mx-auto h-auto xl:px-[6rem] pt-20 pb-10">
-            <h3 className="text-4xl md:text-5xl font-bold px-4 md:px-0 text-center z-0 flex justify-center">Let&apos;s get in Touch <Navigation /></h3>
+            <h3 className="text-4xl md:text-5xl font-bold px-4 md:px-0 text-center flex-wrap z-0 flex gap-2 justify-center">Let&apos;s get in <span className="flex">Touch <Navigation /></span></h3>
             <div className="mt-4 md:mt-6 grid md:grid-cols-2 overflow-hidden" >
                 <div className="max-w-[90%] md:max-w-[100%] max-[768px]:mx-auto self-center md:h-[500px] h-[350px] lg:h-[650px]" >
                     <EarthCanvas />

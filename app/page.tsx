@@ -1,31 +1,61 @@
 'use client'
 
 import About from '@/components/About'
-import LandingPage from '@/components/LandingPage'
 import Projects from '@/components/Projects'
 import Sparkles from '@/components/Sparkles'
 import dynamic from 'next/dynamic'
-const ToolsAndTechnology = dynamic(
-  () => import('@/components/ToolsAndTechnology'),
+const LandingPage = dynamic(
+  () => import('@/components/LandingPage'),
+  {
+    ssr: false
+  }
+)
+// import ToolsAndTechnology from '@/components/ToolsAndTechnology'
+const TechStack = dynamic(
+  () => import('@/components/TechStack'),
   {
     ssr: false
   }
 )
 import Contact from '@/components/ContactPage'
+import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import Preloader from '@/components/Preloader'
+import SmoothScroller from '@/components/SmoothScroller'
 
 
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden"
+    setTimeout(() => {
+      setIsLoading(false)
+      document.body.style.cursor = 'default'
+      window.scrollTo(0, 0)
+      document.body.style.overflowY = "auto"
+    }, 2000)
+  }, [])
+
 
   return (
     <main className='relative w-screen bg-[#f2f2f2] dark:bg-[#111111]'>
+      <SmoothScroller />
+
       {/* <Sparkles /> */}
+      <AnimatePresence mode='wait'>
+        {isLoading && <Preloader />}
+      </AnimatePresence>
 
       <LandingPage />
 
       <About />
 
-      <ToolsAndTechnology />
+      {/* Alternative to TechStack */}
+      {/* <ToolsAndTechnology /> */}
+
+      <TechStack />
 
       <Projects />
 
