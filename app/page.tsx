@@ -21,7 +21,6 @@ import Contact from '@/components/ContactPage'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Preloader from '@/components/Preloader'
-import SmoothScroller from '@/components/SmoothScroller'
 
 
 
@@ -41,7 +40,6 @@ export default function Home() {
 
   return (
     <main className='relative w-screen bg-[#f2f2f2] dark:bg-[#111111]'>
-      <SmoothScroller />
 
       {/* <Sparkles /> */}
       <AnimatePresence mode='wait'>

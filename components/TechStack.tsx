@@ -18,12 +18,13 @@ export default function TechStack() {
     const container = useRef(null);
     const { theme } = useTheme()
 
-
     const { scrollYProgress } = useScroll({
         target: container,
 
         offset: ["start start", "end end"],
     });
+
+
     return (
         <div id='toolsAndTechnology' className="mb-[10vh] md:max-w-[86%] mx-auto max-[300px]:w-[98%] w-[95%] relative">
             <h1 className='mx-auto w-[95%] flex justify-center text-center text-4xl font-bold min-[200px]:py-3 min-[400px]:py-5 sm:py-5 md:text-5xl sticky top-10 h-[15vh] gap-2 flex-wrap'>

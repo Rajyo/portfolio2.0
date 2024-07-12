@@ -20,30 +20,8 @@ const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), {
 })
 import { FloatingNav } from './ui/floating-navbar'
 import dynamic from 'next/dynamic'
+import { navLinks } from '@/lib/data'
 
-
-export const navLinks = [
-  {
-    id: 1,
-    title: 'About',
-    link: '#about'
-  },
-  {
-    id: 2,
-    title: 'Tech Stack',
-    link: '#toolsAndTechnology'
-  },
-  {
-    id: 3,
-    title: 'Projects',
-    link: '#projects'
-  },
-  {
-    id: 4,
-    title: 'Contact',
-    link: '#contact'
-  }
-]
 
 export default function Navbar() {
   const [windowSize, setWindowSize] = useState<number | null>(null)

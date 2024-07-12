@@ -18,34 +18,9 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
+import { stack } from "@/lib/data"
 
-const stack = [
-    {
-        value: "reactExpress",
-        label: "React + Express",
-    },
-    {
-        value: "next.js",
-        label: "Next.js",
-    },
-    {
-        value: "angularExpress",
-        label: "Angular + Express",
-    },
-    {
-        value: "reactNative",
-        label: "React Native",
-    },
-    {
-        value: "reactDRF",
-        label: "React + Django",
-    },
-]
 
-interface ProjectDropdownProps {
-    techStack: string
-    handleTechStack: (value: string) => void
-}
 
 export function ProjectDropdown({ techStack, handleTechStack }: ProjectDropdownProps) {
     const [open, setOpen] = React.useState(false)

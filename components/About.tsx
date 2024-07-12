@@ -8,6 +8,7 @@ import Image from 'next/image'
 import img from '@/public/lachlan-dempsey.jpg'
 import { StickyScroll } from './ui/sticky-scroll-reveal'
 import { InfiniteMovingCards } from './ui/infinite-moving-cards'
+import { testimonials } from '@/lib/data'
 
 export default function About() {
     const [timer, setTimer] = useState(false)
@@ -18,36 +19,6 @@ export default function About() {
         }, 12250)
     }, [timer])
 
-    const testimonials = [
-        {
-            name: 'NMIMS Global Access School for Continuing Education, Mumbai',
-            course: 'Post Graduate Diploma in Management',
-            major: 'Financial Management (Distance)',
-            percentage: '72.42%',
-            year: '2021-2023'
-        },
-        {
-            name: 'Government College of Engineering, Chandrapur',
-            course: 'Bachelors in Engineering',
-            major: 'Computer Science Engineering (Full-time)',
-            percentage: '75.68%',
-            year: '2017-2021'
-        },
-        {
-            name: 'Sri Chaitanya Vidya Niketan, Visakhapatnam',
-            course: 'Higher Secondary School Certificate',
-            major: 'Physics Chemistry Math (Full-time)',
-            percentage: '84.4%',
-            year: '2015-2017'
-        },
-        {
-            name: 'Bhonsala Military School, Nagpur',
-            course: 'Secondary School Certificate',
-            major: 'General (Full-time)',
-            percentage: '89.2%',
-            year: '2013-2015'
-        }
-    ]
 
     return (
         <section

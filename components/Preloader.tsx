@@ -2,19 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { words } from '@/lib/data'
 
-const words = [
-    'Hello',
-    'Namaste',
-    'Namaskar',
-    'Bonjour',
-    'Ciao',
-    'Olà',
-    'やあ',
-    'Hallå',
-    'Guten tag',
-    'Hallo'
-]
 
 export default function Preloader() {
     const [index, setIndex] = useState(0)

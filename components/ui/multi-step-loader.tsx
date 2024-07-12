@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { AuroraHero } from "../AuroraHero";
 
 const CheckIcon = ({ className }: { className?: string }) => {
     return (
@@ -136,6 +137,7 @@ export const MultiStepLoader = ({
                     }}
                     className="w-full h-full fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-2xl dark:bg-black/50 bg-white/50"
                 >
+                    <AuroraHero />
                     <div className="h-96 relative flex flex-col items-center justify-center">
                         <h1 className="text-5xl mb-5 text-center font-bold">{title}</h1>
                         <LoaderCore value={currentState} loadingStates={loadingStates} />
