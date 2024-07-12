@@ -1,15 +1,13 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import { useTransform, motion } from "framer-motion";
-import { useRef } from "react";
 
 
 const Card = ({ i, title, stack, color, colorr, progress, range, targetScale, theme }: any) => {
-    const container = useRef(null);
     const scale = useTransform(progress, range, [1, targetScale]);
 
     return (
-        <div ref={container} className="flex items-center justify-center sticky top-32 h-[80vh]">
+        <div className="flex items-center justify-center sticky top-32 h-[80vh]">
             <motion.div
                 className="flex flex-col relative h-[32rem] max-[300px]:w-[95%] w-[90%] rounded-2xl p-2 sm:p-4 md:p-6 origin-top shadow-lg shadow-slate-300 dark:shadow-neutral-800"
                 style={{ backgroundColor: theme === "light" ? colorr : color, scale, top: `calc(-5vh + ${i * 25}px)` }}

@@ -1,6 +1,6 @@
 'use client'
 
-import { AlignJustify, Github, Linkedin, Star } from 'lucide-react'
+import { AlignJustify, Github, Linkedin, Star, X } from 'lucide-react'
 import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 import { LinkPreview } from './ui/link-preview'
@@ -20,6 +20,7 @@ const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), {
 })
 import { FloatingNav } from './ui/floating-navbar'
 import dynamic from 'next/dynamic'
+
 
 export const navLinks = [
   {
@@ -126,13 +127,6 @@ export default function Navbar() {
   )
 }
 
-export const StaticMobileNavbar = () => {
-  return (
-    <header className='absolute inset-x-0 top-0 z-[50] flex w-full items-center justify-between border bg-transparent py-2 border-black/[0.2] dark:border-white/[0.2] md:hidden pr-6 pl-4'>
-      <MobileNavbarContent />
-    </header>
-  )
-}
 
 const MobileNavbarContent = () => {
   return (
@@ -230,5 +224,69 @@ const WebNavbarContent = () => {
         </div>
       </div>
     </>
+  )
+}
+
+export const StaticMobileNavbar = () => {
+  const [slider, setSlider] = useState(false)
+
+  return (
+    <header className='absolute inset-x-0 top-0 z-[50] flex w-full items-center justify-between border-b border-black/[0.2] bg-transparent py-2 pl-4 pr-6 dark:border-white/[0.2] md:hidden'>
+      <div>
+        <Link href={'/'}>
+          <Star />
+        </Link>
+      </div>
+
+      <div className='flex items-center max-[300px]:gap-x-4 max-[400px]:gap-x-6 gap-x-10 sm:gap-x-16'>
+        <AlignJustify
+          className='hover:cursor-pointer'
+          onClick={() => setSlider(true)}
+        />
+
+        <ToggleTheme />
+      </div>
+
+      {slider && (
+        <div className='fixed inset-y-0 right-0 z-50 h-full w-3/4 gap-4 border-l bg-background bg-white p-6 shadow-lg dark:bg-black sm:max-w-sm transition-all delay-500 ease-in-out duration-700'>
+          <div className='absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none'>
+            <X
+              className='h-6 w-6 hover:cursor-pointer'
+              onClick={() => setSlider(false)}
+            />
+          </div>
+          <nav className='mt-10 flex w-full flex-col items-center gap-y-5'>
+            {navLinks.map(item => (
+              <Link
+                key={item.id}
+                className='w-full rounded-md p-2 text-center hover:scale-105 hover:bg-slate-50 hover:font-semibold hover:dark:bg-black/50'
+                href={item.link}
+                onClick={() => setSlider(false)}
+              >
+                {item.title}
+              </Link>
+            ))}
+            <div className='flex w-full items-center justify-around gap-x-3 pt-10'>
+              <div className='p-2.5'>
+                <LinkPreview
+                  url='https://in.linkedin.com/in/prajyot-khadse'
+                  className='hover:text-[#00eeff] dark:hover:text-[#00eeff]'
+                >
+                  <Linkedin className='h-[1.5rem] w-[1.5rem]' />
+                </LinkPreview>
+              </div>
+              <div className='p-2.5'>
+                <LinkPreview
+                  url='https://github.com/Rajyo'
+                  className='hover:text-[#00eeff] dark:hover:text-[#00eeff]'
+                >
+                  <Github className='h-[1.5rem] w-[1.5rem]' />
+                </LinkPreview>
+              </div>
+            </div>
+          </nav>
+        </div>
+      )}
+    </header>
   )
 }
