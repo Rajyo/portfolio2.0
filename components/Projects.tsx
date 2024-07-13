@@ -1,13 +1,22 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import { project } from "@/lib/constants";
 import { ProjectDropdown } from "./ProjectDropdown";
-import { Star } from "lucide-react";
+import { useInView } from "framer-motion";
+import { motion } from "framer-motion";
+import { slideLeftSide, slideRightSide } from "@/lib/framer";
+
 
 export default function Projects() {
     const [techStack, setTechStack] = useState("reactExpress");
+
+    const container = useRef(null)
+    const inView = useInView(container, {
+        margin: "0px 100px -50px 0px",
+    })
+    const projectTitle = `My Projects`
 
     const handleTechStack = (stack: string) => {
         setTechStack(stack)
@@ -17,8 +26,28 @@ export default function Projects() {
         <section id="projects" className='m-auto h-auto max-w-[100%] md:max-w-[86%] sm:py-10'>
             <div className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-around p-4'>
                 <div className="flex max-[550px]:flex-col flex-row max-[550px]:gap-y-5 items-center justify-between w-full p-10">
-                    <h1 className='font-bold text-4xl md:text-5xl max-[575px]:mb-4 mb-0 text-center flex flex-wrap gap-2 justify-center'>My<span className="flex">Projects <Star /></span></h1>
-                    <ProjectDropdown techStack={techStack} handleTechStack={handleTechStack} />
+                    <h1 ref={container} className='font-bold text-4xl md:text-5xl max-[575px]:mb-4 mb-0 text-center flex flex-wrap gap-2 justify-center'>
+                        {projectTitle.split(" ").map((x, index) => {
+                            return (
+                                <span
+                                    key={index}
+                                    className="flex hide relative justify-start"
+                                >
+                                    <motion.span
+                                        variants={slideLeftSide}
+                                        initial="initial"
+                                        custom={index}
+                                        animate={inView ? "animate" : "exit"}
+                                    >
+                                        {x}
+                                    </motion.span>
+                                </span>
+                            );
+                        })}
+                    </h1>
+                    <motion.div ref={container} variants={slideRightSide} initial="initial" animate={inView ? "animate" : "exit"}>
+                        <ProjectDropdown techStack={techStack} handleTechStack={handleTechStack} />
+                    </motion.div>
                 </div>
                 <div className="flex flex-wrap justify-around gap-5">
                     {

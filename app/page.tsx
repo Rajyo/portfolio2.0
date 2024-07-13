@@ -44,20 +44,21 @@ export default function Home() {
       {/* <Sparkles /> */}
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
+
+        <LandingPage />
+
+        <About />
+
+        {/* Alternative to TechStack */}
+        {/* <ToolsAndTechnology /> */}
+
+        <TechStack />
+
+        <Projects />
+
+        <Contact />
       </AnimatePresence>
 
-      <LandingPage />
-
-      <About />
-
-      {/* Alternative to TechStack */}
-      {/* <ToolsAndTechnology /> */}
-
-      <TechStack />
-
-      <Projects />
-
-      <Contact />
     </main>
   )
 }

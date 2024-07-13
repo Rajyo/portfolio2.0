@@ -1,7 +1,7 @@
 'use client'
 
 import { Crown, SendHorizonal } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { TextGenerateEffect } from './ui/text-generate-effect'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,6 +9,8 @@ import img from '@/public/lachlan-dempsey.jpg'
 import { StickyScroll } from './ui/sticky-scroll-reveal'
 import { InfiniteMovingCards } from './ui/infinite-moving-cards'
 import { testimonials } from '@/lib/data'
+import { useInView, motion } from 'framer-motion'
+import { scaleAnimations, smallslideup } from '@/lib/framer'
 
 export default function About() {
     const [timer, setTimer] = useState(false)
@@ -19,6 +21,18 @@ export default function About() {
         }, 12250)
     }, [timer])
 
+    const container = useRef(null)
+    const inView = useInView(container, {
+        margin: "0px 100px -50px 0px",
+    })
+
+    const aboutTitle = `Hi there,`
+    const aboutMe = `About me`
+
+    const container1 = useRef(null)
+    const inView1 = useInView(container1, {
+        margin: "50px 50px 50px 50px",
+    })
 
     return (
         <section
@@ -28,8 +42,24 @@ export default function About() {
             <div className='w-full md:flex md:h-[160vh] md:flex-col lg:h-[140vh] lg:flex-row'>
                 <div className='border border-red-500/0 lg:basis-1/2'>
                     <div className='mx-auto flex h-full w-[95%] flex-col justify-start pt-10 min-[400px]:w-[90%] md:float-end md:p-4 md:pt-20 lg:p-8'>
-                        <span className='text-2xl font-semibold text-gray-800 dark:text-gray-50 sm:text-3xl lg:text-4xl'>
-                            Hi there,
+                        <span ref={container} className='flex flex-wrap gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-50 sm:text-3xl lg:text-4xl'>
+                            {aboutTitle.split(" ").map((x, index) => {
+                                return (
+                                    <span
+                                        key={index}
+                                        className="flex hide relative justify-start"
+                                    >
+                                        <motion.span
+                                            variants={smallslideup}
+                                            custom={index}
+                                            initial="initial"
+                                            animate={inView ? "animate" : "exit"}
+                                        >
+                                            {x}
+                                        </motion.span>
+                                    </span>
+                                );
+                            })}
                         </span>
                         <br />
 
@@ -52,15 +82,33 @@ export default function About() {
                 </div>
 
                 <div className='flex-col gap-y-5 border border-green-500/0 md:flex lg:basis-1/2 lg:self-end'>
-                    <p className='mx-auto hidden w-[90%] gap-x-2 text-xl font-semibold text-[#00eeff] lg:flex'>
+                    <p ref={container} className='mx-auto hidden w-[90%] gap-x-2 text-xl font-semibold text-[#00eeff] lg:flex'>
                         <Crown />
-                        About me
+                        {aboutMe.split(" ").map((x, index) => {
+                            return (
+                                <span
+                                    key={index}
+                                    className="flex hide relative justify-start"
+                                >
+                                    <motion.span
+                                        variants={smallslideup}
+                                        custom={index}
+                                        initial="initial"
+                                        animate={inView ? "animate" : "exit"}
+                                    >
+                                        {x}
+                                    </motion.span>
+                                </span>
+                            );
+                        })}
                     </p>
-                    <Image
-                        src={img}
-                        alt='skater'
-                        className='m-auto my-5 aspect-auto w-[80%] self-center rounded-xl sm:w-[70%] lg:w-[90%]'
-                    />
+                    <motion.div ref={container1} variants={scaleAnimations} initial="initial" animate={inView1 ? "animate" : "exit"}>
+                        <Image
+                            src={img}
+                            alt='skater'
+                            className='m-auto my-5 aspect-auto w-[80%] self-center rounded-xl sm:w-[70%] lg:w-[90%]'
+                        />
+                    </motion.div>
                 </div>
             </div>
 

@@ -1,3 +1,36 @@
+export const slideLeftSide = {
+    initial: {
+        opacity: 0,
+        x: "-60px",
+    },
+    animate: () => ({
+        opacity: 1,
+        x: "0",
+        transition: { duration: 0.8, delay: 0.4, },
+    }),
+    exit: {
+        opacity: 0,
+        x: "-60px",
+    },
+};
+
+export const slideRightSide = {
+    initial: {
+        opacity: 0,
+        x: "60px",
+    },
+    animate: () => ({
+        opacity: 1,
+        x: "0",
+        transition: { duration: 0.8, delay: 0.4, },
+    }),
+    exit: {
+        opacity: 0,
+        x: "60px",
+    },
+};
+
+
 export const slideup = {
     initial: {
         opacity: 0,
@@ -22,27 +55,11 @@ export const smallslideup = {
     animate: (i: number) => ({
         opacity: 1,
         y: "0",
-        transition: { duration: 0.4, delay: i * 0.03, },
+        transition: { duration: 0.4, delay: i * 0.05, },
     }),
     exit: {
         opacity: 0,
         y: "42px",
-    },
-};
-
-export const slideup2 = {
-    initial: {
-        opacity: 0,
-        y: "100px",
-    },
-    animate: (i: number) => ({
-        opacity: 1,
-        y: "0",
-        transition: { duration: .6, delay: i * 0.12 },
-    }),
-    exit: {
-        opacity: 0,
-        y: "100px",
     },
 };
 
@@ -51,10 +68,10 @@ export const slideup3 = {
         opacity: 0,
         y: "75px",
     },
-    animate: (i: number) => ({
+    animate: () => ({
         opacity: 1,
         y: "0",
-        transition: { duration: 1, delay: i * 0.4 },
+        transition: { duration: 1, delay: 0.4 },
     }),
     exit: {
         opacity: 0,
@@ -62,15 +79,33 @@ export const slideup3 = {
     },
 };
 
-
-export const opacity = {
+export const projectCard = {
     initial: {
         opacity: 0,
     },
-    animate: (i: number) => ({
+    animate: {
         opacity: 1,
-        transition: { duration: 1, delay: i * 0.04 },
-    }),
+        transition: {
+            duration: 2, delay: 0.5, ease: [0.76, 0, 0.24, 1]
+        }
+    },
+    exit: {
+        opacity: 0,
+    }
+}
+
+
+export const normalOpacity = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 1.5,
+            delay: 0.5,
+        },
+    },
     exit: {
         opacity: 0,
     },
@@ -78,13 +113,13 @@ export const opacity = {
 
 export const scaleAnimations = {
     initial: { scale: 0, x: "-50%", y: "-50%" },
-    enter: {
+    animate: {
         scale: 1,
-        x: "-50%",
-        y: "-50%",
+        x: "0%",
+        y: "0%",
         transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
     },
-    closed: {
+    exit: {
         scale: 0,
         x: "-50%",
         y: "-50%",
@@ -138,6 +173,7 @@ export const perspectiveAnimations = {
         transition: { duration: 3, ease: [0.76, 0, 0.24, 1] },
     },
 };
+
 export const perspective = {
     initial: {
         scale: 1,
@@ -174,17 +210,22 @@ export const slide = {
     },
 };
 
-export const opacity1 = {
+
+export const imageScale = {
     initial: {
         opacity: 0,
+        z: 0
     },
-    enter: {
+    animate: {
         opacity: 1,
+        z: 100,
         transition: {
-            duration: 0.5,
+            duration: 1.5,
+            delay: 0.5,
         },
     },
     exit: {
-        opacity: 1,
+        opacity: 0,
+        z: 0
     },
 };

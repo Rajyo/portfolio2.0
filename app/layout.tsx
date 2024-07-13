@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Inter as FontSans } from 'next/font/google'
+import { Roboto_Flex as Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import dynamic from 'next/dynamic'
@@ -15,9 +15,11 @@ const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false })
 import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroller'
 
-const fontSans = FontSans({
+//Roboto_Flex, Inter_Tight, Sarabun, ALmarai, Aleo, Hanuman, Battambang
+const fontSans = Inter({
   subsets: ['latin'],
-  variable: '--font-sans'
+  variable: '--font-sans',
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000"]
 })
 
 export const metadata: Metadata = {

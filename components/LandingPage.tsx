@@ -15,11 +15,21 @@ const MobileLandingPage = dynamic(() => import('./MobileLandingPage'), {
 })
 import Sparkles from './Sparkles'
 import { StaticMobileNavbar } from './Navbar'
+import { useRef } from 'react'
+import { useInView, motion } from 'framer-motion'
+import { smallslideup } from '@/lib/framer'
 
 
 
 export default function LandingPage() {
     const { theme } = useTheme()
+
+    const container = useRef(null)
+    const inView = useInView(container, {
+        margin: "0px 100px -50px 0px",
+    })
+
+    const title = `p r a j y o t  k h a d s e,`
 
     return (
         <section
@@ -31,8 +41,24 @@ export default function LandingPage() {
             <div className='inset-0 top-0 h-screen w-full'>
                 <div className='absolute mx-auto hidden md:flex h-screen w-full max-w-[100%] md:max-w-[86%]'>
                     <div className='m-auto flex h-[35%] w-[90%] flex-col items-center max-[400px]:w-[95%] sm:h-[45%] sm:w-[75%] md:w-[69%] md:items-start xl:h-[40%]'>
-                        <h1 className='z-30 flex flex-wrap gap-7 py-2 pl-[6px] text-2xl font-semibold uppercase tracking-tight text-gray-800 dark:text-gray-400 max-[400px]:text-xl md:text-gray-600'>
-                            <span>p r a j y o t</span> <span>k h a d s e</span>
+                        <h1 ref={container} className='z-30 flex flex-wrap gap-2 py-2 pl-[6px] text-2xl font-semibold uppercase tracking-tight text-gray-800 dark:text-gray-400 max-[400px]:text-xl md:text-gray-600'>
+                            {title.split(" ").map((x, index) => {
+                                return (
+                                    <span
+                                        key={index}
+                                        className="flex hide relative justify-start"
+                                    >
+                                        <motion.span
+                                            variants={smallslideup}
+                                            custom={index}
+                                            initial="initial"
+                                            animate={inView ? "animate" : "exit"}
+                                        >
+                                            {x}
+                                        </motion.span>
+                                    </span>
+                                );
+                            })}
                         </h1>
 
                         <TypeAnimation
