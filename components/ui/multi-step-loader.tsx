@@ -135,7 +135,7 @@ export const MultiStepLoader = ({
                     exit={{
                         opacity: 0,
                     }}
-                    className="w-full h-full fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-2xl dark:bg-black/50 bg-white/50"
+                    className="w-full h-full fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-2xl dark:bg-black/50 bg-white/50 p-10"
                 >
                     <AuroraHero />
                     <div className="h-96 relative flex flex-col items-center justify-center">

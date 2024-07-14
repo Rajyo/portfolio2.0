@@ -8,11 +8,10 @@ import { smallslideup } from "@/lib/framer";
 export default function Footer() {
     const container = useRef(null)
     const inView = useInView(container, {
-        margin: "0px 100px -50px 0px",
+        margin: "50px 50px 50px 50px",
     })
-    const leftFooter = 'Website Designed and Developed by Prajyot'
-    const rightFooter = '©copyright 2024'
-
+    const leftFooter = `Website Designed and Developed by your's truly`
+    const rightFooter = '©copyright 2024   Prajyot Khadse'
 
 
     return (
@@ -22,7 +21,7 @@ export default function Footer() {
         >
 
             <div className="items-center fixed bottom-0 h-[75px] w-full flex max-[500px]:flex-col flex-row flex-wrap justify-evenly">
-                <h1 ref={container} className="flex flex-wrap gap-2 max-[350px]:text-xs text-center text-sm sm:text-base md:text-lg lg:text-xl leading-[0.8]">
+                <h1 ref={container} className="md:flex flex-wrap gap-2 text-center hidden md:text-lg lg:text-xl leading-[0.8]">
                     {leftFooter.split(" ").map((x, index) => {
                         return (
                             <span
@@ -41,7 +40,7 @@ export default function Footer() {
                         );
                     })}
                 </h1>
-                <p ref={container} className="flex flex-wrap gap-2 max-[350px]:text-xs text-center md:text-base lg:text-lg leading-[0.8]">
+                <p ref={container} className="flex flex-wrap gap-2 text-center max-[300px]:text-sm max-[400px]:text-base text-lg md:text-base lg:text-lg leading-[0.8]">
                     {rightFooter.split(" ").map((x, index) => {
                         return (
                             <span

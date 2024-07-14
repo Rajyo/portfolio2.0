@@ -22,15 +22,12 @@ export const stack = [
 ]
 
 export const words = [
-  'Hello',
-  'Namaste',
   'Namaskar',
+  'Namaste',
+  'Hello',
   'Bonjour',
   'Ciao',
   'Olà',
-  'やあ',
-  'Hallå',
-  'Guten tag',
   'Hallo'
 ]
 

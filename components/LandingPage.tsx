@@ -29,7 +29,7 @@ export default function LandingPage() {
         margin: "0px 100px -50px 0px",
     })
 
-    const title = `p r a j y o t  k h a d s e,`
+    const title = `p r a j y o t    k h a d s e`
 
     return (
         <section

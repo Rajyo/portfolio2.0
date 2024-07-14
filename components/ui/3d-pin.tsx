@@ -35,7 +35,7 @@ export const PinContainer = ({
     return (
         <section
             className={cn(
-                'group/pin relative z-40 h-[16.5rem] w-[28rem] self-center max-[350px]:h-[8.5rem] max-[350px]:w-[14rem] max-[450px]:h-[10.5rem] max-[450px]:w-[17rem] max-[550px]:h-[13.5rem] max-[550px]:w-[22rem] lg:h-[13.5rem] lg:w-[22rem] xl:h-[16.5rem] xl:w-[28rem]',
+                'group/pin relative z-40 h-[16.5rem] w-[28rem] self-center max-[350px]:h-[8.5rem] max-[350px]:w-[14rem] max-[450px]:h-[10.5rem] max-[450px]:w-[17rem] max-[550px]:h-[13.5rem] max-[550px]:w-[22rem] lg:h-[13.5rem] lg:w-[22rem] xl:h-[16.5rem] xl:w-[28rem] overflow-hidden',
                 containerClassName
             )}
         >

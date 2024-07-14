@@ -11,23 +11,21 @@ import {
     TooltipTrigger
 } from './ui/tooltip'
 import { MultiStepLoader as Loader } from '@/components/ui/multi-step-loader'
-import { useInView, motion } from 'framer-motion'
-import { projectCard } from '@/lib/framer'
+import { motion } from 'framer-motion'
+
+
 
 export function ProjectCard({
     technicalStack,
     item: { cover, title, repo, demo, techStack, mainStack, info, mininfo }
 }: ProjectCardProps) {
     const [loading, setLoading] = useState(false)
-    const container = useRef(null)
-    const inView = useInView(container, {
-        margin: "100px 100px 100px 100px",
-    })
+
 
     return (
         <>
             {mainStack === technicalStack && (
-                <motion.div ref={container} variants={projectCard} initial="initial" animate={inView ? "animate" : "exit"} className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center overflow-hidden rounded-2xl border border-black/[0.1] bg-zinc-100 shadow-xl transition duration-700 hover:shadow-gray-400 dark:border-white/[0.1] dark:bg-black hover:dark:shadow-neutral-800 max-[550px]:h-[32rem] max-[550px]:w-[24rem] max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] min-[350px]:px-2 lg:h-[32rem] lg:w-[24rem] xl:h-[34rem] xl:w-[32rem]'>
+                <motion.div className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center overflow-hidden rounded-2xl border border-black/[0.1] bg-zinc-100 shadow-xl transition duration-700 hover:shadow-gray-400 dark:border-white/[0.1] dark:bg-black hover:dark:shadow-neutral-800 max-[550px]:h-[32rem] max-[550px]:w-[24rem] max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] min-[350px]:px-2 lg:h-[32rem] lg:w-[24rem] xl:h-[34rem] xl:w-[32rem]'>
                     <div className='min-[450px]px-2 flex h-[30rem] w-[30rem] flex-col tracking-tight text-slate-100/50 transition duration-500 ease-in-out group-hover/card:scale-[1.03] max-[550px]:h-[28rem] max-[550px]:w-[24rem] max-[450px]:h-[26rem] max-[450px]:w-[19rem] max-[350px]:h-[26rem] max-[350px]:w-[14rem] min-[350px]:px-4 lg:h-[28rem] lg:w-[24rem] xl:h-[30rem] xl:w-[30rem]'>
                         <PinContainer href={demo || repo} title={title} cover={cover} />
 
@@ -41,7 +39,7 @@ export function ProjectCard({
                             <div className='flex w-[42%] items-center justify-around max-[350px]:w-[50%]'>
                                 <AnimatedTooltip items={techStack} />
                             </div>
-                            <div className='flex w-[25%] items-center justify-between max-[450px]:w-[20%] max-[350px]:mr-2 max-[350px]:w-[25%] min-[350px]:mr-4 min-[550px]:mr-0'>
+                            <div className='flex w-[25%] items-center justify-between max-[350px]:mr-2 min-[350px]:mr-4 min-[550px]:mr-0'>
                                 <TooltipProvider>
                                     <Tooltip>
                                         <TooltipTrigger asChild>
@@ -63,7 +61,6 @@ export function ProjectCard({
                                         </TooltipContent>
                                     </Tooltip>
                                 </TooltipProvider>
-                                <div></div>
                             </div>
                         </div>
                     </div>

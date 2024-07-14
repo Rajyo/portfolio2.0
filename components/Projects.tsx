@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import { project } from "@/lib/constants";
 import { ProjectDropdown } from "./ProjectDropdown";
-import { useInView } from "framer-motion";
+import { AnimatePresence, useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import { slideLeftSide, slideRightSide } from "@/lib/framer";
 
@@ -18,45 +18,52 @@ export default function Projects() {
     })
     const projectTitle = `My Projects`
 
+    const container1 = useRef(null)
+    const inView1 = useInView(container1, {
+        margin: "50px 50px 50px 50px",
+    })
+
     const handleTechStack = (stack: string) => {
         setTechStack(stack)
     }
 
     return (
-        <section id="projects" className='m-auto h-auto max-w-[100%] md:max-w-[86%] sm:py-10'>
-            <div className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-around p-4'>
-                <div className="flex max-[550px]:flex-col flex-row max-[550px]:gap-y-5 items-center justify-between w-full p-10">
-                    <h1 ref={container} className='font-bold text-4xl md:text-5xl max-[575px]:mb-4 mb-0 text-center flex flex-wrap gap-2 justify-center'>
-                        {projectTitle.split(" ").map((x, index) => {
-                            return (
-                                <span
-                                    key={index}
-                                    className="flex hide relative justify-start"
-                                >
-                                    <motion.span
-                                        variants={slideLeftSide}
-                                        initial="initial"
-                                        custom={index}
-                                        animate={inView ? "animate" : "exit"}
+        <AnimatePresence mode="wait">
+            <section id="projects" className='m-auto h-auto max-w-[100%] md:max-w-[86%] sm:py-10'>
+                <div ref={container1} className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-around p-4'>
+                    <div className="flex max-[550px]:flex-col flex-row max-[550px]:gap-y-5 items-center justify-between w-full p-10">
+                        <h1 ref={container} className='font-bold text-4xl md:text-5xl max-[575px]:mb-4 mb-0 text-center flex flex-wrap gap-2 justify-center'>
+                            {projectTitle.split(" ").map((x, index) => {
+                                return (
+                                    <span
+                                        key={index}
+                                        className="flex hide relative justify-start"
                                     >
-                                        {x}
-                                    </motion.span>
-                                </span>
-                            );
-                        })}
-                    </h1>
-                    <motion.div ref={container} variants={slideRightSide} initial="initial" animate={inView ? "animate" : "exit"}>
-                        <ProjectDropdown techStack={techStack} handleTechStack={handleTechStack} />
+                                        <motion.span
+                                            variants={slideLeftSide}
+                                            initial="initial"
+                                            custom={index}
+                                            animate={inView ? "animate" : "exit"}
+                                        >
+                                            {x}
+                                        </motion.span>
+                                    </span>
+                                );
+                            })}
+                        </h1>
+                        <motion.div ref={container} variants={slideRightSide} initial="initial" animate={inView ? "animate" : "exit"}>
+                            <ProjectDropdown techStack={techStack} handleTechStack={handleTechStack} />
+                        </motion.div>
+                    </div>
+                    <motion.div initial={{ opacity: 0.25, scale: 0.25 }} animate={inView1 ? { opacity: 1, scale: 1 } : { opacity: 0.25, scale: 0.25 }} transition={{ duration: 1, ease: "easeInOut" }} className="flex flex-wrap justify-around gap-5">
+                        {
+                            project.map((item, index) => (
+                                <ProjectCard item={item} technicalStack={techStack} key={index} />
+                            ))
+                        }
                     </motion.div>
                 </div>
-                <div className="flex flex-wrap justify-around gap-5">
-                    {
-                        project.map((item, index) => (
-                            <ProjectCard item={item} technicalStack={techStack} key={index} />
-                        ))
-                    }
-                </div>
-            </div>
-        </section >
+            </section >
+        </AnimatePresence>
     )
 }

@@ -23,9 +23,6 @@ export default function Preloader() {
         )
     }, [index])
 
-    const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`
-    const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`
-
 
     return (
         <motion.div
@@ -40,12 +37,12 @@ export default function Preloader() {
             }}
             initial='initial'
             exit='exit'
-            className="h-screen w-screen flex items-center justify-center fixed z-[99] bg-[#141516] overflow-hidden cursor-wait"
+            className="h-screen w-screen flex items-center justify-center fixed z-[99] bg-[#f0f3ec] dark:bg-[#161616] overflow-hidden cursor-wait"
         >
             {dimension.width > 0 && (
                 <>
                     <motion.p
-                        className='flex text-white items-center absolute z-[1] text-5xl'
+                        className='flex text-black dark:text-white items-center absolute z-[1] text-5xl'
                         variants={{
                             initial: {
                                 opacity: 0
@@ -58,25 +55,9 @@ export default function Preloader() {
                         initial='initial'
                         animate='enter'
                     >
-                        <span className='block w-2.5 h-2.5 bg-white rounded-md'></span>
+                        <span className='block w-2.5 h-2.5 bg-black dark:bg-white rounded-md mr-4'></span>
                         {words[index]}
                     </motion.p>
-                    <svg className={`absolute top-0 w-[100%] calc(100% + 300px)`}>
-                        <motion.path style={{ fill: "#141516" }}
-                            variants={{
-                                initial: {
-                                    d: initialPath,
-                                    transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] }
-                                },
-                                exit: {
-                                    d: targetPath,
-                                    transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 }
-                                }
-                            }}
-                            initial='initial'
-                            exit='exit'
-                        ></motion.path>
-                    </svg>
                 </>
             )}
         </motion.div>
