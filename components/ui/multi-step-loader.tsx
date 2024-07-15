@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { AuroraHero } from "../AuroraHero";
+import { AuroraHero } from "../projectSection/AuroraHero";
 
 const CheckIcon = ({ className }: { className?: string }) => {
     return (
@@ -77,7 +77,7 @@ const LoaderCore = ({
                         </div>
                         <span
                             className={cn(
-                                "text-black dark:text-white",
+                                "text-black dark:text-white text-xs sm:text-base xl:text-xl",
                                 value === index && "text-black dark:text-lime-500 opacity-100"
                             )}
                         >
@@ -135,11 +135,11 @@ export const MultiStepLoader = ({
                     exit={{
                         opacity: 0,
                     }}
-                    className="w-full h-full fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-2xl dark:bg-black/50 bg-white/50 p-10"
+                    className="w-full h-full fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-2xl dark:bg-black/50 bg-white/50 py-10 px-6"
                 >
                     <AuroraHero />
-                    <div className="h-96 relative flex flex-col items-center justify-center">
-                        <h1 className="text-5xl mb-5 text-center font-bold">{title}</h1>
+                    <div className="h-72 md:h-96 relative flex flex-col items-center justify-center">
+                        <h1 className="text-3xl sm:text-5xl mb-3 sm:mb-5 text-center font-bold">{title}</h1>
                         <LoaderCore value={currentState} loadingStates={loadingStates} />
                     </div>
 

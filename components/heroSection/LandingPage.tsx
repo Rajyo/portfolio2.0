@@ -4,17 +4,19 @@ import { LinkPreview } from '@/components/ui/link-preview'
 import { TypeAnimation } from 'react-type-animation'
 import { useTheme } from 'next-themes'
 import dynamic from 'next/dynamic'
-const Light3DCanvas = dynamic(() => import('./canvas/Light3DCanvas'), {
+const Light3DCanvas = dynamic(() => import('../canvas/Light3DCanvas'), {
     ssr: false
 })
-const Dark3DCanvas = dynamic(() => import('./canvas/Dark3DCanvas'), {
+const Dark3DCanvas = dynamic(() => import('../canvas/Dark3DCanvas'), {
     ssr: false
 })
 const MobileLandingPage = dynamic(() => import('./MobileLandingPage'), {
     ssr: false
 })
+const StaticMobileNavbar = dynamic(() => import('../navbarSection/StaticMobileNavbar'), {
+    ssr: false
+})
 import Sparkles from './Sparkles'
-import { StaticMobileNavbar } from './Navbar'
 import { useRef } from 'react'
 import { useInView, motion } from 'framer-motion'
 import { smallslideup } from '@/lib/framer'

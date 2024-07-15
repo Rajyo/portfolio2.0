@@ -7,11 +7,13 @@ import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import dynamic from 'next/dynamic'
 import { Toaster } from '@/components/ui/toaster'
-import { Logo } from '@/components/ToggleTheme'
 const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), {
   ssr: false
 })
-const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false })
+const Logo = dynamic(() => import('@/components/navbarSection/Logo'), {
+  ssr: false
+})
+const Navbar = dynamic(() => import('@/components/navbarSection/Navbar'), { ssr: false })
 import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroller'
 

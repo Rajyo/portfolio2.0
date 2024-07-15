@@ -1,18 +1,17 @@
 'use client'
 
-import React, { useRef, useState } from 'react'
-import { AnimatedTooltip } from './ui/animated-tooltip'
-import { PinContainer } from './ui/3d-pin'
+import React, { useEffect, useRef, useState } from 'react'
+import { AnimatedTooltip } from '../ui/animated-tooltip'
+import { PinContainer } from '../ui/3d-pin'
 import { Github, Minimize2, Maximize2 } from 'lucide-react'
 import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger
-} from './ui/tooltip'
+} from '../ui/tooltip'
 import { MultiStepLoader as Loader } from '@/components/ui/multi-step-loader'
 import { motion } from 'framer-motion'
-
 
 
 export function ProjectCard({
@@ -21,11 +20,14 @@ export function ProjectCard({
 }: ProjectCardProps) {
     const [loading, setLoading] = useState(false)
 
+    useEffect(() => {
+        loading ? document.body.style.overflow = "hidden" : document.body.style.overflowY = "auto"
+    }, [loading])
 
     return (
         <>
             {mainStack === technicalStack && (
-                <motion.div className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center overflow-hidden rounded-2xl border border-black/[0.1] bg-zinc-100 shadow-xl transition duration-700 hover:shadow-gray-400 dark:border-white/[0.1] dark:bg-black hover:dark:shadow-neutral-800 max-[550px]:h-[32rem] max-[550px]:w-[24rem] max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] min-[350px]:px-2 lg:h-[32rem] lg:w-[24rem] xl:h-[34rem] xl:w-[32rem]'>
+                <motion.div className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center rounded-2xl border border-black/[0.1] bg-zinc-100 shadow-xl transition duration-700 hover:shadow-gray-400 dark:border-white/[0.1] dark:bg-black hover:dark:shadow-neutral-800 max-[550px]:h-[32rem] max-[550px]:w-[24rem] max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] min-[350px]:px-2 lg:h-[32rem] lg:w-[24rem] xl:h-[34rem] xl:w-[32rem]'>
                     <div className='min-[450px]px-2 flex h-[30rem] w-[30rem] flex-col tracking-tight text-slate-100/50 transition duration-500 ease-in-out group-hover/card:scale-[1.03] max-[550px]:h-[28rem] max-[550px]:w-[24rem] max-[450px]:h-[26rem] max-[450px]:w-[19rem] max-[350px]:h-[26rem] max-[350px]:w-[14rem] min-[350px]:px-4 lg:h-[28rem] lg:w-[24rem] xl:h-[30rem] xl:w-[30rem]'>
                         <PinContainer href={demo || repo} title={title} cover={cover} />
 

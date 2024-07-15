@@ -1,16 +1,7 @@
 "use client"
 
-import { Moon, Star, Sun } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import Link from "next/link"
-
-export const Logo = () => {
-  return (
-    <Link href={'/'} className='fixed left-[42px] hidden md:flex top-10 z-[60] p-3 rounded-md hover:bg-gray-50 dark:hover:bg-gray-100/10'>
-      <Star className='h-[2rem] w-[2rem]' />
-    </Link>
-  )
-}
 
 
 export default function ToggleTheme() {

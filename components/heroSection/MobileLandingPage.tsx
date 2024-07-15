@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
-import { LinkPreview } from "./ui/link-preview";
+import { LinkPreview } from "../ui/link-preview";
 import { TypeAnimation } from "react-type-animation";
 
 

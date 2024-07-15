@@ -4,12 +4,12 @@ import dynamic from "next/dynamic";
 const EarthCanvas = dynamic(() => import('@/components/canvas/EarthCanvas'), {
     ssr: false
 })
-import { ContactForm } from "@/components/ContactForm";
+import { ContactForm } from "@/components/contactSection/ContactForm";
 import { useRef } from "react";
 import { AnimatePresence, useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import { slideLeftSide, slideRightSide, smallslideup } from "@/lib/framer";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 
 
 const Contact = () => {
