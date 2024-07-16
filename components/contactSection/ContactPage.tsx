@@ -15,7 +15,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/
 const Contact = () => {
     const container = useRef(null)
     const inView = useInView(container, {
-        margin: "-50px 100px -50px 0px",
+        margin: "100px 100px -50px 0px",
     })
     const contactTitle = `Let's get in Touch`
 

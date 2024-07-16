@@ -23,7 +23,7 @@ export default function About() {
 
     const container = useRef(null)
     const inView = useInView(container, {
-        margin: "50px 100px -50px -50px",
+        margin: "250px 100px -50px -50px",
     })
     const aboutContact = `Send me a message`
 

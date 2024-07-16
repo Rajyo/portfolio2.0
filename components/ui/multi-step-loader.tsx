@@ -2,7 +2,11 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { AuroraHero } from "../projectSection/AuroraHero";
+import dynamic from "next/dynamic";
+const AuroraCard = dynamic(() => import('../projectSection/AuroraCard'), {
+    ssr: false
+})
+
 
 const CheckIcon = ({ className }: { className?: string }) => {
     return (
@@ -137,7 +141,7 @@ export const MultiStepLoader = ({
                     }}
                     className="w-full h-full fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-2xl dark:bg-black/50 bg-white/50 py-10 px-6"
                 >
-                    <AuroraHero />
+                    <AuroraCard />
                     <div className="h-72 md:h-96 relative flex flex-col items-center justify-center">
                         <h1 className="text-3xl sm:text-5xl mb-3 sm:mb-5 text-center font-bold">{title}</h1>
                         <LoaderCore value={currentState} loadingStates={loadingStates} />

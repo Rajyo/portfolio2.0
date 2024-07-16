@@ -1,0 +1,11 @@
+Model Information:
+* title:	Walking Astronaut
+* source:	https://sketchfab.com/3d-models/walking-astronaut-e57bd18e4bc64b1298cc6b1ef13fd9e1
+* author:	LeonardoLamKengyaik (https://sketchfab.com/LeonardoLamKengyaik)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Walking Astronaut" (https://sketchfab.com/3d-models/walking-astronaut-e57bd18e4bc64b1298cc6b1ef13fd9e1) by LeonardoLamKengyaik (https://sketchfab.com/LeonardoLamKengyaik) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

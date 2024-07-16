@@ -7,7 +7,7 @@ export const slideLeftSide = {
     animate: () => ({
         opacity: 1,
         x: "0",
-        transition: { duration: 0.75, delay: 0.25, },
+        transition: { duration: 0.5, delay: 0.15, },
     }),
     exit: {
         opacity: 0,
@@ -23,7 +23,7 @@ export const slideRightSide = {
     animate: () => ({
         opacity: 1,
         x: "0",
-        transition: { duration: 0.75, delay: 0.25, },
+        transition: { duration: 0.5, delay: 0.15, },
     }),
     exit: {
         opacity: 0,
@@ -56,7 +56,7 @@ export const slideup = {
     animate: (i: number) => ({
         opacity: 1,
         y: "0",
-        transition: { duration: 0.6, delay: i * 0.1 },
+        transition: { duration: 0.5, delay: i * 0.05 },
     }),
     exit: {
         opacity: 0,
@@ -73,14 +73,14 @@ export const scaleAnimations = {
         x: "0%",
         y: "0%",
         opacity: 1,
-        transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
+        transition: { duration: 0.25, ease: [0.76, 0, 0.24, 1] },
     },
     exit: {
         scale: 0,
         x: "-50%",
         y: "0%",
         opacity: 0,
-        transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
+        transition: { duration: 0.25, ease: [0.32, 0, 0.67, 0] },
     },
 };
 

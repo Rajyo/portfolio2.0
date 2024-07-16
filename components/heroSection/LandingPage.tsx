@@ -10,7 +10,7 @@ const Light3DCanvas = dynamic(() => import('../canvas/Light3DCanvas'), {
 const Dark3DCanvas = dynamic(() => import('../canvas/Dark3DCanvas'), {
     ssr: false
 })
-const MobileLandingPage = dynamic(() => import('./MobileLandingPage'), {
+const AuroraHero = dynamic(() => import('./AuroraHero'), {
     ssr: false
 })
 const StaticMobileNavbar = dynamic(() => import('../navbarSection/StaticMobileNavbar'), {
@@ -32,23 +32,41 @@ export default function LandingPage() {
     })
 
     const title = `p r a j y o t    k h a d s e`
+    const mobileTitle = `prajyot khadse`
 
     return (
         <section
             id='home'
-            className='relative w-full bg-[#f2f2f2] dark:bg-[#111111]'
+            className='relative w-full bg-[#f0f3ec] dark:bg-[#161616]'
         >
             <StaticMobileNavbar />
 
             <div className='inset-0 top-0 h-screen w-full'>
-                <div className='absolute mx-auto hidden md:flex h-screen w-full max-w-[100%] md:max-w-[86%]'>
+                <div className='absolute mx-auto flex h-screen w-full max-w-[100%] md:max-w-[86%]'>
                     <div className='m-auto flex h-[35%] w-[90%] flex-col items-center max-[400px]:w-[95%] sm:h-[45%] sm:w-[75%] md:w-[69%] md:items-start xl:h-[40%]'>
                         <h1 ref={container} className='z-30 flex flex-wrap gap-2 py-2 pl-[6px] text-2xl font-semibold uppercase tracking-tight text-gray-800 dark:text-gray-400 max-[400px]:text-xl md:text-gray-600'>
                             {title.split(" ").map((x, index) => {
                                 return (
                                     <span
                                         key={index}
-                                        className="flex hide relative justify-start"
+                                        className="hide relative justify-start min-[400px]:flex hidden"
+                                    >
+                                        <motion.span
+                                            variants={smallslideup}
+                                            custom={index}
+                                            initial="initial"
+                                            animate={inView ? "animate" : "exit"}
+                                        >
+                                            {x}
+                                        </motion.span>
+                                    </span>
+                                );
+                            })}
+                            {mobileTitle.split(" ").map((x, index) => {
+                                return (
+                                    <span
+                                        key={index}
+                                        className="hide relative justify-start flex min-[400px]:hidden"
                                     >
                                         <motion.span
                                             variants={smallslideup}
@@ -94,14 +112,17 @@ export default function LandingPage() {
                 </div>
 
                 {/* Mobile */}
-                <div className='absolute z-10 h-screen w-screen md:hidden'>
+                {/* <div className='absolute z-10 h-screen w-screen md:hidden'>
                     {theme === 'light' ? <MobileLandingPage theme={"light"} /> : <MobileLandingPage theme={"dark"} />}
-                </div>
+                </div> */}
 
                 {/* Web */}
                 <Sparkles />
 
-                <div className='absolute -top-[7rem] z-20 max-[767px]:hidden md:-right-[40rem] xl:-right-[50rem]'>
+                <div className='absolute md:-top-[10rem] md:-right-[40rem] lg:-top-[15rem] lg:-right-[60rem] xl:-top-[17rem] xl:-right-[80rem] z-20'>
+                    <div className='flex md:hidden'>
+                        <AuroraHero />
+                    </div>
                     {theme === 'light' ? <Light3DCanvas /> : <Dark3DCanvas />}
                 </div>
             </div>

@@ -16,7 +16,7 @@ export default function Sparkles() {
         minSize={0.6}
         maxSize={1.4}
         particleDensity={currentDensity}
-        className="w-full h-full absolute z-10 hidden md:flex"
+        className="w-full h-full absolute z-10"
         particleColor={currentTheme}
       />
     </>

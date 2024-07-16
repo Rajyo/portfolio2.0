@@ -16,7 +16,7 @@ export default function Footer() {
 
     return (
         <div
-            className="relative bg-[#f2f2f2] dark:bg-[#111111] border border-t border-gray-400 dark:border-gray-800 mx-auto w-full h-[75px]"
+            className="relative bg-[#f0f3ec] dark:bg-[#161616] border border-t border-gray-400 dark:border-gray-800 mx-auto w-full h-[75px]"
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
 

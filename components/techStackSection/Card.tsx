@@ -20,7 +20,7 @@ const Card = ({ i, title, stack, color, colorr, progress, range, targetScale, th
             >
                 <h1 className='w-[95%] py-2 mt-6 mx-auto text-xl md:text-4xl font-bold md:w-[100%]'>{title}</h1>
                 <div className='mx-auto mt-8 flex w-[95%] flex-wrap justify-between gap-x-2 gap-y-4 max-[350px]:w-[100%] max-[300px]:gap-x-0 md:gap-6 lg:w-[100%]'>
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence mode="sync">
                         {stack.map((tech: { name: string, link: StaticImageData }) => (
                             <motion.div onViewportEnter={() => setLoading(true)} onViewportLeave={() => setLoading(false)}
                                 variants={scaleAnimations} initial='initial' animate={loading ? 'animate' : 'exit'}

@@ -14,6 +14,7 @@ import { AnimatePresence } from 'framer-motion'
 import Preloader from '@/components/Preloader'
 import LandingPage from '@/components/heroSection/LandingPage'
 
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
 
