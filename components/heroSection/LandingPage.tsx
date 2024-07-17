@@ -13,12 +13,15 @@ const Dark3DCanvas = dynamic(() => import('../canvas/Dark3DCanvas'), {
 const AuroraHero = dynamic(() => import('./AuroraHero'), {
     ssr: false
 })
+const MobileLandingPage = dynamic(() => import('./MobileLandingPage'), {
+    ssr: false
+})
 const StaticMobileNavbar = dynamic(() => import('../navbarSection/StaticMobileNavbar'), {
     ssr: false
 })
 import Sparkles from './Sparkles'
 import { useRef } from 'react'
-import { useInView, motion } from 'framer-motion'
+import { useInView, motion, useScroll, useTransform } from 'framer-motion'
 import { smallslideup } from '@/lib/framer'
 
 
@@ -34,6 +37,15 @@ export default function LandingPage() {
     const title = `p r a j y o t    k h a d s e`
     const mobileTitle = `prajyot khadse`
 
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"],
+    });
+    const sectionY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    const divY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+
+
     return (
         <section
             id='home'
@@ -42,9 +54,9 @@ export default function LandingPage() {
             <StaticMobileNavbar />
 
             <div className='inset-0 top-0 h-screen w-full'>
-                <div className='absolute mx-auto flex h-screen w-full max-w-[100%] md:max-w-[86%]'>
-                    <div className='m-auto flex h-[35%] w-[90%] flex-col items-center max-[400px]:w-[95%] sm:h-[45%] sm:w-[75%] md:w-[69%] md:items-start xl:h-[40%]'>
-                        <h1 ref={container} className='z-30 flex flex-wrap gap-2 py-2 pl-[6px] text-2xl font-semibold uppercase tracking-tight text-gray-800 dark:text-gray-400 max-[400px]:text-xl md:text-gray-600'>
+                <div ref={ref} className='absolute mx-auto flex h-screen w-full max-w-[100%] md:max-w-[86%]'>
+                    <motion.div style={{ y: sectionY }} className={`m-auto flex h-[35%] w-[90%] flex-col items-center max-[400px]:w-[95%] sm:h-[45%] sm:w-[75%] md:w-[69%] md:items-start xl:h-[40%] z-40`}>
+                        <h1 ref={container} className='flex flex-wrap gap-2 py-2 pl-[6px] text-2xl font-semibold uppercase tracking-tight text-gray-800 dark:text-gray-400 max-[400px]:text-xl md:text-gray-600'>
                             {title.split(" ").map((x, index) => {
                                 return (
                                     <span
@@ -108,24 +120,22 @@ export default function LandingPage() {
                                 Resume
                             </button>
                         </LinkPreview>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Mobile */}
-                {/* <div className='absolute z-10 h-screen w-screen md:hidden'>
+                <div className='absolute z-10 h-screen w-screen md:hidden'>
                     {theme === 'light' ? <MobileLandingPage theme={"light"} /> : <MobileLandingPage theme={"dark"} />}
-                </div> */}
+                </div>
 
                 {/* Web */}
                 <Sparkles />
 
-                <div className='absolute md:-top-[10rem] md:-right-[40rem] lg:-top-[15rem] lg:-right-[60rem] xl:-top-[17rem] xl:-right-[80rem] z-20'>
-                    <div className='flex md:hidden'>
-                        <AuroraHero />
-                    </div>
-                    {theme === 'light' ? <Light3DCanvas /> : <Dark3DCanvas />}
+                <div className='absolute -top-[7rem] z-20 hidden md:flex md:-right-[40rem] xl:-right-[50rem]'>
+                    {theme === 'light' ? <Light3DCanvas sectionY={divY} /> : <Dark3DCanvas sectionY={divY} />}
                 </div>
             </div>
         </section>
     )
 }
+

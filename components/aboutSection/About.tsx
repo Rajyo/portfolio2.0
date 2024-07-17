@@ -5,12 +5,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import { TextGenerateEffect } from '../ui/text-generate-effect'
 import Link from 'next/link'
 import Image from 'next/image'
-import img from '@/public/lachlan-dempsey.jpg'
+import img from '@/public/images/lachlan-dempsey.jpg'
 import { StickyScroll } from '../ui/sticky-scroll-reveal'
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards'
 import { testimonials } from '@/lib/data'
 import { useInView, motion, AnimatePresence } from 'framer-motion'
 import { imageScale, slideLeftSide, slideRightSide, slideup } from '@/lib/framer'
+
 
 export default function About() {
     const [timer, setTimer] = useState(false)

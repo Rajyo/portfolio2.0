@@ -11,7 +11,7 @@ import { useTheme } from "next-themes";
 
 
 const LIGHT_COLOR = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"]
-const DARK_COLOR = ["#4F987E", "#7E9BC0", "#CE84CF", "#A80129"]
+const DARK_COLOR = ["#01C17C", "#0256C4", "#BB00BD", "#C5012F"]
 
 
 const AuroraHero = () => {

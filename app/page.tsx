@@ -5,9 +5,7 @@ import Projects from '@/components/projectSection/Projects'
 import Sparkles from '@/components/heroSection/Sparkles'
 import dynamic from 'next/dynamic'
 // import ToolsAndTechnology from '@/components/techStackSection/ToolsAndTechnology'
-const TechStack = dynamic(() => import('@/components/techStackSection/TechStack'), {
-  ssr: false
-})
+import TechStack from '@/components/techStackSection/TechStack'
 import Contact from '@/components/contactSection/ContactPage'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'

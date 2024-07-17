@@ -17,6 +17,8 @@ const Navbar = dynamic(() => import('@/components/navbarSection/Navbar'), { ssr:
 import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroller'
 
+
+
 //Roboto_Flex, Inter_Tight, Sarabun, ALmarai, Aleo, Hanuman, Battambang
 const fontSans = Inter({
   subsets: ['latin'],
@@ -26,7 +28,10 @@ const fontSans = Inter({
 
 export const metadata: Metadata = {
   title: 'Prajyot Khadse',
-  description: 'Next.js Portfolio of Prajyot Khadse'
+  description: 'Next.js Portfolio of Prajyot Khadse',
+  icons: {
+    icon: '/images/logo_dark.png',
+  }
 }
 
 export default function RootLayout({

@@ -15,14 +15,14 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/
 const Contact = () => {
     const container = useRef(null)
     const inView = useInView(container, {
-        margin: "100px 100px -50px 0px",
+        margin: "250px 100px -50px 0px",
     })
     const contactTitle = `Let's get in Touch`
 
     return (
         <AnimatePresence mode="wait">
-            <div id="contact" className="max-w-[100%] md:max-w-[86%] md:mx-auto h-auto xl:px-[6rem] pt-20 pb-10">
-                <h3 ref={container} className="text-4xl md:text-5xl font-bold px-4 md:px-0 text-center flex-wrap z-0 flex gap-4 justify-center">
+            <div ref={container} id="contact" className="max-w-[100%] md:max-w-[86%] md:mx-auto h-auto xl:px-[6rem] pt-20 pb-10">
+                <h3 className="text-4xl md:text-5xl font-bold px-4 md:px-0 text-center flex-wrap z-0 flex gap-4 justify-center">
                     {contactTitle.split(" ").map((x, index) => {
                         return (
                             <span

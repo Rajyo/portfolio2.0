@@ -2,10 +2,13 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import will_web from '@/public/will_smith_b&w.png'
-import will_mobile from '@/public/will_portrait.png'
+import will_web from '@/public/images/will_smith_b&w.png'
+import will_mobile from '@/public/images/will_portrait.png'
 import { motion } from 'framer-motion'
-import StaticMobileNavbar from '@/components/navbarSection/StaticMobileNavbar'
+import dynamic from 'next/dynamic'
+const StaticMobileNavbar = dynamic(() => import('@/components/navbarSection/StaticMobileNavbar'), {
+    ssr: false
+})
 
 export default function NotFound() {
     return (

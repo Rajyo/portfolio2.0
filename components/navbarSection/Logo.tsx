@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import lightLogo from "@/public/logo_light.png"
-import darkLogo from "@/public/logo_dark.png"
+import lightLogo from "@/public/images/logo_light.png"
+import darkLogo from "@/public/images/logo_dark.png"
 import { useTheme } from "next-themes"
 
 const Logo = () => {

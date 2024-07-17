@@ -11,8 +11,8 @@ const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), {
 import { AnimatePresence, motion } from "framer-motion"
 import { navLinks } from "@/lib/data"
 import { LinkPreview } from "../ui/link-preview"
-import lightLogo from "@/public/logo_light.png"
-import darkLogo from "@/public/logo_dark.png"
+import lightLogo from "@/public/images/logo_light.png"
+import darkLogo from "@/public/images/logo_dark.png"
 import dynamic from "next/dynamic"
 
 
@@ -35,7 +35,7 @@ export default function StaticMobileNavbar() {
     }, [outsideRef])
 
     return (
-        <header className='absolute inset-x-0 top-0 z-[50] flex w-full items-center justify-between bg-transparent py-2 pl-4 pr-6 border-b border-black/[0.1] dark:border-white/[0.1] md:hidden'>
+        <header className='absolute inset-x-0 top-0 z-[50] flex w-full items-center justify-between bg-transparent py-2 pl-4 pr-6 border-b border-black/[0.1] dark:border-white/[0.1] md:hidden h-16'>
             <div>
                 <Link href={'/'} className='rounded-md hover:bg-gray-50 dark:hover:bg-gray-100/10'>
                     {

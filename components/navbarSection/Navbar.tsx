@@ -24,8 +24,8 @@ import { navLinks } from '@/lib/data'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from "next-themes"
 import Image from "next/image"
-import lightLogo from "@/public/logo_light.png"
-import darkLogo from "@/public/logo_dark.png"
+import lightLogo from "@/public/images/logo_light.png"
+import darkLogo from "@/public/images/logo_dark.png"
 
 export default function Navbar() {
   const [windowSize, setWindowSize] = useState<number | null>(null)
