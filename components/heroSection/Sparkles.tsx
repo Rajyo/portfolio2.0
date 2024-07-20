@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 export default function Sparkles() {
   const { theme } = useTheme()
   const currentTheme = theme === "light" ? "#000000" : "#FFFFFF"
-  const currentDensity = theme === "light" ? 200 : 100
+  const currentDensity = theme === "light" ? 150 : 100
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function Sparkles() {
         minSize={0.6}
         maxSize={1.4}
         particleDensity={currentDensity}
-        className="w-full h-full absolute z-10 hidden md:flex"
+        className="w-full h-full absolute z-20"
         particleColor={currentTheme}
       />
     </>

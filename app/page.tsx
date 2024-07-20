@@ -2,9 +2,7 @@
 
 import About from '@/components/aboutSection/About'
 import Projects from '@/components/projectSection/Projects'
-import Sparkles from '@/components/heroSection/Sparkles'
-import dynamic from 'next/dynamic'
-// import ToolsAndTechnology from '@/components/techStackSection/ToolsAndTechnology'
+import ToolsAndTechnology from '@/components/techStackSection/ToolsAndTechnology'
 import TechStack from '@/components/techStackSection/TechStack'
 import Contact from '@/components/contactSection/ContactPage'
 import { useEffect, useState } from 'react'
@@ -26,11 +24,11 @@ export default function Home() {
     }, 2000)
   }, [])
 
+
+
   return (
     <main className='relative w-screen bg-[#f0f3ec] dark:bg-[#161616]'>
-      {/* <main className='relative w-screen bg-[#f0f3ec] dark:bg-[#161616] dark:bg-[#111010] dark:bg-[#02010e]'> */}
 
-      {/* <Sparkles /> */}
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
@@ -48,6 +46,7 @@ export default function Home() {
       <Projects />
 
       <Contact />
+
     </main>
   )
 }

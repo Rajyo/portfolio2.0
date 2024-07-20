@@ -1,4 +1,6 @@
 interface ProjectCardProps {
+  index: number
+  inView1: boolean
   technicalStack: string
   item: {
     image: StaticImageData

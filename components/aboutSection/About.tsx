@@ -6,11 +6,11 @@ import { TextGenerateEffect } from '../ui/text-generate-effect'
 import Link from 'next/link'
 import Image from 'next/image'
 import img from '@/public/images/lachlan-dempsey.jpg'
-import { StickyScroll } from '../ui/sticky-scroll-reveal'
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards'
 import { testimonials } from '@/lib/data'
 import { useInView, motion, AnimatePresence } from 'framer-motion'
 import { imageScale, slideLeftSide, slideRightSide, slideup } from '@/lib/framer'
+import Education from './Education'
 
 
 export default function About() {
@@ -19,7 +19,7 @@ export default function About() {
     useEffect(() => {
         setTimeout(() => {
             setTimer(true)
-        }, 12250)
+        }, 7500)
     }, [timer])
 
     const container = useRef(null)
@@ -107,12 +107,6 @@ export default function About() {
                     </div>
                 </div>
 
-                {/* <div className='m-auto h-[70vh] max-w-[100%] md:max-w-[86%]'>
-                <div className='mx-auto flex h-full max-w-[95%] flex-col items-center justify-evenly'>
-                    <StickyScroll />
-                </div>
-            </div> */}
-
                 <div className='dark:bg-grid-white/[0.05] relative flex h-[25rem] flex-col items-center justify-center overflow-hidden rounded-md antialiased'>
                     <InfiniteMovingCards
                         items={testimonials}
@@ -120,7 +114,12 @@ export default function About() {
                         speed='slow'
                     />
                 </div>
+
+                {/* Alternative to Infinite Moving Cards */}
+                {/* <Education /> */}
+
             </section>
+
         </AnimatePresence>
     )
 }

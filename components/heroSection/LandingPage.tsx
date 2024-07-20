@@ -49,7 +49,7 @@ export default function LandingPage() {
     return (
         <section
             id='home'
-            className='relative w-full bg-[#f0f3ec] dark:bg-[#161616]'
+            className='relative w-full bg-[#f0f3ec] dark:bg-[#161616] overflow-hidden md:overflow-visible'
         >
             <StaticMobileNavbar />
 
@@ -123,15 +123,18 @@ export default function LandingPage() {
                     </motion.div>
                 </div>
 
-                {/* Mobile */}
-                <div className='absolute z-10 h-screen w-screen md:hidden'>
-                    {theme === 'light' ? <MobileLandingPage theme={"light"} /> : <MobileLandingPage theme={"dark"} />}
-                </div>
 
-                {/* Web */}
                 <Sparkles />
 
-                <div className='absolute -top-[7rem] z-20 hidden md:flex md:-right-[40rem] xl:-right-[50rem]'>
+
+                {/* Mobile */}
+                <div className='absolute z-10 h-screen w-screen md:hidden'>
+                    <MobileLandingPage />
+                </div>
+
+
+                {/* Web */}
+                <div className='absolute -top-[5.75rem] z-20 hidden md:flex md:-right-[40rem] xl:-right-[50rem]'>
                     {theme === 'light' ? <Light3DCanvas sectionY={divY} /> : <Dark3DCanvas sectionY={divY} />}
                 </div>
             </div>

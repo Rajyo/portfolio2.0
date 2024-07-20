@@ -175,16 +175,19 @@ export const technicalStack = [
     id: 1,
     title: 'Frontend',
     stack: [
+      { name: 'Next.js', link: p_next },
       { name: 'React.js', link: react },
+      { name: 'TypeScript', link: p_typescript },
+      { name: 'Tailwind CSS', link: tailwindcss },
+      { name: 'Redux Toolkit', link: p_redux_toolkit },
+      { name: 'Framer Motion', link: p_framer_motion },
+      { name: 'Three.js', link: p_three },
+      { name: 'Angular', link: p_angular },
       { name: 'JavaScript', link: javascript },
       { name: 'CSS3', link: css },
       { name: 'HTML5', link: html },
-      { name: 'Redux', link: redux },
       { name: 'Vite', link: vite },
-      { name: 'Bootstrap', link: bootstrap },
-      { name: 'Material UI', link: matrialUI },
-      { name: 'SASS', link: sass },
-      { name: 'Tailwind CSS', link: tailwindcss }
+      { name: 'SASS', link: sass }
     ],
     color: '#010203',
     colorr: '#F8F9FA'
@@ -193,15 +196,17 @@ export const technicalStack = [
     id: 2,
     title: 'Backend',
     stack: [
+      { name: 'Express JS', link: p_expressjs },
       { name: 'Django Rest Framework', link: drf },
+      { name: 'Node JS', link: node },
+      { name: 'Socket.io', link: p_socketio },
+      { name: 'GraphQL', link: p_graphql },
+      { name: 'TRPC', link: p_trpc },
       { name: 'Django', link: django },
       { name: 'Python', link: python },
       { name: 'Django Channels', link: djChannels },
-      { name: 'Node JS', link: node },
-      { name: 'Express JS', link: express },
       { name: 'Flask', link: flask },
       { name: 'Java', link: java },
-      { name: 'C', link: c },
       { name: 'C++', link: cplus }
     ],
     color: '#0A0A0A',
@@ -209,44 +214,50 @@ export const technicalStack = [
   },
   {
     id: 3,
-    title: 'Database',
+    title: 'Database and Deployment',
     stack: [
       { name: 'MySQL', link: mysql },
       { name: 'PostgreSQL', link: postgresql },
       { name: 'MongoDB', link: mongodb },
       { name: 'Redis', link: redis },
-      { name: 'SQLite', link: sqlite }
+      { name: 'SQLite', link: sqlite },
+      { name: 'Vercel', link: vercel },
+      { name: 'Supabase', link: netlify },
+      { name: 'Firebase', link: firebase },
+      { name: 'Netlify', link: netlify },
+      { name: 'Railway', link: railway }
     ],
     color: '#0D0D0D',
     colorr: '#E8EAED'
   },
   {
     id: 4,
-    title: 'Deployment',
+    title: 'Tools',
     stack: [
-      { name: 'Vercel', link: vercel },
-      { name: 'Railway', link: railway },
-      { name: 'Firebase', link: firebase },
-      { name: 'Heroku', link: heroku },
-      { name: 'Netlify', link: netlify }
+      { name: 'Prisma', link: p_prisma },
+      { name: 'Stripe', link: stripe },
+      { name: 'Cloudinary', link: p_cloudinary },
+      { name: 'Zod', link: jwt },
+      { name: 'Git', link: git },
+      { name: 'Email JS', link: emailjs },
+      { name: 'VS Code', link: vscode },
+      { name: 'Potman', link: postman },
+      { name: 'Insomnia', link: insomnia },
+      { name: 'npm', link: npm },
+      { name: 'Github', link: github }
     ],
     color: '#0E0E0E',
     colorr: '#E0E0E0'
   },
   {
     id: 5,
-    title: 'Tools',
+    title: 'DevOps',
     stack: [
-      { name: 'JWT', link: jwt },
-      { name: 'Git', link: git },
-      { name: 'Sripe', link: stripe },
-      { name: 'Email JS', link: emailjs },
-      { name: 'VS Code', link: vscode },
-      { name: 'Potman', link: postman },
-      { name: 'Insomnia', link: insomnia },
-      { name: 'npm', link: npm },
       { name: 'Docker', link: docker },
-      { name: 'Github', link: github }
+      { name: 'CI/CD', link: docker },
+      { name: 'AWS', link: docker },
+      { name: 'Nginx', link: docker },
+      { name: 'Linux', link: docker }
     ],
     color: '#111111',
     colorr: '#DADCE0'

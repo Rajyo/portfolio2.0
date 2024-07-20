@@ -1,6 +1,6 @@
 'use client'
 
-import { AlignJustify, Github, Linkedin, Star, X } from 'lucide-react'
+import { AlignJustify, Github, Linkedin, ShieldOff, Star, X } from 'lucide-react'
 import Link from 'next/link'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { LinkPreview } from '../ui/link-preview'
@@ -26,6 +26,7 @@ import { useTheme } from "next-themes"
 import Image from "next/image"
 import lightLogo from "@/public/images/logo_light.png"
 import darkLogo from "@/public/images/logo_dark.png"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
 
 export default function Navbar() {
   const [windowSize, setWindowSize] = useState<number | null>(null)
@@ -67,6 +68,21 @@ export default function Navbar() {
 
           <div
             className='flex items-center rotate-180 gap-x-3'>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={'/fight-club'}
+                    className='p-2.5 rotate-90 hover:text-[#00eeff] dark:hover:text-[#00eeff]'
+                  >
+                    <ShieldOff className='h-[1.5rem] w-[1.5rem]' />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className='absolute rotate-90 w-48 h-[74px] -ml-[86px] border-4 border-gray-500'>
+                  <p>I have some info about FIGHT CLUB</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             <div
               className='p-2.5 rotate-90' >
               <LinkPreview
@@ -92,7 +108,7 @@ export default function Navbar() {
           <motion.header initial={{ opacity: 0, }} animate={{ opacity: 1, }} transition={{ duration: 2, delay: 0.5 }} className='absolute inset-x-0 top-10 z-[40] md:flex w-full items-center justify-evenly space-x-4 border-transparent bg-transparent py-2 hidden'>
             <WebNavbarContent />
           </motion.header>
-          <header className='fixed z-50 mx-10 justify-between px-10 py-2 hidden md:flex'>
+          <header className='fixed z-50 mx-10 text-sm justify-between px-10 py-2 hidden md:flex'>
             <FloatingNav>
               <WebNavbarContent />
             </FloatingNav>
@@ -124,6 +140,22 @@ const MobileNavbarContent = () => {
       </div>
 
       <div className='flex items-center gap-x-2'>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href={'/fight-club'}
+                className='p-3 hover:bg-gray-50 dark:hover:bg-gray-100/10'
+              >
+                <ShieldOff className='h-[1.5rem] w-[1.5rem]' />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>I have some info about FIGHT CLUB</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+
         <Sheet>
           <SheetTrigger asChild>
             <Button variant='ghost'>
@@ -146,7 +178,7 @@ const MobileNavbarContent = () => {
                   </Link>
                 </SheetClose>
               ))}
-              <div className='flex w-full items-center justify-around gap-x-3 pt-10'>
+              <div className='flex flex-wrap w-full items-center justify-around gap-x-3 pt-10'>
                 <div className='p-2.5'>
                   <LinkPreview
                     url='https://in.linkedin.com/in/prajyot-khadse'
@@ -178,11 +210,11 @@ const MobileNavbarContent = () => {
 const WebNavbarContent = () => {
   return (
     <>
-      <nav className='flex items-center gap-x-5'>
+      <nav className='flex items-center md:gap-x-3 lg:gap-x-5'>
         {navLinks.map(item => (
           <Link
             key={item.id}
-            className='px-2 text-lg font-semibold hover:line-through hover:decoration-[#00eeff] hover:decoration-4'
+            className='px-2 text-base lg:text-lg font-semibold hover:line-through hover:decoration-[#00eeff] hover:decoration-4'
             href={item.link}
           >
             {item.title}
@@ -191,14 +223,14 @@ const WebNavbarContent = () => {
       </nav>
 
       <div
-        className='flex items-center gap-x-3'>
+        className='flex items-center md:gap-x-2 lg:gap-x-3'>
         <div
           className='p-2.5' >
           <LinkPreview
             url='https://in.linkedin.com/in/prajyot-khadse'
             className='hover:text-[#00eeff] dark:hover:text-[#00eeff]'
           >
-            <Linkedin className='h-[1.5rem] w-[1.5rem]' />
+            <Linkedin className='md:h-[1.25rem] md:w-[1.25rem] lg:h-[1.5rem] lg:w-[1.5rem]' />
           </LinkPreview>
         </div>
         <div
@@ -207,9 +239,24 @@ const WebNavbarContent = () => {
             url='https://github.com/Rajyo'
             className='hover:text-[#00eeff] dark:hover:text-[#00eeff]'
           >
-            <Github className='h-[1.5rem] w-[1.5rem]' />
+            <Github className='md:h-[1.25rem] md:w-[1.25rem] lg:h-[1.5rem] lg:w-[1.5rem]' />
           </LinkPreview>
         </div>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href={'/fight-club'}
+                className='p-2.5 hover:text-[#00eeff] dark:hover:text-[#00eeff]'
+              >
+                <ShieldOff className='md:h-[1.25rem] md:w-[1.25rem] lg:h-[1.5rem] lg:w-[1.5rem]' />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>I have some info about FIGHT CLUB</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
     </>
   )

@@ -1,62 +1,22 @@
 'use client'
 
-import { motion } from 'framer-motion'
+
 import React from 'react'
-import AuroraHero from './AuroraHero'
+import Sparkles from './Sparkles'
 
 
-export default function MobileLandingPage({ theme }: { theme: string }) {
-
+export default function MobileLandingPage() {
     return (
         <>
-            <AuroraHero />
+            <div className='absolute h-screen w-screen 
+                 bg-[linear-gradient(to_bottom,#f0f3ec,#C2DBE4_34%,#99C7D6_65%,#64A2B9_82%)] 
+            dark:bg-[linear-gradient(to_bottom,#161616,#200D42_34%,#4F21A1_65%,#A46EDB_82%)]'>
+            </div>
+
+            <div className='z-10 absolute bottom-[-27%] left-1/2 -translate-x-1/2 max-[300px]:w-[180%] max-[300px]:h-[40%] max-[400px]:w-[170%] max-[400px]:h-[40%] max-[500px]:w-[160%] max-[500px]:h-[43%] w-[150%] h-[43%] rounded-[100%] bg-[#f0f3ec] dark:bg-[#161616] border border-[#bfdcea] dark:border-[#B48CDE] 
+                 bg-[radial-gradient(closest-side,#f0f3ec_75%,#0f6887)] 
+            dark:bg-[radial-gradient(closest-side,#161616_75%,#9560EB)]'>
+            </div>
         </>
     )
 }
-
-
-// 'use client'
-
-// import { motion, useScroll, useTransform } from 'framer-motion'
-// import React, { useRef } from 'react'
-
-
-// export default function MobileLandingPage({ theme }: { theme: string }) {
-//     const ref = useRef(null)
-//     const { scrollYProgress } = useScroll({
-//         target: ref,
-//         offset: ['start start', 'end start']
-//     })
-//     const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
-
-//     return (
-//         <div
-//             ref={ref}
-//             className='relative grid h-screen w-full place-items-center overflow-hidden'
-//         >
-//             <motion.div
-//                 className='absolute inset-0 z-0'
-//                 style={{
-//                     backgroundImage:
-//                         theme === 'light'
-//                             ? `url(/parallax/light-full.jpg)`
-//                             : `url(/parallax/dark-full.jpg)`,
-//                     backgroundPosition: 'bottom',
-//                     backgroundSize: 'cover',
-//                     y: backgroundY
-//                 }}
-//             />
-//             <div
-//                 className='absolute inset-0 z-20'
-//                 style={{
-//                     backgroundImage:
-//                         theme === 'light'
-//                             ? `url(/parallax/light-half.png)`
-//                             : `url(/parallax/dark-half.png)`,
-//                     backgroundPosition: 'bottom',
-//                     backgroundSize: 'cover'
-//                 }}
-//             />
-//         </div>
-//     )
-// }

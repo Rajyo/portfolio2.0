@@ -15,11 +15,11 @@ const Card = ({ i, title, stack, color, colorr, progress, range, targetScale, th
     return (
         <div className="flex items-center justify-center sticky top-32 h-[80vh]">
             <motion.div
-                className="flex flex-col relative h-[32rem] max-[300px]:w-[95%] w-[90%] rounded-2xl p-2 sm:p-4 md:p-6 origin-top shadow-lg shadow-slate-300 dark:shadow-neutral-800"
+                className="flex flex-col relative h-[32rem] md:h-[36rem] lg:h-[32rem] max-[300px]:w-[95%] w-[90%] rounded-2xl p-2 sm:p-4 md:p-6 origin-top shadow-lg shadow-slate-300 dark:shadow-neutral-800"
                 style={{ backgroundColor: theme === "light" ? colorr : color, scale, top: `calc(-5vh + ${i * 25}px)` }}
             >
-                <h1 className='w-[95%] py-2 mt-6 mx-auto text-xl md:text-4xl font-bold md:w-[100%]'>{title}</h1>
-                <div className='mx-auto mt-8 flex w-[95%] flex-wrap justify-between gap-x-2 gap-y-4 max-[350px]:w-[100%] max-[300px]:gap-x-0 md:gap-6 lg:w-[100%]'>
+                <h1 className='w-[95%] py-2 mt-2 lg:mt-6 mx-auto text-xl md:text-4xl font-bold md:w-[100%]'>{title}</h1>
+                <div className='mx-auto mt-4 lg:mt-8 flex w-[95%] flex-wrap justify-between gap-x-2 gap-y-4 max-[350px]:w-[100%] max-[300px]:gap-x-0 md:gap-6 lg:w-[100%]'>
                     <AnimatePresence mode="sync">
                         {stack.map((tech: { name: string, link: StaticImageData }) => (
                             <motion.div onViewportEnter={() => setLoading(true)} onViewportLeave={() => setLoading(false)}

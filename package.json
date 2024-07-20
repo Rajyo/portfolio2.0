@@ -29,7 +29,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^11.3.8",
     "lenis": "^1.1.6",
     "lucide-react": "^0.399.0",
     "next": "14.2.4",
@@ -40,10 +40,9 @@
     "react-hook-form": "^7.52.1",
     "react-type-animation": "^3.2.0",
     "sharp": "^0.33.4",
-    "tailwind-merge": "^2.3.0",
+    "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.166.0",
-    "vaul": "^0.9.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {

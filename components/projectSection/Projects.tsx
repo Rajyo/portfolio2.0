@@ -20,7 +20,7 @@ export default function Projects() {
 
     const container1 = useRef(null)
     const inView1 = useInView(container1, {
-        margin: "50px 50px 50px 50px",
+        margin: "50px 100px 50px 50px",
     })
 
     const handleTechStack = (stack: string) => {
@@ -55,10 +55,10 @@ export default function Projects() {
                             <ProjectDropdown techStack={techStack} handleTechStack={handleTechStack} />
                         </motion.div>
                     </div>
-                    <motion.div initial={{ opacity: 0.25, scale: 0.25 }} animate={inView1 ? { opacity: 1, scale: 1 } : { opacity: 0.25, scale: 0.25 }} transition={{ duration: 1, ease: "easeInOut" }} className="flex flex-wrap justify-around gap-5">
+                    <motion.div className="flex flex-wrap justify-around gap-5">
                         {
                             project.map((item, index) => (
-                                <ProjectCard item={item} technicalStack={techStack} key={index} />
+                                <ProjectCard item={item} technicalStack={techStack} key={index} index={index} inView1={inView1} />
                             ))
                         }
                     </motion.div>

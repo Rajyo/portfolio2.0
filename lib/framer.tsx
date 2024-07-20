@@ -1,3 +1,24 @@
+import { easeIn, easeOut } from "framer-motion";
+
+export const slideCard = {
+    initial: {
+        x: -75,
+        y: -75,
+        scale: 0.75,
+    },
+    animate: (i: number) => ({
+        x: 0,
+        y: 0,
+        transition: { duration: 0.25, delay: i * 0.15, easeIn },
+        scale: 1,
+    }),
+    exit: {
+        x: -75,
+        y: -75,
+        transition: { duration: 0.25, easeOut },
+        scale: 0.75,
+    },
+};
 
 export const slideLeftSide = {
     initial: {
@@ -7,7 +28,7 @@ export const slideLeftSide = {
     animate: () => ({
         opacity: 1,
         x: "0",
-        transition: { duration: 0.5, delay: 0.15, },
+        transition: { duration: 0.5, delay: 0.15, easeIn },
     }),
     exit: {
         opacity: 0,
@@ -23,7 +44,7 @@ export const slideRightSide = {
     animate: () => ({
         opacity: 1,
         x: "0",
-        transition: { duration: 0.5, delay: 0.15, },
+        transition: { duration: 0.5, delay: 0.15, easeIn },
     }),
     exit: {
         opacity: 0,
@@ -40,7 +61,7 @@ export const smallslideup = {
     animate: (i: number) => ({
         opacity: 1,
         y: "0",
-        transition: { duration: 0.4, delay: i * 0.05, },
+        transition: { duration: 0.4, delay: i * 0.05, easeIn },
     }),
     exit: {
         opacity: 0,
@@ -56,7 +77,7 @@ export const slideup = {
     animate: (i: number) => ({
         opacity: 1,
         y: "0",
-        transition: { duration: 0.5, delay: i * 0.05 },
+        transition: { duration: 0.5, delay: i * 0.05, easeIn },
     }),
     exit: {
         opacity: 0,
@@ -73,14 +94,14 @@ export const scaleAnimations = {
         x: "0%",
         y: "0%",
         opacity: 1,
-        transition: { duration: 0.25, ease: [0.76, 0, 0.24, 1] },
+        transition: { duration: 0.25, easeIn },
     },
     exit: {
         scale: 0,
         x: "-50%",
         y: "0%",
         opacity: 0,
-        transition: { duration: 0.25, ease: [0.32, 0, 0.67, 0] },
+        transition: { duration: 0.25, easeOut },
     },
 };
 
@@ -94,8 +115,8 @@ export const imageScale = {
         scale: 1,
         z: 150,
         transition: {
-            duration: 0.75,
-            ease: [0.76, 0, 0.24, 1],
+            duration: 0.5,
+            easeIn
         },
     },
     exit: {
@@ -103,8 +124,8 @@ export const imageScale = {
         z: 0,
         opacity: 1,
         transition: {
-            duration: 0.75,
-            ease: [0.76, 0, 0.24, 1],
+            duration: 0.5,
+            easeOut
         },
     },
 };
