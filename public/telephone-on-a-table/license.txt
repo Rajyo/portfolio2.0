@@ -1,0 +1,11 @@
+Model Information:
+* title:	telephone-on-a-table
+* source:	https://sketchfab.com/3d-models/telephone-on-a-table-0eed833ffec84aae943150efe3d7d5cb
+* author:	Mylom (https://sketchfab.com/Mylom)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "telephone-on-a-table" (https://sketchfab.com/3d-models/telephone-on-a-table-0eed833ffec84aae943150efe3d7d5cb) by Mylom (https://sketchfab.com/Mylom) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

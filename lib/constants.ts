@@ -94,8 +94,12 @@ import p_tailwind from '@/public/assets/project_assets/tailwind.png'
 import p_three from '@/public/assets/project_assets/three.png'
 import p_trpc from '@/public/assets/project_assets/trpc.png'
 import p_typescript from '@/public/assets/project_assets/typescript.png'
-import p_vercel from '@/public/assets/project_assets/vercel.png'
 import p_vite from '@/public/assets/project_assets/vite.png'
+import p_cicd from '@/public/assets/project_assets/ci-cd.webp'
+import p_aws from '@/public/assets/project_assets/AWS.webp'
+import p_nginx from '@/public/assets/project_assets/Nginx.webp'
+import p_linux from '@/public/assets/project_assets/LINUX.webp'
+import p_supabase from '@/public/assets/project_assets/supabase.jpeg'
 
 import p_Article from '@/public/assets/project_assets/Article.png'
 import p_Blog from '@/public/assets/project_assets/Blog.png'
@@ -198,7 +202,7 @@ export const technicalStack = [
     stack: [
       { name: 'Express JS', link: p_expressjs },
       { name: 'Django Rest Framework', link: drf },
-      { name: 'Node JS', link: node },
+      { name: 'Node JS', link: p_nodejs },
       { name: 'Socket.io', link: p_socketio },
       { name: 'GraphQL', link: p_graphql },
       { name: 'TRPC', link: p_trpc },
@@ -222,7 +226,7 @@ export const technicalStack = [
       { name: 'Redis', link: redis },
       { name: 'SQLite', link: sqlite },
       { name: 'Vercel', link: vercel },
-      { name: 'Supabase', link: netlify },
+      { name: 'Supabase', link: p_supabase },
       { name: 'Firebase', link: firebase },
       { name: 'Netlify', link: netlify },
       { name: 'Railway', link: railway }
@@ -240,11 +244,11 @@ export const technicalStack = [
       { name: 'Zod', link: jwt },
       { name: 'Git', link: git },
       { name: 'Email JS', link: emailjs },
-      { name: 'VS Code', link: vscode },
-      { name: 'Potman', link: postman },
-      { name: 'Insomnia', link: insomnia },
       { name: 'npm', link: npm },
-      { name: 'Github', link: github }
+      { name: 'Github', link: github },
+      { name: 'Potman', link: postman },
+      { name: 'VS Code', link: vscode },
+      { name: 'Insomnia', link: insomnia }
     ],
     color: '#0E0E0E',
     colorr: '#E0E0E0'
@@ -254,10 +258,10 @@ export const technicalStack = [
     title: 'DevOps',
     stack: [
       { name: 'Docker', link: docker },
-      { name: 'CI/CD', link: docker },
-      { name: 'AWS', link: docker },
-      { name: 'Nginx', link: docker },
-      { name: 'Linux', link: docker }
+      { name: 'CI/CD', link: p_cicd },
+      { name: 'AWS', link: p_aws },
+      { name: 'Nginx', link: p_nginx },
+      { name: 'Linux', link: p_linux }
     ],
     color: '#111111',
     colorr: '#DADCE0'

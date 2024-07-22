@@ -1,7 +1,7 @@
 "use client"
 
 import dynamic from "next/dynamic";
-const EarthCanvas = dynamic(() => import('@/components/canvas/EarthCanvas'), {
+const Telephone3DCanvas = dynamic(() => import('@/components/canvas/Telephone3DCanvas'), {
     ssr: false
 })
 import { ContactForm } from "@/components/contactSection/ContactForm";
@@ -46,12 +46,13 @@ const Contact = () => {
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger asChild>
-                                <motion.div ref={container} variants={slideLeftSide} initial="initial" animate={inView ? "animate" : "exit"} className="max-w-[90%] md:max-w-[100%] max-[768px]:mx-auto self-center md:h-[500px] h-[350px] lg:h-[650px] hover:cursor-pointer" >
-                                    <EarthCanvas />
+                                <motion.div ref={container} variants={slideLeftSide} initial="initial" animate={inView ? "animate" : "exit"} className="max-w-[90%] md:max-w-[100%] max-[768px]:mx-auto md:h-[500px] h-[350px] lg:h-[650px] hover:cursor-pointer mt-10 -mb-24 md:my-0" >
+                                    <Telephone3DCanvas />
                                 </motion.div>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p className="flex flex-wrap text-center">Use Right Key on mouse to Interact</p>
+                                <p className="flex-wrap text-center hidden md:flex p-1">Use Left Key on mouse to Interact</p>
+                                <p className="flex flex-wrap text-center md:hidden p-1">Use Right Key on mouse to Interact</p>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>

@@ -124,14 +124,12 @@ export default function LandingPage() {
                 </div>
 
 
-                <Sparkles />
-
-
                 {/* Mobile */}
-                <div className='absolute z-10 h-screen w-screen md:hidden'>
+                <div className='absolute z-20 h-screen w-screen md:hidden'>
                     <MobileLandingPage />
                 </div>
 
+                <Sparkles />
 
                 {/* Web */}
                 <div className='absolute -top-[5.75rem] z-20 hidden md:flex md:-right-[40rem] xl:-right-[50rem]'>

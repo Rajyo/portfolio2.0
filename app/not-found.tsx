@@ -12,7 +12,7 @@ const StaticMobileNavbar = dynamic(() => import('@/components/navbarSection/Stat
 
 export default function NotFound() {
     return (
-        <section className='flex h-screen w-screen flex-col items-center justify-center text-lg'>
+        <section className='flex h-screen w-screen flex-col items-center justify-center text-lg sm:-ml-2.5'>
             <StaticMobileNavbar />
 
             <p className='absolute left-[23%] sm:left-[25%] top-[70%] z-[10] text-3xl uppercase max-[500px]:hidden sm:text-4xl md:left-[15%] lg:left-[19%] xl:left-[23%] md:top-[15%]'>

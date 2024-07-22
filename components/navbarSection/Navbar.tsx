@@ -78,7 +78,7 @@ export default function Navbar() {
                     <ShieldOff className='h-[1.5rem] w-[1.5rem]' />
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent className='absolute rotate-90 w-48 h-[74px] -ml-[86px] border-4 border-gray-500'>
+                <TooltipContent className='absolute rotate-90 w-48 h-[74px] -ml-[86px] shadow-md shadow-slate-400 dark:shadow-stone-200'>
                   <p>I have some info about FIGHT CLUB</p>
                 </TooltipContent>
               </Tooltip>

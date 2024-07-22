@@ -38,7 +38,7 @@ export default function StaticMobileNavbar() {
     }, [outsideRef])
 
     return (
-        <header className='absolute inset-x-0 top-0 z-[50] flex h-16 w-full items-center justify-between border-b border-black/[0.1] bg-[#dbeff1]/80 py-2 pl-4 pr-6 dark:border-white/[0.1] dark:bg-[#18151c]/80 md:hidden'>
+        <header className='absolute inset-x-0 top-0 z-[50] flex h-16 w-full items-center justify-between border-b border-black/[0.1] py-2 pl-4 pr-6 dark:border-white/[0.1] bg-white/50 dark:bg-black/20 md:hidden'>
             <div>
                 <Link
                     href={'/'}
@@ -76,7 +76,7 @@ export default function StaticMobileNavbar() {
                             </Link>
                         </TooltipTrigger>
                         <TooltipContent>
-                            <p>I have some info about FIGHT CLUB</p>
+                            <p className='p-1'>I have some info about FIGHT CLUB</p>
                         </TooltipContent>
                     </Tooltip>
                 </TooltipProvider>
