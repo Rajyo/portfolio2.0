@@ -103,7 +103,7 @@ export default function LandingPage() {
                                 1000,
                                 'Mobile App Developer',
                                 1000,
-                                'Devops Engineer',
+                                'DevOps Engineer',
                                 1000
                             ]}
                             wrapper='span'
@@ -113,7 +113,7 @@ export default function LandingPage() {
                         />
 
                         <LinkPreview
-                            url='https://drive.google.com/file/d/1zcbqPT8vW6J5HXpyDbGjqtOfmwLI_bGx/view?usp=drive_link'
+                            url='https://drive.google.com/file/d/1q_Vw1sgRfmILG-UHcn4wsvZWaVrEnW-p/view?usp=sharing'
                             className='z-50 h-16 w-36 self-center font-bold md:self-auto md:pl-1'
                         >
                             <button className='inline-flex h-full w-full animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'>

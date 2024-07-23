@@ -73,7 +73,7 @@ export default function Navbar() {
                 <TooltipTrigger asChild>
                   <Link
                     href={'/fight-club'}
-                    className='p-2.5 rotate-90 hover:text-[#00eeff] dark:hover:text-[#00eeff]'
+                    className='p-2.5 z-[100] rotate-90 hover:text-[#00eeff] dark:hover:text-[#00eeff]'
                   >
                     <ShieldOff className='h-[1.5rem] w-[1.5rem]' />
                   </Link>

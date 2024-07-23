@@ -8,6 +8,26 @@
   box-sizing: border-box;
 }
 
+/* ::-webkit-scrollbar {
+  width: 0.5rem;
+  border: 1px solid var(--background);
+}
+
+::-webkit-scrollbar:hover {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar);
+  opacity: 20;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll);
+  border-radius: 0.05rem;
+  background-clip: content-box;
+} */
+
 html.lenis,
 html.lenis body {
   height: auto;
@@ -51,6 +71,8 @@ html.lenis body {
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
+    --scrollbar: #f1f1f109;
+    --scroll: #c1c1c1;
   }
 
   .dark {
@@ -73,6 +95,8 @@ html.lenis body {
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+    --scrollbar: #4242420c;
+    --scroll: #686868;
   }
 }
 

@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { TextGenerateEffect } from '../ui/text-generate-effect'
 import Link from 'next/link'
 import Image from 'next/image'
-import img from '@/public/images/lachlan-dempsey.jpg'
+import img from '@/public/images/Profile.jpg'
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards'
 import { testimonials } from '@/lib/data'
 import { useInView, motion, AnimatePresence } from 'framer-motion'
@@ -60,11 +60,11 @@ export default function About() {
                             {timer && (
                                 <TextGenerateEffect
                                     className='pt-4'
-                                    words={`When I'm not exploring the latest tech trends, you'll find me indulging in my love for music or seeking out new and creative ways to solve problems.`}
+                                    words={`When I'm not exploring the latest tech trends, you'll find me indulging in my love for music and cinema or I enjoy capturing moments from my travels and daily life.`}
                                 />
                             )}
 
-                            <p ref={container} className='flex items-center gap-2 pt-6 text-lg font-bold text-[#00eeff] sm:pt-10 sm:text-xl'>
+                            <p ref={container} className='flex items-center gap-2 pt-6 text-lg font-bold text-[#1f8c92] dark:text-[#00eeff] sm:pt-10 sm:text-xl'>
                                 <SendHorizonal />
                                 <Link href={'#contact'} className='flex flex-wrap gap-2'>
                                     {aboutContact.split(" ").map((x, index) => (
@@ -89,7 +89,7 @@ export default function About() {
                     </div>
 
                     <div ref={container} className='flex-col gap-y-5 border border-green-500/0 md:flex lg:basis-1/2 lg:self-end'>
-                        <p className='mx-auto hidden w-[90%] gap-x-2 text-xl font-semibold text-[#00eeff] lg:flex'>
+                        <p className='mx-auto hidden w-[90%] gap-x-2 text-xl font-semibold text-[#1f8c92] dark:text-[#00eeff] lg:flex'>
                             <Crown />
                             <motion.span variants={slideRightSide}
                                 initial="initial"
@@ -101,12 +101,14 @@ export default function About() {
                             <Image
                                 src={img}
                                 alt='skater'
-                                className='m-auto my-5 aspect-auto w-[80%] self-center rounded-xl sm:w-[70%] lg:w-[90%]'
+                                className='m-auto my-5 self-center rounded-xl w-[90%] h-auto sm:h-[80%] sm:w-[80%] md:h-[90%] md:w-[70%] lg:h-[90%] lg:w-[90%]'
+                            //className='m-auto my-5 aspect-auto w-[80%] self-center rounded-xl sm:w-[70%] lg:w-[90%]'
                             />
                         </motion.div>
                     </div>
                 </div>
 
+                {/* Alternative to Education */}
                 <div className='dark:bg-grid-white/[0.05] relative flex h-[25rem] flex-col items-center justify-center overflow-hidden rounded-md antialiased'>
                     <InfiniteMovingCards
                         items={testimonials}

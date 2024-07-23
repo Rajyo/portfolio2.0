@@ -100,12 +100,19 @@ import p_aws from '@/public/assets/project_assets/AWS.webp'
 import p_nginx from '@/public/assets/project_assets/Nginx.webp'
 import p_linux from '@/public/assets/project_assets/LINUX.webp'
 import p_supabase from '@/public/assets/project_assets/supabase.jpeg'
+import p_zod from '@/public/assets/project_assets/zod.png'
+import p_aceternityUI from '@/public/assets/project_assets/aceternity-ui.webp'
+import p_reactHookForm from '@/public/assets/project_assets/react-hook-form.png'
+import p_shadcnUI from '@/public/assets/project_assets/shadcnUI.png'
+import p_jest from '@/public/assets/project_assets/jest.png'
+import p_stripeConnect from '@/public/assets/project_assets/stripe-connect.webp'
 
 import p_Article from '@/public/assets/project_assets/Article.png'
 import p_Blog from '@/public/assets/project_assets/Blog.png'
 import p_Ecommerce from '@/public/assets/project_assets/Ecommerce.png'
 import p_Hotel from '@/public/assets/project_assets/Hotel.png'
 import p_Portfolio from '@/public/assets/project_assets/Portfolio.png'
+import p_Portfolio2 from '@/public/assets/project_assets/Portfolio2.0.png'
 import p_RNExpo from '@/public/assets/project_assets/RNExpo.png'
 import p_T3 from '@/public/assets/project_assets/T3.png'
 import p_Tool from '@/public/assets/project_assets/Tool.png'
@@ -186,12 +193,13 @@ export const technicalStack = [
       { name: 'Redux Toolkit', link: p_redux_toolkit },
       { name: 'Framer Motion', link: p_framer_motion },
       { name: 'Three.js', link: p_three },
+      { name: 'Expo', link: p_expo },
       { name: 'Angular', link: p_angular },
       { name: 'JavaScript', link: javascript },
-      { name: 'CSS3', link: css },
-      { name: 'HTML5', link: html },
+      { name: 'Aceternity UI', link: p_aceternityUI },
       { name: 'Vite', link: vite },
-      { name: 'SASS', link: sass }
+      { name: 'CSS3', link: css },
+      { name: 'HTML5', link: html }
     ],
     color: '#010203',
     colorr: '#F8F9FA'
@@ -241,14 +249,17 @@ export const technicalStack = [
       { name: 'Prisma', link: p_prisma },
       { name: 'Stripe', link: stripe },
       { name: 'Cloudinary', link: p_cloudinary },
-      { name: 'Zod', link: jwt },
+      { name: 'Zod', link: p_zod },
+      { name: 'React Hook Form', link: p_reactHookForm },
+      { name: 'Shadcn UI', link: p_shadcnUI },
       { name: 'Git', link: git },
       { name: 'Email JS', link: emailjs },
+      { name: 'Jest', link: p_jest },
+      { name: 'Stripe Connect', link: p_stripeConnect },
+      { name: 'Potman', link: postman },
       { name: 'npm', link: npm },
       { name: 'Github', link: github },
-      { name: 'Potman', link: postman },
-      { name: 'VS Code', link: vscode },
-      { name: 'Insomnia', link: insomnia }
+      { name: 'VS Code', link: vscode }
     ],
     color: '#0E0E0E',
     colorr: '#E0E0E0'
@@ -364,6 +375,74 @@ export const contactLinks = [
 ]
 
 export const project = [
+  {
+    image: portfolio,
+    cover: p_Portfolio2,
+    title: 'Portfolio',
+    repo: 'https://github.com/Rajyo/portfolio2.0',
+    demo: 'https://prajyot-khadse.vercel.app/',
+    tags: [
+      'Next.js',
+      'Tailwind CSS',
+      'Three JS',
+      'Framer Motion',
+      'Aceternity UI',
+      'Shadcn UI',
+      'Zod',
+      'Email JS',
+      'React Typical',
+      'Vercel'
+    ],
+    techStack: [
+      {
+        id: 1,
+        title: 'Next.js',
+        logo: p_next
+      },
+      {
+        id: 2,
+        title: 'Tailwind CSS',
+        logo: p_tailwind
+      },
+      {
+        id: 3,
+        title: 'Three.js',
+        logo: p_three
+      },
+      {
+        id: 4,
+        title: 'Framer Motion',
+        logo: p_framer_motion
+      },
+      {
+        id: 5,
+        title: 'Aceternity UI',
+        logo: p_aceternityUI
+      }
+    ],
+    mainStack: 'next.js',
+    info: [
+      {
+        text: 'Developed a responsive portfolio web application from scratch using Next.js and Tailwind CSS.'
+      },
+      {
+        text: 'Used Three.js to implement custom 3D models and used React Three Drei and React Three Fiber to implement pre-build models in the project.'
+      },
+      {
+        text: 'Used Aceternity UI and Shadcn UI component library to build amazing UI components and Next Themes for theme.'
+      },
+      {
+        text: 'Used Framer motion for animation and integrated React Typical, Email JS, Zod, React Hook Form.'
+      },
+      { text: 'Deployed the project on Vercel.' },
+      {
+        text: 'TECH STACK: Next.js, Tailwind CSS, Three.js, Framer Motion, Aceternity UI, Shadcn UI, Zod, React Hook Form, Email JS, React Typical, Vercel'
+      }
+    ],
+    mininfo: [
+      'Developed a responsive portfolio web application from scratch using Next.js, Tailwind CSS, Framer Motion, used Three.js to implement custom 3D models and Aceternity UI, Shadcn UI to for building amazing UI components.'
+    ]
+  },
   {
     image: portfolio,
     cover: p_Portfolio,
@@ -755,7 +834,7 @@ export const project = [
       {
         id: 1,
         title: 'Next.js',
-        logo: p_nextjs
+        logo: p_next
       },
       {
         id: 2,

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Roboto_Flex as Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import dynamic from 'next/dynamic'
@@ -18,12 +17,11 @@ import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroller'
 
 
-
-//Roboto_Flex, Inter_Tight, Sarabun, ALmarai, Aleo, Hanuman, Battambang
+import { Roboto_Slab as Inter } from 'next/font/google'
 const fontSans = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000"]
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 })
 
 export const metadata: Metadata = {
@@ -43,7 +41,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen w-screen overflow-x-hidden font-sans antialiased',
+          'min-h-screen w-screen overflow-x-hidden overflow-y-auto font-sans antialiased',
           fontSans.variable
         )}
       >

@@ -22,7 +22,7 @@ const DummyContent = ({ tab }: { tab: string }) => {
                     src={tech.link}
                     className='h-6 w-6 max-[350px]:h-5 max-[350px]:w-5 max-[300px]:h-4 max-[300px]:w-4 md:h-7 md:w-7'
                   />
-                  <h4 className='text-center text-sm text-black dark:text-white max-[350px]:text-xs md:text-base'>
+                  <h4 className='text-center text-xs text-black dark:text-white sm:text-sm md:text-base'>
                     {tech.name}
                   </h4>
                 </div>
@@ -62,29 +62,41 @@ const ToolsAndTechnology = () => {
       )
     },
     {
-      title: 'Database',
-      value: 'database',
+      title: 'Database and Deployment',
+      value: 'databaseAndDeployment',
       content: (
         <div className='relative h-[30rem] w-full overflow-hidden rounded-2xl bg-neutral-50 p-2 text-xl font-bold text-black dark:bg-stone-950 dark:text-white max-[275px]:h-auto md:h-[35rem] md:p-6 md:text-4xl lg:h-[30rem] lg:p-8 xl:h-[30rem] xl:p-10 shadow-lg shadow-slate-300 dark:shadow-neutral-800'>
           <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
-            Database tab
+            Database and Deployment tab
           </p>
-          <DummyContent tab='Database' />
+          <DummyContent tab='Database and Deployment' />
         </div>
       )
     },
-    {
-      title: 'Deployment',
-      value: 'deployment',
-      content: (
-        <div className='relative h-[30rem] w-full overflow-hidden rounded-2xl bg-neutral-50 p-2 text-xl font-bold text-black dark:bg-stone-950 dark:text-white max-[275px]:h-auto md:h-[35rem] md:p-6 md:text-4xl lg:h-[30rem] lg:p-8 xl:h-[30rem] xl:p-10 shadow-lg shadow-slate-300 dark:shadow-neutral-800'>
-          <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
-            Deployment tab
-          </p>
-          <DummyContent tab='Deployment' />
-        </div>
-      )
-    },
+    // {
+    //   title: 'Database',
+    //   value: 'database',
+    //   content: (
+    //     <div className='relative h-[30rem] w-full overflow-hidden rounded-2xl bg-neutral-50 p-2 text-xl font-bold text-black dark:bg-stone-950 dark:text-white max-[275px]:h-auto md:h-[35rem] md:p-6 md:text-4xl lg:h-[30rem] lg:p-8 xl:h-[30rem] xl:p-10 shadow-lg shadow-slate-300 dark:shadow-neutral-800'>
+    //       <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
+    //         Database tab
+    //       </p>
+    //       <DummyContent tab='Database' />
+    //     </div>
+    //   )
+    // },
+    // {
+    //   title: 'Deployment',
+    //   value: 'deployment',
+    //   content: (
+    //     <div className='relative h-[30rem] w-full overflow-hidden rounded-2xl bg-neutral-50 p-2 text-xl font-bold text-black dark:bg-stone-950 dark:text-white max-[275px]:h-auto md:h-[35rem] md:p-6 md:text-4xl lg:h-[30rem] lg:p-8 xl:h-[30rem] xl:p-10 shadow-lg shadow-slate-300 dark:shadow-neutral-800'>
+    //       <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
+    //         Deployment tab
+    //       </p>
+    //       <DummyContent tab='Deployment' />
+    //     </div>
+    //   )
+    // },
     {
       title: 'Tools',
       value: 'tools',
@@ -96,7 +108,19 @@ const ToolsAndTechnology = () => {
           <DummyContent tab='Tools' />
         </div>
       )
-    }
+    },
+    {
+      title: 'DevOps',
+      value: 'devops',
+      content: (
+        <div className='relative h-[30rem] w-full overflow-hidden rounded-2xl bg-neutral-50 p-2 text-xl font-bold text-black dark:bg-stone-950 dark:text-white max-[275px]:h-auto md:h-[35rem] md:p-6 md:text-4xl lg:h-[30rem] lg:p-8 xl:h-[30rem] xl:p-10 shadow-lg shadow-slate-300 dark:shadow-neutral-800'>
+          <p className='w-[95%] pt-5 max-[1024px]:mx-auto lg:w-[100%]'>
+            DevOps tab
+          </p>
+          <DummyContent tab='DevOps' />
+        </div>
+      )
+    },
   ]
 
   return (
