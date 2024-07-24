@@ -20,7 +20,7 @@ const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), {
 })
 import { FloatingNav } from '../ui/floating-navbar'
 import dynamic from 'next/dynamic'
-import { navLinks } from '@/lib/data'
+import { mobileNavLinks, navLinks } from '@/lib/data'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from "next-themes"
 import Image from "next/image"
@@ -168,7 +168,7 @@ const MobileNavbarContent = () => {
               <SheetDescription></SheetDescription>
             </SheetHeader>
             <nav className='mt-10 flex flex-col items-center gap-y-5'>
-              {navLinks.map(item => (
+              {mobileNavLinks.map(item => (
                 <SheetClose asChild key={item.id}>
                   <Link
                     className='w-full rounded-md p-2 text-center hover:scale-105 hover:bg-slate-50 hover:font-semibold hover:dark:bg-black/50'

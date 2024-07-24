@@ -25,8 +25,8 @@ const fontSans = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Prajyot Khadse',
-  description: 'Next.js Portfolio of Prajyot Khadse',
+  title: `Prajyot Khadse's Portfolio`,
+  description: 'Portfolio website of Prajyot Khadse made with Next.js, Tailwind CSS, Three.js and Framer Motion.',
   icons: {
     icon: '/images/logo_dark.png',
   }

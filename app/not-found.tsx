@@ -24,7 +24,7 @@ export default function NotFound() {
             </h1>
 
             <p className='absolute md:left-[23%] lg:left-[25%] xl:left-[27%] top-[80%] z-[10] rounded-3xl border-4 border-white px-6 py-2 dark:bg-black/20 max-[500px]:hidden md:top-[75%]'>
-                <Link href='/' className='text-2xl font-bold uppercase'>
+                <Link href='/#home' className='text-2xl font-bold uppercase'>
                     Take me Home
                 </Link>
             </p>

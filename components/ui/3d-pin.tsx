@@ -55,6 +55,8 @@ export const PinContainer = ({
                     <Link
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
+                        onTouchStart={onMouseEnter}
+                        onTouchEnd={onMouseLeave}
                         href={href || '/'}
                         className={cn('relative z-50 cursor-pointer', className)}
                     >

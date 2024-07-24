@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { AnimatedTooltip } from '../ui/animated-tooltip'
 import { PinContainer } from '../ui/3d-pin'
-import { Github, Minimize2, Maximize2 } from 'lucide-react'
+import { Github, Minimize2, Maximize2, Navigation } from 'lucide-react'
 import {
     Tooltip,
     TooltipContent,
@@ -13,9 +13,10 @@ import {
 import { MultiStepLoader as Loader } from '@/components/ui/multi-step-loader'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { slideCard } from '@/lib/framer'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
-
-export function ProjectCard({
+function ProjectCard({
     inView1,
     index,
     technicalStack,
@@ -24,19 +25,27 @@ export function ProjectCard({
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        loading ? document.body.style.overflow = "hidden" : document.body.style.overflowY = "auto"
+        loading
+            ? (document.body.style.overflow = 'hidden')
+            : (document.body.style.overflowY = 'auto')
     }, [loading])
 
+    var hasTouchScreen = false
+    if ('maxTouchPoints' in navigator) {
+        hasTouchScreen = navigator.maxTouchPoints > 0
+    }
 
     return (
         <>
             {mainStack === technicalStack && (
                 <AnimatePresence mode='wait'>
-                    <motion.div variants={slideCard}
-                        initial="initial"
-                        animate={inView1 ? "animate" : "exit"}
+                    <motion.div
+                        variants={slideCard}
+                        initial='initial'
+                        animate={inView1 ? 'animate' : 'exit'}
                         custom={index}
-                        className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center rounded-2xl border border-black/[0.1] bg-zinc-100 shadow-xl transition duration-700 hover:shadow-gray-400 dark:border-white/[0.1] dark:bg-black hover:dark:shadow-neutral-800 max-[550px]:h-[32rem] max-[550px]:w-[24rem] max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] min-[350px]:px-2 lg:h-[32rem] lg:w-[24rem] xl:h-[34rem] xl:w-[32rem]'>
+                        className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center rounded-2xl border border-black/[0.1] bg-zinc-100 shadow-xl transition duration-700 hover:shadow-gray-400 dark:border-white/[0.1] dark:bg-black hover:dark:shadow-neutral-800 max-[550px]:h-[32rem] max-[550px]:w-[24rem] max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] min-[350px]:px-2 lg:h-[32rem] lg:w-[24rem] xl:h-[34rem] xl:w-[32rem]'
+                    >
                         <div className='min-[450px]px-2 flex h-[30rem] w-[30rem] flex-col tracking-tight text-slate-100/50 transition duration-500 ease-in-out group-hover/card:scale-[1.03] max-[550px]:h-[28rem] max-[550px]:w-[24rem] max-[450px]:h-[26rem] max-[450px]:w-[19rem] max-[350px]:h-[26rem] max-[350px]:w-[14rem] min-[350px]:px-4 lg:h-[28rem] lg:w-[24rem] xl:h-[30rem] xl:w-[30rem]'>
                             <PinContainer href={demo || repo} title={title} cover={cover} />
 
@@ -50,11 +59,30 @@ export function ProjectCard({
                                 <div className='flex w-[42%] items-center justify-around max-[350px]:w-[50%]'>
                                     <AnimatedTooltip items={techStack} />
                                 </div>
-                                <div className='flex w-[25%] items-center justify-between max-[350px]:mr-2 min-[350px]:mr-4 min-[550px]:mr-0'>
+                                <div
+                                    className={cn(
+                                        'flex items-center justify-between max-[350px]:mr-2 min-[350px]:mr-4 min-[550px]:mr-0 md:w-[30%]',
+                                        hasTouchScreen ? 'w-[35%]' : 'w-[25%]'
+                                    )}
+                                >
                                     <TooltipProvider>
+                                        {hasTouchScreen && (
+                                            <Tooltip>
+                                                <TooltipTrigger asChild>
+                                                    <Link href={demo || repo}>
+                                                        <Navigation className='flex h-5 w-5 cursor-pointer text-gray-900 hover:text-[#00eeff] dark:text-gray-500 dark:hover:text-[#00eeff] min-[550px]:h-6 min-[550px]:w-6 md:hidden md:h-7 md:w-7' />
+                                                    </Link>
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                    <p>Check Live</p>
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        )}
                                         <Tooltip>
                                             <TooltipTrigger asChild>
-                                                <Github className='h-5 w-5 cursor-pointer text-gray-900 hover:text-[#00eeff] dark:text-gray-500 dark:hover:text-[#00eeff] min-[550px]:h-6 min-[550px]:w-6 md:h-7 md:w-7' />
+                                                <Link href={repo}>
+                                                    <Github className='h-5 w-5 cursor-pointer text-gray-900 hover:text-[#00eeff] dark:text-gray-500 dark:hover:text-[#00eeff] min-[550px]:h-6 min-[550px]:w-6 md:h-7 md:w-7' />
+                                                </Link>
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <p>Github</p>
@@ -95,3 +123,5 @@ export function ProjectCard({
         </>
     )
 }
+
+export default ProjectCard

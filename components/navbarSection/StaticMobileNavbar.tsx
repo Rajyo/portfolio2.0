@@ -9,7 +9,7 @@ const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), {
     ssr: false
 })
 import { AnimatePresence, motion } from 'framer-motion'
-import { navLinks } from '@/lib/data'
+import { mobileNavLinks, navLinks } from '@/lib/data'
 import { LinkPreview } from '../ui/link-preview'
 import lightLogo from '@/public/images/logo_light.png'
 import darkLogo from '@/public/images/logo_dark.png'
@@ -106,7 +106,7 @@ export default function StaticMobileNavbar() {
                             />
                         </div>
                         <nav className='mt-10 flex w-full flex-col items-center gap-y-5'>
-                            {navLinks.map(item => (
+                            {mobileNavLinks.map(item => (
                                 <Link
                                     key={item.id}
                                     className='w-full rounded-md p-2 text-center hover:scale-105 hover:bg-slate-50 hover:font-semibold hover:dark:bg-black'

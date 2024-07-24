@@ -1,13 +1,15 @@
 "use client"
 
 import React, { useRef, useState } from "react";
-import { ProjectCard } from "./ProjectCard";
 import { project } from "@/lib/constants";
 import { ProjectDropdown } from "./ProjectDropdown";
 import { AnimatePresence, useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import { slideLeftSide, slideRightSide } from "@/lib/framer";
-
+import dynamic from "next/dynamic";
+const ProjectCard = dynamic(() => import('./ProjectCard'), {
+    ssr: false
+})
 
 export default function Projects() {
     const [techStack, setTechStack] = useState("reactExpress");
