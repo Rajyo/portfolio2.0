@@ -64,6 +64,15 @@ import postman from '@/public/assets/postman.svg'
 import vscode from '@/public/assets/visual-studio.svg'
 import insomnia from '@/public/assets/insomnia.svg'
 
+//DevOps
+import ansible from '@/public/assets/ansible.png'
+import argocd from '@/public/assets/argocd.png'
+import grafana from '@/public/assets/grafana.jpeg'
+import jenkins from '@/public/assets/jenkins.png'
+import kubernetes from '@/public/assets/kubernetes.png'
+import prometheus from '@/public/assets/prometheus.png'
+import terraform from '@/public/assets/terraform.png'
+
 //Tech Stack
 import p_angular from '@/public/assets/project_assets/angular.png'
 import p_axios from '@/public/assets/project_assets/axios.png'
@@ -272,7 +281,14 @@ export const technicalStack = [
       { name: 'CI/CD', link: p_cicd },
       { name: 'AWS', link: p_aws },
       { name: 'Nginx', link: p_nginx },
-      { name: 'Linux', link: p_linux }
+      { name: 'Linux', link: p_linux },
+      { name: 'Jenkins', link: jenkins },
+      { name: 'ArgoCD', link: argocd },
+      { name: 'Kubernetes', link: kubernetes },
+      { name: 'Terraform', link: terraform },
+      { name: 'Ansible', link: ansible },
+      { name: 'Prometheus', link: prometheus },
+      { name: 'Grafana', link: grafana },
     ],
     color: '#111111',
     colorr: '#DADCE0'
