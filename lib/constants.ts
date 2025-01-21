@@ -597,7 +597,7 @@ export const project = [
     cover: p_RNExpo,
     title: 'Pet Adoption React Native',
     repo: 'https://github.com/Rajyo/Pet_Adoption_React_Native_Frontend',
-    demo: null,
+    demo: 'https://pawsforyou-screenshots.vercel.app/',
     tags: [
       'React Native',
       'Expo',
