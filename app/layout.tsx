@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import dynamic from 'next/dynamic'
@@ -12,23 +12,52 @@ const ToggleTheme = dynamic(() => import('@/components/ToggleTheme'), {
 const Logo = dynamic(() => import('@/components/navbarSection/Logo'), {
   ssr: false
 })
-const Navbar = dynamic(() => import('@/components/navbarSection/Navbar'), { ssr: false })
+const Navbar = dynamic(() => import('@/components/navbarSection/Navbar'), {
+  ssr: false
+})
 import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroller'
-
 
 import { Roboto_Slab as Inter } from 'next/font/google'
 const fontSans = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 })
 
 export const metadata: Metadata = {
-  title: `Prajyot Khadse's Portfolio`,
-  description: 'Portfolio website of Prajyot Khadse made with Next.js, Tailwind CSS, Three.js and Framer Motion.',
+  title: {
+    default: 'Prajyot Khadse | Full Stack Developer',
+    template: '%s | Prajyot Khadse | Full Stack Developer'
+  },
   icons: {
-    icon: '/images/logo_dark.png',
+    icon: '/images/logo_dark.png'
+  },
+  authors: [{ name: 'Prajyot Khadse', url: 'https://github.com/Rajyo' }],
+  description:
+    'Portfolio website of Prajyot Khadse made with Next.js, Tailwind CSS, Three.js and Framer Motion.',
+  keywords:
+    'Prajyot Khadse, Nextjs, Developer Portfolio, Portfolio, Nextjs, Framer motion, Aceternity UI, Tailwind CSS',
+  openGraph: {
+    title: 'Prajyot Khadse | Full Stack Developer',
+    description:
+      'Portfolio website of Prajyot Khadse made with Next.js, Tailwind CSS, Three.js and Framer Motion.',
+    type: 'website',
+    url: 'https://prajyot-khadse.vercel.app/',
+    siteName: 'Shutter Stories',
+    images: [
+      'https://res.cloudinary.com/djghl1dtn/image/upload/v1737475775/rqbkfku0es33piqcrktb.png'
+    ]
+  },
+  twitter: {
+    title: 'Prajyot Khadse | Full Stack Developer',
+    site: 'https://prajyot-khadse.vercel.app/',
+    description:
+      'Portfolio website of Prajyot Khadse made with Next.js, Tailwind CSS, Three.js and Framer Motion.',
+    images: [
+      'https://res.cloudinary.com/djghl1dtn/image/upload/v1737475775/rqbkfku0es33piqcrktb.png'
+    ],
+    card: 'summary_large_image'
   }
 }
 
@@ -41,7 +70,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen w-screen overflow-x-hidden overflow-y-auto font-sans antialiased',
+          'min-h-screen w-screen overflow-y-auto overflow-x-hidden font-sans antialiased',
           fontSans.variable
         )}
       >

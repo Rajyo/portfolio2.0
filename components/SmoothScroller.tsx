@@ -3,24 +3,24 @@
 import { ReactNode, useEffect } from 'react'
 import Lenis from 'lenis'
 const SmoothScroll = ({ children }: { children: ReactNode }) => {
-    useEffect(() => {
-        const lenis = new Lenis({
-            autoResize: true,
-            duration: 2,
-            easing: t => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-            orientation: 'vertical',
-            gestureOrientation: 'vertical',
-            smoothWheel: true,
-            touchMultiplier: 2
-        })
-        function raf(time: number) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoResize: true,
+      duration: 2,
+      easing: t => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      touchMultiplier: 2
+    })
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
 
-        requestAnimationFrame(raf)
-    }, [])
-    return children
+    requestAnimationFrame(raf)
+  }, [])
+  return children
 }
 
 export default SmoothScroll

@@ -1,6 +1,13 @@
 'use client'
 
-import { AlignJustify, Github, Linkedin, ShieldOff, Star, X } from 'lucide-react'
+import {
+  AlignJustify,
+  Github,
+  Linkedin,
+  ShieldOff,
+  Star,
+  X
+} from 'lucide-react'
 import Link from 'next/link'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { LinkPreview } from '../ui/link-preview'
@@ -22,11 +29,16 @@ import { FloatingNav } from '../ui/floating-navbar'
 import dynamic from 'next/dynamic'
 import { mobileNavLinks, navLinks } from '@/lib/data'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useTheme } from "next-themes"
-import Image from "next/image"
-import lightLogo from "@/public/images/logo_light.png"
-import darkLogo from "@/public/images/logo_dark.png"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
+import { useTheme } from 'next-themes'
+import Image from 'next/image'
+import lightLogo from '@/public/images/logo_light.png'
+import darkLogo from '@/public/images/logo_dark.png'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '../ui/tooltip'
 
 export default function Navbar() {
   const [windowSize, setWindowSize] = useState<number | null>(null)
@@ -44,12 +56,16 @@ export default function Navbar() {
     }
   }, [handleWindowResize, windowSize])
 
-
   return (
     <>
       {/* Web Header View */}
       {windowSize && windowSize > 750 ? (
-        <motion.header initial={{ opacity: 0, }} animate={{ opacity: 1, }} transition={{ duration: 2, delay: 0.5 }} className='fixed z-50 mx-10 -mt-[58px] hidden w-[790px] origin-bottom-left rotate-90 justify-between px-10 py-2 md:flex'>
+        <motion.header
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className='fixed z-50 mx-10 -mt-[58px] hidden w-[790px] origin-bottom-left rotate-90 justify-between px-10 py-2 md:flex'
+        >
           <div className='flex items-center'>
             <p></p>
           </div>
@@ -58,7 +74,7 @@ export default function Navbar() {
             {navLinks.map(item => (
               <Link
                 key={item.id}
-                className='px-2 font-semibold hover:line-through hover:decoration-[#00eeff] hover:decoration-4 rotate-180'
+                className='rotate-180 px-2 font-semibold hover:line-through hover:decoration-[#00eeff] hover:decoration-4'
                 href={item.link}
               >
                 {item.title}
@@ -66,25 +82,23 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div
-            className='flex items-center rotate-180 gap-x-3'>
+          <div className='flex rotate-180 items-center gap-x-3'>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
                     href={'/fight-club'}
-                    className='p-2.5 z-[100] rotate-90 hover:text-[#00eeff] dark:hover:text-[#00eeff]'
+                    className='z-[100] rotate-90 p-2.5 hover:text-[#00eeff] dark:hover:text-[#00eeff]'
                   >
                     <ShieldOff className='h-[1.5rem] w-[1.5rem]' />
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent className='absolute rotate-90 w-48 h-[74px] -ml-[86px] shadow-md shadow-slate-400 dark:shadow-stone-200'>
+                <TooltipContent className='absolute -ml-[86px] h-[74px] w-48 rotate-90 shadow-md shadow-slate-400 dark:shadow-stone-200'>
                   <p>I have some info about FIGHT CLUB</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            <div
-              className='p-2.5 rotate-90' >
+            <div className='rotate-90 p-2.5'>
               <LinkPreview
                 url='https://in.linkedin.com/in/prajyot-khadse'
                 className='hover:text-[#00eeff] dark:hover:text-[#00eeff]'
@@ -92,8 +106,7 @@ export default function Navbar() {
                 <Linkedin className='h-[1.5rem] w-[1.5rem]' />
               </LinkPreview>
             </div>
-            <div
-              className='p-2.5 rotate-90' >
+            <div className='rotate-90 p-2.5'>
               <LinkPreview
                 url='https://github.com/Rajyo'
                 className='hover:text-[#00eeff] dark:hover:text-[#00eeff]'
@@ -105,10 +118,15 @@ export default function Navbar() {
         </motion.header>
       ) : (
         <>
-          <motion.header initial={{ opacity: 0, }} animate={{ opacity: 1, }} transition={{ duration: 2, delay: 0.5 }} className='absolute inset-x-0 top-10 z-[40] md:flex w-full items-center justify-evenly space-x-4 border-transparent bg-transparent py-2 hidden'>
+          <motion.header
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, delay: 0.5 }}
+            className='absolute inset-x-0 top-10 z-[40] hidden w-full items-center justify-evenly space-x-4 border-transparent bg-transparent py-2 md:flex'
+          >
             <WebNavbarContent />
           </motion.header>
-          <header className='fixed z-50 mx-10 text-sm justify-between px-10 py-2 hidden md:flex'>
+          <header className='fixed z-50 mx-10 hidden justify-between px-10 py-2 text-sm md:flex'>
             <FloatingNav>
               <WebNavbarContent />
             </FloatingNav>
@@ -126,16 +144,32 @@ export default function Navbar() {
   )
 }
 
-
 const MobileNavbarContent = () => {
   const { theme } = useTheme()
   return (
     <>
       <div>
-        <Link href={'/'} className='rounded-md hover:bg-gray-50 dark:hover:bg-gray-100/10'>
-          {
-            theme === "dark" ? <Image src={lightLogo} alt="logo" width={30} height={30} className="rounded-full" /> : <Image src={darkLogo} alt="logo" width={30} height={30} className="rounded-full" />
-          }
+        <Link
+          href={'/'}
+          className='rounded-md hover:bg-gray-50 dark:hover:bg-gray-100/10'
+        >
+          {theme === 'dark' ? (
+            <Image
+              src={lightLogo}
+              alt='logo'
+              width={30}
+              height={30}
+              className='rounded-full'
+            />
+          ) : (
+            <Image
+              src={darkLogo}
+              alt='logo'
+              width={30}
+              height={30}
+              className='rounded-full'
+            />
+          )}
         </Link>
       </div>
 
@@ -178,7 +212,7 @@ const MobileNavbarContent = () => {
                   </Link>
                 </SheetClose>
               ))}
-              <div className='flex flex-wrap w-full items-center justify-around gap-x-3 pt-10'>
+              <div className='flex w-full flex-wrap items-center justify-around gap-x-3 pt-10'>
                 <div className='p-2.5'>
                   <LinkPreview
                     url='https://in.linkedin.com/in/prajyot-khadse'
@@ -214,7 +248,7 @@ const WebNavbarContent = () => {
         {navLinks.map(item => (
           <Link
             key={item.id}
-            className='px-2 text-base lg:text-lg font-semibold hover:line-through hover:decoration-[#00eeff] hover:decoration-4'
+            className='px-2 text-base font-semibold hover:line-through hover:decoration-[#00eeff] hover:decoration-4 lg:text-lg'
             href={item.link}
           >
             {item.title}
@@ -222,10 +256,8 @@ const WebNavbarContent = () => {
         ))}
       </nav>
 
-      <div
-        className='flex items-center md:gap-x-2 lg:gap-x-3'>
-        <div
-          className='p-2.5' >
+      <div className='flex items-center md:gap-x-2 lg:gap-x-3'>
+        <div className='p-2.5'>
           <LinkPreview
             url='https://in.linkedin.com/in/prajyot-khadse'
             className='hover:text-[#00eeff] dark:hover:text-[#00eeff]'
@@ -233,8 +265,7 @@ const WebNavbarContent = () => {
             <Linkedin className='md:h-[1.25rem] md:w-[1.25rem] lg:h-[1.5rem] lg:w-[1.5rem]' />
           </LinkPreview>
         </div>
-        <div
-          className='p-2.5' >
+        <div className='p-2.5'>
           <LinkPreview
             url='https://github.com/Rajyo'
             className='hover:text-[#00eeff] dark:hover:text-[#00eeff]'

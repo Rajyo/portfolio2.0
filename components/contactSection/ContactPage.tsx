@@ -1,69 +1,93 @@
-"use client"
+'use client'
 
-import dynamic from "next/dynamic";
-const Telephone3DCanvas = dynamic(() => import('@/components/canvas/Telephone3DCanvas'), {
+import dynamic from 'next/dynamic'
+const Telephone3DCanvas = dynamic(
+  () => import('@/components/canvas/Telephone3DCanvas'),
+  {
     ssr: false
-})
-import { ContactForm } from "@/components/contactSection/ContactForm";
-import { useRef } from "react";
-import { AnimatePresence, useInView } from "framer-motion";
-import { motion } from "framer-motion";
-import { slideLeftSide, slideRightSide, smallslideup } from "@/lib/framer";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
-
+  }
+)
+import { ContactForm } from '@/components/contactSection/ContactForm'
+import { useRef } from 'react'
+import { AnimatePresence, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { slideLeftSide, slideRightSide, smallslideup } from '@/lib/framer'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '../ui/tooltip'
 
 const Contact = () => {
-    const container = useRef(null)
-    const inView = useInView(container, {
-        margin: "250px 100px -50px 0px",
-    })
-    const contactTitle = `Let's get in Touch`
+  const container = useRef(null)
+  const inView = useInView(container, {
+    margin: '250px 100px -50px 0px'
+  })
+  const contactTitle = `Let's get in Touch`
 
-    return (
-        <AnimatePresence mode="wait">
-            <div ref={container} id="contact" className="max-w-[100%] md:max-w-[86%] md:mx-auto h-auto xl:px-[6rem] pt-20 pb-10">
-                <h3 className="text-4xl md:text-5xl font-bold px-4 md:px-0 text-center flex-wrap z-0 flex gap-4 justify-center">
-                    {contactTitle.split(" ").map((x, index) => {
-                        return (
-                            <span
-                                key={index}
-                                className="flex hide relative justify-start"
-                            >
-                                <motion.span
-                                    variants={smallslideup}
-                                    custom={index}
-                                    initial="initial"
-                                    animate={inView ? "animate" : "exit"}
-                                >
-                                    {x}
-                                </motion.span>
-                            </span>
-                        );
-                    })}
-                </h3>
+  return (
+    <AnimatePresence mode='wait'>
+      <div
+        ref={container}
+        id='contact'
+        className='h-auto max-w-[100%] pb-10 pt-20 md:mx-auto md:max-w-[86%] xl:px-[6rem]'
+      >
+        <h3 className='z-0 flex flex-wrap justify-center gap-4 px-4 text-center text-4xl font-bold md:px-0 md:text-5xl'>
+          {contactTitle.split(' ').map((x, index) => {
+            return (
+              <span key={index} className='hide relative flex justify-start'>
+                <motion.span
+                  variants={smallslideup}
+                  custom={index}
+                  initial='initial'
+                  animate={inView ? 'animate' : 'exit'}
+                >
+                  {x}
+                </motion.span>
+              </span>
+            )
+          })}
+        </h3>
 
-                <div className="mt-4 md:mt-6 grid md:grid-cols-2 overflow-hidden">
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <motion.div ref={container} variants={slideLeftSide} initial="initial" animate={inView ? "animate" : "exit"} className="max-w-[90%] md:max-w-[100%] max-[768px]:mx-auto md:h-[500px] h-[350px] lg:h-[650px] hover:cursor-pointer mt-10 -mb-24 md:my-0" >
-                                    <Telephone3DCanvas />
-                                </motion.div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p className="flex-wrap text-center hidden md:flex p-1">Use Left Key on mouse to Interact</p>
-                                <p className="flex flex-wrap text-center md:hidden p-1">Use Right Key on mouse to Interact</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
+        <div className='mt-4 grid overflow-hidden md:mt-6 md:grid-cols-2'>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.div
+                  ref={container}
+                  variants={slideLeftSide}
+                  initial='initial'
+                  animate={inView ? 'animate' : 'exit'}
+                  className='h-[350px] max-w-[90%] hover:cursor-pointer max-[768px]:mx-auto md:my-0 md:h-[500px] md:max-w-[100%] lg:h-[650px]'
+                >
+                  <Telephone3DCanvas />
+                </motion.div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className='hidden flex-wrap p-1 text-center md:flex'>
+                  Use Left Key on mouse to Interact
+                </p>
+                <p className='flex flex-wrap p-1 text-center md:hidden'>
+                  Use Right Key on mouse to Interact
+                </p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
 
-                    <motion.div ref={container} variants={slideRightSide} initial="initial" animate={inView ? "animate" : "exit"} className="flex justify-center self-center bg-black-100 sm:p-2 md:p-4 lg:p-8 py-2">
-                        <ContactForm />
-                    </motion.div>
-                </div>
-            </div>
-        </AnimatePresence>
-    );
-};
+          <motion.div
+            ref={container}
+            variants={slideRightSide}
+            initial='initial'
+            animate={inView ? 'animate' : 'exit'}
+            className='bg-black-100 flex justify-center self-center py-2 sm:p-2 md:p-4 lg:p-8'
+          >
+            <ContactForm />
+          </motion.div>
+        </div>
+      </div>
+    </AnimatePresence>
+  )
+}
 
-export default Contact;
+export default Contact
