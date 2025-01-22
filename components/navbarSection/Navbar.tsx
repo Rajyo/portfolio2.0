@@ -64,7 +64,7 @@ export default function Navbar() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.5 }}
-          className='fixed z-50 mx-10 -mt-[58px] hidden w-[790px] origin-bottom-left rotate-90 justify-between px-10 py-2 md:flex'
+          className='fixed z-50 mx-10 -mt-[58px] hidden w-[790px] origin-bottom-left rotate-90 justify-between px-10 pt-1 md:flex scale-[1.2]'
         >
           <div className='flex items-center'>
             <p></p>
@@ -93,7 +93,7 @@ export default function Navbar() {
                     <ShieldOff className='h-[1.5rem] w-[1.5rem]' />
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent className='absolute -ml-[86px] h-[74px] w-48 rotate-90 shadow-md shadow-slate-400 dark:shadow-stone-200'>
+                <TooltipContent className='absolute top-2 -ml-[86px] h-[74px] w-48 rotate-90 shadow-md shadow-slate-400 dark:shadow-stone-200'>
                   <p>I have some info about FIGHT CLUB</p>
                 </TooltipContent>
               </Tooltip>
@@ -122,7 +122,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2, delay: 0.5 }}
-            className='absolute inset-x-0 top-10 z-[40] hidden w-full items-center justify-evenly space-x-4 border-transparent bg-transparent py-2 md:flex'
+            className='absolute inset-x-0 top-10 z-[40] hidden w-full items-center justify-evenly space-x-4 border-transparent bg-transparent py-2 md:flex scale-[1.2]'
           >
             <WebNavbarContent />
           </motion.header>

@@ -17,7 +17,7 @@ const Navbar = dynamic(() => import('@/components/navbarSection/Navbar'), {
 })
 import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroller'
-
+import type { Viewport } from 'next'
 import { Roboto_Slab as Inter } from 'next/font/google'
 const fontSans = Inter({
   subsets: ['latin'],
@@ -59,6 +59,13 @@ export const metadata: Metadata = {
     ],
     card: 'summary_large_image'
   }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false
 }
 
 export default function RootLayout({

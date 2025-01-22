@@ -31,9 +31,9 @@ const Contact = () => {
       <div
         ref={container}
         id='contact'
-        className='h-auto max-w-[100%] pb-10 pt-20 md:mx-auto md:max-w-[86%] xl:px-[6rem]'
+        className='h-auto max-w-[100%] pb-10 pt-20 md:mx-auto md:max-w-[86%] lg:max-w-[90%] xl:max-w-[95%] xl:px-[6rem]'
       >
-        <h3 className='z-0 flex flex-wrap justify-center gap-4 px-4 text-center text-4xl font-bold md:px-0 md:text-5xl'>
+        <h3 className='z-0 flex flex-wrap justify-center gap-4 px-4 text-center text-4xl font-bold md:px-0 md:text-5xl xl:text-6xl'>
           {contactTitle.split(' ').map((x, index) => {
             return (
               <span key={index} className='hide relative flex justify-start'>

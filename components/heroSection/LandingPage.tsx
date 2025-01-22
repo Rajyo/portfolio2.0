@@ -1,6 +1,5 @@
 'use client'
 
-import { LinkPreview } from '@/components/ui/link-preview'
 import { TypeAnimation } from 'react-type-animation'
 import { useTheme } from 'next-themes'
 import dynamic from 'next/dynamic'
@@ -20,9 +19,10 @@ const StaticMobileNavbar = dynamic(
   }
 )
 import Sparkles from './Sparkles'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useInView, motion, useScroll, useTransform } from 'framer-motion'
 import { smallslideup } from '@/lib/framer'
+import Link from 'next/link'
 
 export default function LandingPage() {
   const { theme } = useTheme()
@@ -41,28 +41,6 @@ export default function LandingPage() {
     offset: ['start start', 'end start']
   })
   const sectionY = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
-
-  useEffect(() => {
-    if (window.innerWidth < 750) {
-      return
-    }
-    const scale = window.devicePixelRatio
-    localStorage.setItem('devicePixelRatio', scale.toString())
-
-    if (scale === 1.25) {
-      localStorage.setItem('devicePixelRatio', '1.25')
-    } else {
-      if (localStorage.getItem('devicePixelRatioCount') == null) {
-        localStorage.setItem('devicePixelRatioCount', '1')
-        alert('For better experience scale browser to 125% by pressing ctrl +')
-      } else if (localStorage.getItem('devicePixelRatioCount') == '1') {
-        localStorage.setItem('devicePixelRatioCount', '2')
-        alert('For better experience scale browser to 125% by pressing ctrl +')
-      } else if (localStorage.getItem('devicePixelRatioCount') == '2') {
-        return
-      }
-    }
-  }, [])
 
   return (
     <section
@@ -128,6 +106,8 @@ export default function LandingPage() {
                 1000,
                 'Backend Developer',
                 1000,
+                'Web3 Developer',
+                1000,
                 'Mobile App Developer',
                 1000,
                 'DevOps Engineer',
@@ -135,18 +115,20 @@ export default function LandingPage() {
               ]}
               wrapper='span'
               speed={50}
-              className='z-30 inline-block h-full w-full py-2 text-center text-[3em] font-bold sm:text-[4em] md:text-start lg:text-[5em]'
+              className='z-30 inline-block h-full w-full py-2 text-center text-[3em] font-bold sm:text-[4em] md:text-start lg:text-[5em] 2xl:text-[6em]'
               repeat={Infinity}
             />
 
-            <div
-              onClick={() => window.open('', '_blank')}
-              className='z-50 h-16 w-36 self-center font-bold md:self-auto md:pl-1'
+            <Link
+              href='/#contact'
+              className='z-50 h-16 w-36 self-center font-bold md:self-auto md:pl-1 hover:cursor-pointer'
             >
-              <button className='inline-flex h-full w-full animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'>
-                Resume
+              <button
+                className='inline-flex h-full w-full animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'
+              >
+                Hire me
               </button>
-            </div>
+            </Link>
           </motion.div>
         </div>
 

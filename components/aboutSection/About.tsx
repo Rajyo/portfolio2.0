@@ -48,7 +48,7 @@ export default function About() {
             <div className='mx-auto flex h-full w-[95%] flex-col justify-start pt-10 min-[400px]:w-[90%] md:float-end md:p-4 md:pt-20 lg:p-8'>
               <span
                 ref={container}
-                className='flex flex-wrap gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-50 sm:text-3xl lg:text-4xl'
+                className='flex flex-wrap gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-50 sm:text-3xl lg:text-4xl 2xl:text-5xl'
               >
                 <motion.span
                   variants={slideLeftSide}

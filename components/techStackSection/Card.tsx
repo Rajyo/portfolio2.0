@@ -22,14 +22,14 @@ const Card = ({
   return (
     <div className='sticky top-32 flex h-[80vh] items-center justify-center'>
       <motion.div
-        className='relative flex h-[32rem] w-[90%] origin-top flex-col rounded-2xl p-2 shadow-lg shadow-slate-300 dark:shadow-neutral-800 max-[300px]:w-[95%] sm:p-4 md:h-[36rem] md:p-6 lg:h-[32rem]'
+        className='relative flex h-[32rem] w-[90%] 2xl:w-[100%] origin-top flex-col rounded-2xl p-2 shadow-lg shadow-slate-300 dark:shadow-neutral-800 max-[300px]:w-[95%] sm:p-4 md:h-[36rem] md:p-6 lg:h-[32rem] 2xl:h-[36rem] 2xl:p-8'
         style={{
           backgroundColor: theme === 'light' ? colorr : color,
           scale,
           top: `calc(-5vh + ${i * 25}px)`
         }}
       >
-        <h1 className='mx-auto mt-2 w-[95%] py-2 text-xl font-bold md:w-[100%] md:text-4xl lg:mt-6'>
+        <h1 className='mx-auto mt-2 w-[95%] py-2 text-xl font-bold md:w-[100%] md:text-4xl 2xl:text-5xl lg:mt-6'>
           {title}
         </h1>
         <div className='mx-auto mt-4 flex w-[95%] flex-wrap justify-between gap-x-2 gap-y-4 max-[350px]:w-[100%] max-[300px]:gap-x-0 md:gap-6 lg:mt-8 lg:w-[100%]'>
@@ -49,7 +49,7 @@ const Card = ({
                   src={tech.link}
                   className='h-6 w-6 max-[350px]:h-5 max-[350px]:w-5 max-[300px]:h-4 max-[300px]:w-4 md:h-7 md:w-7'
                 />
-                <h4 className='text-center text-xs text-black dark:text-white sm:text-sm md:text-base'>
+                <h4 className='text-center text-xs text-black dark:text-white sm:text-sm md:text-base 2xl:text-lg'>
                   {tech.name}
                 </h4>
               </motion.div>

@@ -22,7 +22,7 @@ export default function NotFound() {
         This never happened
       </p>
 
-      <h1 className='absolute left-[11%] top-[40%] z-[10] font-bold max-[600px]:left-[8%] max-[500px]:hidden min-[500px]:text-[120px] md:left-[14.4%] md:top-[35%] md:text-[190px] lg:left-[19.4%] xl:text-[250px]'>
+      <h1 className='absolute left-[11%] top-[40%] z-[10] font-bold max-[600px]:left-[8%] max-[500px]:hidden min-[500px]:text-[120px] md:left-[14.4%] md:top-[35%] md:text-[190px] lg:left-[18%] 2xl:left-[22%] xl:text-[250px]'>
         4O4
       </h1>
 

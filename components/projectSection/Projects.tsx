@@ -42,7 +42,7 @@ export default function Projects() {
           <div className='flex w-full flex-row items-center justify-between p-10 max-[550px]:flex-col max-[550px]:gap-y-5'>
             <h1
               ref={container}
-              className='mb-0 flex flex-wrap justify-center gap-2 text-center text-4xl font-bold max-[575px]:mb-4 md:text-5xl'
+              className='mb-0 flex flex-wrap justify-center gap-2 text-center text-4xl font-bold max-[575px]:mb-4 md:text-5xl 2xl:text-6xl'
             >
               {projectTitle.split(' ').map((x, index) => {
                 return (
@@ -74,7 +74,7 @@ export default function Projects() {
               />
             </motion.div>
           </div>
-          <motion.div className='flex flex-wrap justify-around gap-5'>
+          <motion.div className='flex flex-wrap lg:grid lg:grid-cols-2 lg:justify-between w-full justify-around gap-5'>
             {project.map((item, index) => (
               <ProjectCard
                 item={item}

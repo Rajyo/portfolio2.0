@@ -33,7 +33,7 @@ export default function TechStack() {
     >
       <h1
         ref={container1}
-        className='sticky top-10 mx-auto flex h-[15vh] w-[95%] flex-wrap justify-center gap-2 text-center text-4xl font-bold min-[200px]:py-3 min-[400px]:py-5 sm:py-5 md:text-5xl'
+        className='sticky top-10 mx-auto flex h-[15vh] w-[95%] flex-wrap justify-center gap-2 text-center text-4xl font-bold min-[200px]:py-3 min-[400px]:py-5 sm:py-5 md:text-5xl 2xl:text-6xl'
       >
         {techStackTitle.split(' ').map((x, index) => {
           return (

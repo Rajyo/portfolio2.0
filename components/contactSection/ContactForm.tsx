@@ -86,7 +86,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className='mx-auto h-auto w-[90%] self-center rounded-2xl bg-white px-2 py-8 shadow-xl shadow-slate-300 dark:bg-black dark:shadow-neutral-800 min-[400px]:w-[80%] min-[500px]:w-[70%] min-[600px]:w-[60%] md:w-[100%] md:p-4 lg:p-8'>
+    <div className='mx-auto h-auto w-[90%] self-center rounded-2xl bg-white px-2 py-8 shadow-xl shadow-slate-300 dark:bg-black dark:shadow-neutral-800 min-[400px]:w-[80%] min-[500px]:w-[70%] min-[600px]:w-[60%] md:w-[100%] xl:w-[95%] 2xl:w-[90%] md:p-4 lg:p-6 xl:p-8'>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -96,7 +96,7 @@ export function ContactForm() {
             control={form.control}
             name='name'
             render={({ field }) => (
-              <FormItem className='w-[90%] xl:w-[80%]'>
+              <FormItem className='w-[90%]'>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input placeholder='Enter Name' {...field} />
@@ -109,7 +109,7 @@ export function ContactForm() {
             control={form.control}
             name='email'
             render={({ field }) => (
-              <FormItem className='w-[90%] xl:w-[80%]'>
+              <FormItem className='w-[90%]'>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input placeholder='Enter Email' {...field} />
@@ -122,7 +122,7 @@ export function ContactForm() {
             control={form.control}
             name='subject'
             render={({ field }) => (
-              <FormItem className='w-[90%] xl:w-[80%]'>
+              <FormItem className='w-[90%]'>
                 <FormLabel>Subject</FormLabel>
                 <FormControl>
                   <Input placeholder='Enter Subject' {...field} />
@@ -135,7 +135,7 @@ export function ContactForm() {
             control={form.control}
             name='message'
             render={({ field }) => (
-              <FormItem className='w-[90%] xl:w-[80%]'>
+              <FormItem className='w-[90%]'>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea placeholder='Enter Message' {...field} />
@@ -145,14 +145,14 @@ export function ContactForm() {
             )}
           />
           {loading ? (
-            <Button disabled className='w-[90%] xl:w-[80%]'>
+            <Button disabled className='w-[90%]'>
               <Loader2 className='mr-2 h-4 w-4 animate-spin' />
               Please wait
             </Button>
           ) : (
             <Button
               variant='default'
-              className='w-[90%] xl:w-[80%]'
+              className='w-[90%]'
               type='submit'
             >
               Send Message
