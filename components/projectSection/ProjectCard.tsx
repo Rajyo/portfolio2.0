@@ -44,12 +44,13 @@ function ProjectCard({
             initial='initial'
             animate={inView1 ? 'animate' : 'exit'}
             custom={index}
+            viewport={{ once: true }}
             className='group/card flex h-[34rem] w-[32rem] flex-col items-center justify-center rounded-2xl border border-black/[0.1] bg-zinc-100 shadow-xl transition duration-700 hover:shadow-gray-400 dark:border-white/[0.1] dark:bg-black hover:dark:shadow-neutral-800 max-[550px]:h-[32rem] max-[550px]:w-[24rem] max-[550px]:px-4 max-[450px]:h-[28rem] max-[450px]:w-[19rem] max-[350px]:h-[29rem] max-[350px]:w-[16rem] min-[350px]:px-2 lg:h-[32rem] lg:w-[25rem] xl:h-[34rem] xl:w-[32rem] 2xl:h-[38rem] 2xl:w-[36rem]'
           >
             <div className='flex h-[30rem] w-[30rem] flex-col tracking-tight text-slate-100/50 transition duration-500 ease-in-out group-hover/card:scale-[1.03] max-[550px]:h-[28rem] max-[550px]:w-[24rem] max-[450px]:h-[26rem] max-[450px]:w-[19rem] max-[350px]:h-[26rem] max-[350px]:w-[14rem] min-[350px]:px-4 lg:h-[28rem] lg:w-[24rem] xl:h-[30rem] xl:w-[30rem] 2xl:h-[34rem] 2xl:w-[34rem]'>
               <PinContainer href={demo || repo} title={title} cover={cover} />
 
-              <h3 className='!m-0 max-w-xs pb-2 pt-4 text-xl 2xl:text-2xl 2xl:pt-4 font-bold text-black dark:text-slate-100'>
+              <h3 className='!m-0 max-w-xs pb-2 pt-4 text-xl font-bold text-black dark:text-slate-100 2xl:pt-4 2xl:text-2xl'>
                 {title}
               </h3>
               <div className='!m-0 text-base font-normal max-[450px]:text-sm 2xl:pt-4'>

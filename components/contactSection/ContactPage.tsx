@@ -64,14 +64,6 @@ const Contact = () => {
                   <Telephone3DCanvas />
                 </motion.div>
               </TooltipTrigger>
-              <TooltipContent>
-                <p className='hidden flex-wrap p-1 text-center md:flex'>
-                  Use Left Key on mouse to Interact
-                </p>
-                <p className='flex flex-wrap p-1 text-center md:hidden'>
-                  Use Right Key on mouse to Interact
-                </p>
-              </TooltipContent>
             </Tooltip>
           </TooltipProvider>
 

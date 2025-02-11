@@ -20,9 +20,9 @@ const Card = ({
   const [loading, setLoading] = useState(false)
 
   return (
-    <div className='sticky top-32 flex h-[80vh] items-center justify-center'>
+    <div className='sticky top-[20vh] flex items-center justify-center'>
       <motion.div
-        className='relative flex h-[32rem] w-[90%] 2xl:w-[100%] origin-top flex-col rounded-2xl p-2 shadow-lg shadow-slate-300 dark:shadow-neutral-800 max-[300px]:w-[95%] sm:p-4 md:h-[36rem] md:p-6 lg:h-[32rem] 2xl:h-[36rem] 2xl:p-8'
+        className='relative flex h-[32rem] w-[95%] sm:w-[100%] origin-top flex-col rounded-2xl p-2 shadow-lg shadow-slate-300 dark:shadow-neutral-800 sm:p-4 md:h-[36rem] md:p-6 lg:h-[32rem] 2xl:h-[36rem] 2xl:p-8'
         style={{
           backgroundColor: theme === 'light' ? colorr : color,
           scale,

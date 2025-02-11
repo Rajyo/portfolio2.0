@@ -58,7 +58,7 @@ export default function TechStack() {
             i={i}
             {...project}
             progress={scrollYProgress}
-            range={[i * 0.2, 1]}
+            range={[i * 0.15, 1]}
             targetScale={targetScale}
             theme={theme}
           />

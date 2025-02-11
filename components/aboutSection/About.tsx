@@ -43,7 +43,7 @@ export default function About() {
         id='about'
         className='mx-auto h-auto max-w-[100%] border border-orange-500/0 p-2 md:max-w-[86%] lg:p-10'
       >
-        <div className='w-full md:flex md:h-[160vh] md:flex-col lg:h-[140vh] lg:flex-row'>
+        <div className='w-full md:flex md:flex-col lg:flex-row'>
           <div className='border border-red-500/0 lg:basis-1/2'>
             <div className='mx-auto flex h-full w-[95%] flex-col justify-start pt-10 min-[400px]:w-[90%] md:float-end md:p-4 md:pt-20 lg:p-8'>
               <span

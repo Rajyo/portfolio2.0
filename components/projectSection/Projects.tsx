@@ -74,7 +74,7 @@ export default function Projects() {
               />
             </motion.div>
           </div>
-          <motion.div className='flex flex-wrap lg:grid lg:grid-cols-2 lg:justify-between w-full justify-around gap-5'>
+          <motion.div className='flex w-full flex-wrap justify-around gap-5 lg:grid lg:grid-cols-2 lg:justify-between 2xl:flex 2xl:justify-around'>
             {project.map((item, index) => (
               <ProjectCard
                 item={item}

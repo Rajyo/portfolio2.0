@@ -26,6 +26,7 @@ import bootstrap from '@/public/assets/bootstrap.svg'
 import matrialUI from '@/public/assets/material-ui.svg'
 import sass from '@/public/assets/sass.svg'
 import tailwindcss from '@/public/assets/tailwindcss-icon.svg'
+import tanstackQuery from '@/public/images/Tanstack_Query.png'
 
 //Backend
 import django from '@/public/assets/django.svg'
@@ -63,6 +64,7 @@ import git from '@/public/assets/git-icon.svg'
 import postman from '@/public/assets/postman.svg'
 import vscode from '@/public/assets/visual-studio.svg'
 import insomnia from '@/public/assets/insomnia.svg'
+import turborepo from '@/public/images/Turborepo.png'
 
 //DevOps
 import ansible from '@/public/assets/ansible.png'
@@ -72,6 +74,17 @@ import jenkins from '@/public/assets/jenkins.png'
 import kubernetes from '@/public/assets/kubernetes.png'
 import prometheus from '@/public/assets/prometheus.png'
 import terraform from '@/public/assets/terraform.png'
+
+// web3
+import ethereum from '@/public/images/Ethereum.png'
+import solana from '@/public/images/Solana.png'
+import etherjs from '@/public/images/Etherjs.png'
+import web3js from '@/public/images/Web3js.png'
+import solidity from '@/public/images/Solidity.png'
+import rust from '@/public/images/Rust.png'
+import hardhat from '@/public/images/Hardhat.png'
+import anchor from '@/public/images/Anchor.png'
+import ipfs from '@/public/images/IPFS.png'
 
 //Tech Stack
 import p_angular from '@/public/assets/project_assets/angular.png'
@@ -187,7 +200,8 @@ export const toolsAndTechnologies = [
   { title: 'backend' },
   { title: 'database' },
   { title: 'deployment' },
-  { title: 'tools' }
+  { title: 'tools' },
+  { title: 'web3' }
 ]
 
 export const technicalStack = [
@@ -203,7 +217,7 @@ export const technicalStack = [
       { name: 'Framer Motion', link: p_framer_motion },
       { name: 'Three.js', link: p_three },
       { name: 'Expo', link: p_expo },
-      { name: 'Angular', link: p_angular },
+      { name: 'Tanstack Query', link: tanstackQuery },
       { name: 'JavaScript', link: javascript },
       { name: 'Aceternity UI', link: p_aceternityUI },
       { name: 'Vite', link: vite },
@@ -264,7 +278,7 @@ export const technicalStack = [
       { name: 'Git', link: git },
       { name: 'Email JS', link: emailjs },
       { name: 'Jest', link: p_jest },
-      { name: 'Stripe Connect', link: p_stripeConnect },
+      { name: 'Turborepo', link: turborepo },
       { name: 'Potman', link: postman },
       { name: 'npm', link: npm },
       { name: 'Github', link: github },
@@ -290,8 +304,25 @@ export const technicalStack = [
       { name: 'Prometheus', link: prometheus },
       { name: 'Grafana', link: grafana },
     ],
-    color: '#111111',
+    color: '#0F0F0F',
     colorr: '#DADCE0'
+  },
+  {
+    id: 6,
+    title: 'web3',
+    stack: [
+      { name: 'Ethereum', link: ethereum },
+      { name: 'Solana', link: solana },
+      { name: 'Ether.js', link: etherjs },
+      { name: 'web3.js', link: web3js },
+      { name: 'Solidity', link: solidity },
+      { name: 'Rust', link: rust },
+      { name: 'Hardhat', link: hardhat },
+      { name: 'Anchor', link: anchor },
+      { name: 'IPFS', link: ipfs },
+    ],
+    color: '#111111',
+    colorr: '#C5C7C9'
   }
 ]
 
