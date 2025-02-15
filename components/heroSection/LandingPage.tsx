@@ -102,15 +102,11 @@ export default function LandingPage() {
               sequence={[
                 'Full Stack Developer',
                 1000,
-                'Frontend Developer',
-                1000,
-                'Backend Developer',
-                1000,
                 'Web3 Developer',
                 1000,
-                'Mobile App Developer',
-                1000,
                 'DevOps Engineer',
+                1000,
+                'Mobile App Developer',
                 1000
               ]}
               wrapper='span'

@@ -15,107 +15,50 @@ import pAdop from '@/public/assets/pAdop.png'
 import github from '@/public/assets/github-icon.svg'
 import linkedin from '@/public/assets/linkedin-icon.svg'
 
-//Frontend
 import react from '@/public/assets/react.svg'
-import javascript from '@/public/assets/javascript.svg'
-import css from '@/public/assets/css-3.svg'
-import html from '@/public/assets/html-5.svg'
-import redux from '@/public/assets/redux.svg'
 import vite from '@/public/assets/vite.svg'
-import bootstrap from '@/public/assets/bootstrap.svg'
-import matrialUI from '@/public/assets/material-ui.svg'
-import sass from '@/public/assets/sass.svg'
 import tailwindcss from '@/public/assets/tailwindcss-icon.svg'
 import tanstackQuery from '@/public/images/Tanstack_Query.png'
-
-//Backend
-import django from '@/public/assets/django.svg'
 import drf from '@/public/assets/django-rest-framework-drf.png'
 import python from '@/public/assets/python.svg'
-import djChannels from '@/public/assets/django-channels-logo.webp'
-import flask from '@/public/assets/flask.svg'
-import express from '@/public/assets/express.svg'
-import node from '@/public/assets/nodejs.svg'
-import java from '@/public/assets/java.svg'
-import c from '@/public/assets/c.svg'
-import cplus from '@/public/assets/c-plusplus.svg'
-
-//Database
-import mysql from '@/public/assets/mysql.svg'
 import postgresql from '@/public/assets/postgresql.svg'
 import mongodb from '@/public/assets/mongodb-icon.svg'
 import redis from '@/public/assets/redis.svg'
-import sqlite from '@/public/assets/sqlite.svg'
-
-//Deployment
 import vercel from '@/public/assets/vercel.svg'
-import heroku from '@/public/assets/heroku-icon.svg'
-import firebase from '@/public/assets/firebase.svg'
-import netlify from '@/public/assets/netlify.svg'
-import railway from '@/public/assets/railway.png'
-
-//Tools
-import jwt from '@/public/assets/jwt.png'
 import stripe from '@/public/assets/stripe.svg'
-import emailjs from '@/public/assets/emailjs.jpg'
-import npm from '@/public/assets/npm.svg'
 import docker from '@/public/assets/docker-icon.svg'
-import git from '@/public/assets/git-icon.svg'
-import postman from '@/public/assets/postman.svg'
-import vscode from '@/public/assets/visual-studio.svg'
-import insomnia from '@/public/assets/insomnia.svg'
-import turborepo from '@/public/images/Turborepo.png'
-
-//DevOps
 import ansible from '@/public/assets/ansible.png'
 import argocd from '@/public/assets/argocd.png'
-import grafana from '@/public/assets/grafana.jpeg'
 import jenkins from '@/public/assets/jenkins.png'
 import kubernetes from '@/public/assets/kubernetes.png'
-import prometheus from '@/public/assets/prometheus.png'
 import terraform from '@/public/assets/terraform.png'
-
-// web3
-import ethereum from '@/public/images/Ethereum.png'
-import solana from '@/public/images/Solana.png'
-import etherjs from '@/public/images/Etherjs.png'
-import web3js from '@/public/images/Web3js.png'
-import solidity from '@/public/images/Solidity.png'
-import rust from '@/public/images/Rust.png'
-import hardhat from '@/public/images/Hardhat.png'
-import anchor from '@/public/images/Anchor.png'
-import ipfs from '@/public/images/IPFS.png'
+import render from "@/public/assets/project_assets/render.avif"
+import typescript from "@/public/assets/typescript.png"
 
 //Tech Stack
 import p_angular from '@/public/assets/project_assets/angular.png'
-import p_axios from '@/public/assets/project_assets/axios.png'
 import p_cloudinary from '@/public/assets/project_assets/cloudinary.png'
 import p_django_channels from '@/public/assets/project_assets/django-channels.png'
 import p_drf from '@/public/assets/project_assets/django-rest-framework.png'
-import p_django from '@/public/assets/project_assets/django.png'
 import p_emailjs from '@/public/assets/project_assets/emailjs.jpg'
 import p_expo from '@/public/assets/project_assets/expo.png'
 import p_expressjs from '@/public/assets/project_assets/expressjs.png'
 import p_framer_motion from '@/public/assets/project_assets/framer-motion.png'
 import p_graphql from '@/public/assets/project_assets/graphql.png'
-import p_javascript from '@/public/assets/project_assets/javascript.png'
 import p_jwt from '@/public/assets/project_assets/jwt.png'
 import p_mui from '@/public/assets/project_assets/material-ui.png'
 import p_mongodb from '@/public/assets/project_assets/mongo.png'
 import p_next from '@/public/assets/project_assets/next.png'
-import p_nextjs from '@/public/assets/project_assets/nextjs.png'
-import p_nodejs from '@/public/assets/project_assets/nodejs.png'
 import p_postgresql from '@/public/assets/project_assets/postgres.png'
 import p_prisma from '@/public/assets/project_assets/prisma.png'
 import p_react from '@/public/assets/project_assets/react.png'
 import p_redis from '@/public/assets/project_assets/redis.png'
-import p_redux_toolkit from '@/public/assets/project_assets/redux-toolkit.jpg'
+import p_redux_toolkit from '@/public/assets/redux.png'
 import p_socketio from '@/public/assets/project_assets/socketio.png'
 import p_stripe from '@/public/assets/project_assets/stripe.png'
 import p_tailwind from '@/public/assets/project_assets/tailwind.png'
 import p_three from '@/public/assets/project_assets/three.png'
 import p_trpc from '@/public/assets/project_assets/trpc.png'
-import p_typescript from '@/public/assets/project_assets/typescript.png'
 import p_vite from '@/public/assets/project_assets/vite.png'
 import p_cicd from '@/public/assets/project_assets/ci-cd.webp'
 import p_aws from '@/public/assets/project_assets/AWS.webp'
@@ -124,10 +67,7 @@ import p_linux from '@/public/assets/project_assets/LINUX.webp'
 import p_supabase from '@/public/assets/project_assets/supabase.jpeg'
 import p_zod from '@/public/assets/project_assets/zod.png'
 import p_aceternityUI from '@/public/assets/project_assets/aceternity-ui.webp'
-import p_reactHookForm from '@/public/assets/project_assets/react-hook-form.png'
 import p_shadcnUI from '@/public/assets/project_assets/shadcnUI.png'
-import p_jest from '@/public/assets/project_assets/jest.png'
-import p_stripeConnect from '@/public/assets/project_assets/stripe-connect.webp'
 
 import p_Article from '@/public/assets/project_assets/Article.png'
 import p_Blog from '@/public/assets/project_assets/Blog.png'
@@ -140,69 +80,6 @@ import p_T3 from '@/public/assets/project_assets/T3.png'
 import p_Tool from '@/public/assets/project_assets/Tool.png'
 import p_UnicornApp from '@/public/assets/project_assets/UnicornApp.png'
 
-export const frontend = [
-  { name: 'React.js', link: react },
-  { name: 'JavaScript', link: javascript },
-  { name: 'CSS3', link: css },
-  { name: 'HTML5', link: html },
-  { name: 'Redux', link: redux },
-  { name: 'Vite', link: vite },
-  { name: 'Bootstrap', link: bootstrap },
-  { name: 'Material UI', link: matrialUI },
-  { name: 'SASS', link: sass },
-  { name: 'Tailwind CSS', link: tailwindcss }
-]
-
-export const backend = [
-  { name: 'Django Rest Framework', link: drf },
-  { name: 'Django', link: django },
-  { name: 'Python', link: python },
-  { name: 'Django Channels', link: djChannels },
-  { name: 'Node JS', link: node },
-  { name: 'Express JS', link: express },
-  { name: 'Flask', link: flask },
-  { name: 'Java', link: java },
-  { name: 'C', link: c },
-  { name: 'C++', link: cplus }
-]
-
-export const database = [
-  { name: 'MySQL', link: mysql },
-  { name: 'PostgreSQL', link: postgresql },
-  { name: 'MongoDB', link: mongodb },
-  { name: 'Redis', link: redis },
-  { name: 'SQLite', link: sqlite }
-]
-
-export const deployment = [
-  { name: 'Vercel', link: vercel },
-  { name: 'Railway', link: railway },
-  { name: 'Firebase', link: firebase },
-  { name: 'Heroku', link: heroku },
-  { name: 'Netlify', link: netlify }
-]
-
-export const tools = [
-  { name: 'JWT', link: jwt },
-  { name: 'Git', link: git },
-  { name: 'Sripe', link: stripe },
-  { name: 'Email JS', link: emailjs },
-  { name: 'VS Code', link: vscode },
-  { name: 'Potman', link: postman },
-  { name: 'Insomnia', link: insomnia },
-  { name: 'npm', link: npm },
-  { name: 'Docker', link: docker },
-  { name: 'Github', link: github }
-]
-
-export const toolsAndTechnologies = [
-  { title: 'frontend' },
-  { title: 'backend' },
-  { title: 'database' },
-  { title: 'deployment' },
-  { title: 'tools' },
-  { title: 'web3' }
-]
 
 export const technicalStack = [
   {
@@ -211,18 +88,16 @@ export const technicalStack = [
     stack: [
       { name: 'Next.js', link: p_next },
       { name: 'React.js', link: react },
-      { name: 'TypeScript', link: p_typescript },
+      { name: 'TypeScript', link: typescript },
       { name: 'Tailwind CSS', link: tailwindcss },
       { name: 'Redux Toolkit', link: p_redux_toolkit },
       { name: 'Framer Motion', link: p_framer_motion },
       { name: 'Three.js', link: p_three },
-      { name: 'Expo', link: p_expo },
       { name: 'Tanstack Query', link: tanstackQuery },
-      { name: 'JavaScript', link: javascript },
-      { name: 'Aceternity UI', link: p_aceternityUI },
       { name: 'Vite', link: vite },
-      { name: 'CSS3', link: css },
-      { name: 'HTML5', link: html }
+      { name: 'Stripe', link: stripe },
+      { name: 'Shadcn UI', link: p_shadcnUI },
+      { name: 'Expo', link: p_expo },
     ],
     color: '#010203',
     colorr: '#F8F9FA'
@@ -233,96 +108,39 @@ export const technicalStack = [
     stack: [
       { name: 'Express JS', link: p_expressjs },
       { name: 'Django Rest Framework', link: drf },
-      { name: 'Node JS', link: p_nodejs },
       { name: 'Socket.io', link: p_socketio },
+      { name: 'PostgreSQL', link: postgresql },
+      { name: 'MongoDB', link: mongodb },
+      { name: 'Supabase', link: p_supabase },
+      { name: 'Prisma', link: p_prisma },
+      { name: 'Zod', link: p_zod },
       { name: 'GraphQL', link: p_graphql },
       { name: 'TRPC', link: p_trpc },
-      { name: 'Django', link: django },
+      { name: 'Redis', link: redis },
       { name: 'Python', link: python },
-      { name: 'Django Channels', link: djChannels },
-      { name: 'Flask', link: flask },
-      { name: 'Java', link: java },
-      { name: 'C++', link: cplus }
     ],
     color: '#0A0A0A',
     colorr: '#F1F3F4'
   },
   {
     id: 3,
-    title: 'Database and Deployment',
-    stack: [
-      { name: 'MySQL', link: mysql },
-      { name: 'PostgreSQL', link: postgresql },
-      { name: 'MongoDB', link: mongodb },
-      { name: 'Redis', link: redis },
-      { name: 'SQLite', link: sqlite },
-      { name: 'Vercel', link: vercel },
-      { name: 'Supabase', link: p_supabase },
-      { name: 'Firebase', link: firebase },
-      { name: 'Netlify', link: netlify },
-      { name: 'Railway', link: railway }
-    ],
-    color: '#0D0D0D',
-    colorr: '#E8EAED'
-  },
-  {
-    id: 4,
-    title: 'Tools',
-    stack: [
-      { name: 'Prisma', link: p_prisma },
-      { name: 'Stripe', link: stripe },
-      { name: 'Cloudinary', link: p_cloudinary },
-      { name: 'Zod', link: p_zod },
-      { name: 'React Hook Form', link: p_reactHookForm },
-      { name: 'Shadcn UI', link: p_shadcnUI },
-      { name: 'Git', link: git },
-      { name: 'Email JS', link: emailjs },
-      { name: 'Jest', link: p_jest },
-      { name: 'Turborepo', link: turborepo },
-      { name: 'Potman', link: postman },
-      { name: 'npm', link: npm },
-      { name: 'Github', link: github },
-      { name: 'VS Code', link: vscode }
-    ],
-    color: '#0E0E0E',
-    colorr: '#E0E0E0'
-  },
-  {
-    id: 5,
     title: 'DevOps',
     stack: [
       { name: 'Docker', link: docker },
       { name: 'CI/CD', link: p_cicd },
       { name: 'AWS', link: p_aws },
-      { name: 'Nginx', link: p_nginx },
-      { name: 'Linux', link: p_linux },
-      { name: 'Jenkins', link: jenkins },
-      { name: 'ArgoCD', link: argocd },
       { name: 'Kubernetes', link: kubernetes },
       { name: 'Terraform', link: terraform },
+      { name: 'Nginx', link: p_nginx },
+      { name: 'Jenkins', link: jenkins },
+      { name: 'ArgoCD', link: argocd },
       { name: 'Ansible', link: ansible },
-      { name: 'Prometheus', link: prometheus },
-      { name: 'Grafana', link: grafana },
+      { name: 'Vercel', link: vercel },
+      { name: 'Render', link: render },
+      { name: 'Linux', link: p_linux },
     ],
     color: '#0F0F0F',
     colorr: '#DADCE0'
-  },
-  {
-    id: 6,
-    title: 'web3',
-    stack: [
-      { name: 'Ethereum', link: ethereum },
-      { name: 'Solana', link: solana },
-      { name: 'Ether.js', link: etherjs },
-      { name: 'web3.js', link: web3js },
-      { name: 'Solidity', link: solidity },
-      { name: 'Rust', link: rust },
-      { name: 'Hardhat', link: hardhat },
-      { name: 'Anchor', link: anchor },
-      { name: 'IPFS', link: ipfs },
-    ],
-    color: '#111111',
-    colorr: '#C5C7C9'
   }
 ]
 
@@ -367,49 +185,6 @@ export const educations = [
     iconBg: '#787474',
     date: '2012 - 2015'
   }
-]
-
-export const techStack = [
-  { name: 'React.js', link: react },
-  { name: 'JavaScript', link: javascript },
-  { name: 'CSS3', link: css },
-  { name: 'HTML5', link: html },
-  { name: 'Redux', link: redux },
-  { name: 'Vite', link: vite },
-  { name: 'Bootstrap', link: bootstrap },
-  { name: 'Material UI', link: matrialUI },
-  { name: 'SASS', link: sass },
-  { name: 'Tailwind CSS', link: tailwindcss },
-  { name: 'Django Rest Framework', link: drf },
-  { name: 'Django', link: django },
-  { name: 'Python', link: python },
-  { name: 'Django Channels', link: djChannels },
-  { name: 'Node JS', link: node },
-  { name: 'Express JS', link: express },
-  { name: 'Flask', link: flask },
-  { name: 'Java', link: java },
-  { name: 'C', link: c },
-  { name: 'C++', link: cplus },
-  { name: 'MySQL', link: mysql },
-  { name: 'PostgreSQL', link: postgresql },
-  { name: 'MongoDB', link: mongodb },
-  { name: 'Redis', link: redis },
-  { name: 'SQLite', link: sqlite },
-  { name: 'Vercel', link: vercel },
-  { name: 'Railway', link: railway },
-  { name: 'Firebase', link: firebase },
-  { name: 'Heroku', link: heroku },
-  { name: 'Netlify', link: netlify },
-  { name: 'JWT', link: jwt },
-  { name: 'Git', link: git },
-  { name: 'Sripe', link: stripe },
-  { name: 'Email JS', link: emailjs },
-  { name: 'VS Code', link: vscode },
-  { name: 'Potman', link: postman },
-  { name: 'Insomnia', link: insomnia },
-  { name: 'npm', link: npm },
-  { name: 'Docker', link: docker },
-  { name: 'Github', link: github }
 ]
 
 export const contactLinks = [
@@ -659,7 +434,7 @@ export const project = [
       {
         id: 4,
         title: 'TypeScript',
-        logo: p_typescript
+        logo: typescript
       },
       {
         id: 5,
@@ -785,7 +560,7 @@ export const project = [
       {
         id: 4,
         title: 'TypeScript',
-        logo: p_typescript
+        logo: typescript
       },
       {
         id: 5,
@@ -838,7 +613,7 @@ export const project = [
       {
         id: 4,
         title: 'TypeScript',
-        logo: p_typescript
+        logo: typescript
       },
       {
         id: 5,
@@ -896,7 +671,7 @@ export const project = [
       {
         id: 4,
         title: 'TypeScript',
-        logo: p_typescript
+        logo: typescript
       },
       {
         id: 5,
