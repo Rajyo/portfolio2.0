@@ -70,7 +70,7 @@ function ProjectCard({
                     {hasTouchScreen && (
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <Link href={demo || repo}>
+                          <Link href={demo || repo} target='_blank'>
                             <Navigation className='flex h-5 w-5 cursor-pointer text-gray-900 hover:text-[#00eeff] dark:text-gray-500 dark:hover:text-[#00eeff] min-[550px]:h-6 min-[550px]:w-6 md:hidden md:h-7 md:w-7' />
                           </Link>
                         </TooltipTrigger>
@@ -81,7 +81,7 @@ function ProjectCard({
                     )}
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Link href={repo}>
+                        <Link href={repo} target='_blank'>
                           <Github className='h-5 w-5 cursor-pointer text-gray-900 hover:text-[#00eeff] dark:text-gray-500 dark:hover:text-[#00eeff] min-[550px]:h-6 min-[550px]:w-6 md:h-7 md:w-7' />
                         </Link>
                       </TooltipTrigger>
