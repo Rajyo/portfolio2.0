@@ -68,7 +68,12 @@ import p_supabase from '@/public/assets/project_assets/supabase.jpeg'
 import p_zod from '@/public/assets/project_assets/zod.png'
 import p_aceternityUI from '@/public/assets/project_assets/aceternity-ui.webp'
 import p_shadcnUI from '@/public/assets/project_assets/shadcnUI.png'
+import p_etherjs from '@/public/assets/project_assets/etherjs.png'
 
+//Projects
+import p_Portfolio3 from "@/public/assets/project_assets/portfolio3.0.png"
+import p_RarityHaven from '@/public/assets/project_assets/rarity-haven.png'
+import p_ShutterStories from '@/public/assets/project_assets/shutter-stories.png'
 import p_Article from '@/public/assets/project_assets/Article.png'
 import p_Blog from '@/public/assets/project_assets/Blog.png'
 import p_Ecommerce from '@/public/assets/project_assets/Ecommerce.png'
@@ -197,6 +202,210 @@ export const contactLinks = [
 ]
 
 export const project = [
+  {
+    image: portfolio,
+    cover: p_Portfolio3,
+    title: 'Portfolio3.0',
+    repo: 'https://github.com/Rajyo/portfolio3.0',
+    demo: 'https://prajyotkhadse.com/',
+    tags: [
+      'Next.js',
+      'Tailwind CSS',
+      'Three JS',
+      'Framer Motion',
+      'Aceternity UI',
+      'Shadcn UI',
+      'Zod',
+      'Email JS',
+      'React Typical',
+      'Vercel'
+    ],
+    techStack: [
+      {
+        id: 1,
+        title: 'Next.js',
+        logo: p_next
+      },
+      {
+        id: 2,
+        title: 'Tailwind CSS',
+        logo: p_tailwind
+      },
+      {
+        id: 3,
+        title: 'Zod',
+        logo: p_zod
+      },
+      {
+        id: 4,
+        title: 'Framer Motion',
+        logo: p_framer_motion
+      },
+      {
+        id: 5,
+        title: 'Email JS',
+        logo: p_emailjs
+      }
+    ],
+    mainStack: 'next.js',
+    info: [
+      {
+        text: 'Developed a responsive portfolio web application from scratch using Next.js and Tailwind CSS.'
+      },
+      {
+        text: 'Used Three.js to implement custom 3D models and used React Three Drei and React Three Fiber to implement pre-build models in the project.'
+      },
+      {
+        text: 'Used Aceternity UI and Shadcn UI component library to build amazing UI components and Next Themes for theme.'
+      },
+      {
+        text: 'Used Framer motion for animation and integrated React Typical, Email JS, Zod, React Hook Form.'
+      },
+      { text: 'Deployed the project on Vercel.' },
+      {
+        text: 'TECH STACK: Next.js, Tailwind CSS, Three.js, Framer Motion, Aceternity UI, Shadcn UI, Zod, React Hook Form, Email JS, React Typical, Vercel'
+      }
+    ],
+    mininfo: [
+      'Modern & Minimal Developer Portfolio build using Next.js, Tailwind CSS and Framer Motion. Used Shadcn UI for UI components, Zod for validation, integrated Email.js and deployed on Vercel.'
+    ]
+  },
+  {
+    image: portfolio,
+    cover: p_RarityHaven,
+    title: 'Rarity Haven',
+    repo: 'https://github.com/Rajyo/Rarity-Haven',
+    demo: 'https://rarity-haven.vercel.app/',
+    tags: [
+      'Next.js',
+      'Tailwind CSS',
+      'Three JS',
+      'Framer Motion',
+      'Aceternity UI',
+      'Shadcn UI',
+      'Zod',
+      'Email JS',
+      'React Typical',
+      'Vercel'
+    ],
+    techStack: [
+      {
+        id: 1,
+        title: "Next.js",
+        logo: p_next,
+      },
+      {
+        id: 2,
+        title: "Ether.js",
+        logo: p_etherjs,
+      },
+      {
+        id: 3,
+        title: "Tailwind CSS",
+        logo: p_tailwind,
+      },
+      {
+        id: 4,
+        title: "Framer Motion",
+        logo: p_framer_motion,
+      },
+      {
+        id: 5,
+        title: "Three.js",
+        logo: p_three,
+      },
+    ],
+    mainStack: 'next.js',
+    info: [
+      {
+        text: 'Developed a responsive portfolio web application from scratch using Next.js and Tailwind CSS.'
+      },
+      {
+        text: 'Used Three.js to implement custom 3D models and used React Three Drei and React Three Fiber to implement pre-build models in the project.'
+      },
+      {
+        text: 'Used Aceternity UI and Shadcn UI component library to build amazing UI components and Next Themes for theme.'
+      },
+      {
+        text: 'Used Framer motion for animation and integrated React Typical, Email JS, Zod, React Hook Form.'
+      },
+      { text: 'Deployed the project on Vercel.' },
+      {
+        text: 'TECH STACK: Next.js, Tailwind CSS, Three.js, Framer Motion, Aceternity UI, Shadcn UI, Zod, React Hook Form, Email JS, React Typical, Vercel'
+      }
+    ],
+    mininfo: [
+      'Rarity Haven is a platform that allows artists to create and sell unique digital art pieces such as NFTs on Ethereum blockchain build using Next.js, Ether.js, Tailwind CSS , Express.js and MongoDB as database.'
+    ]
+  },
+  {
+    image: portfolio,
+    cover: p_ShutterStories,
+    title: 'Shutter Stories',
+    repo: 'https://github.com/Rajyo/Shutter-Stories',
+    demo: 'https://shutter-stories.vercel.app/',
+    tags: [
+      'Next.js',
+      'Tailwind CSS',
+      'Three JS',
+      'Framer Motion',
+      'Aceternity UI',
+      'Shadcn UI',
+      'Zod',
+      'Email JS',
+      'React Typical',
+      'Vercel'
+    ],
+    techStack: [
+      {
+        id: 1,
+        title: "Next.js",
+        logo: p_next,
+      },
+      {
+        id: 2,
+        title: "Tailwind CSS",
+        logo: p_tailwind,
+      },
+      {
+        id: 3,
+        title: "Framer Motion",
+        logo: p_framer_motion,
+      },
+      {
+        id: 4,
+        title: "Zod",
+        logo: p_zod,
+      },
+      {
+        id: 5,
+        title: "Email JS",
+        logo: p_emailjs,
+      },
+    ],
+    mainStack: 'next.js',
+    info: [
+      {
+        text: 'Developed a responsive portfolio web application from scratch using Next.js and Tailwind CSS.'
+      },
+      {
+        text: 'Used Three.js to implement custom 3D models and used React Three Drei and React Three Fiber to implement pre-build models in the project.'
+      },
+      {
+        text: 'Used Aceternity UI and Shadcn UI component library to build amazing UI components and Next Themes for theme.'
+      },
+      {
+        text: 'Used Framer motion for animation and integrated React Typical, Email JS, Zod, React Hook Form.'
+      },
+      { text: 'Deployed the project on Vercel.' },
+      {
+        text: 'TECH STACK: Next.js, Tailwind CSS, Three.js, Framer Motion, Aceternity UI, Shadcn UI, Zod, React Hook Form, Email JS, React Typical, Vercel'
+      }
+    ],
+    mininfo: [
+      'Shutter Stories is a Photography Portfolio that showcases the work of Samuel Spenser, a London-based photographer build using Next.js, Tailwind CSS and Framer Motion.'
+    ]
+  },
   {
     image: portfolio,
     cover: p_Portfolio2,

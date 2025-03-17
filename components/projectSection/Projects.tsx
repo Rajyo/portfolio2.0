@@ -12,7 +12,7 @@ const ProjectCard = dynamic(() => import('./ProjectCard'), {
 })
 
 export default function Projects() {
-  const [techStack, setTechStack] = useState('reactExpress')
+  const [techStack, setTechStack] = useState('next.js')
 
   const container = useRef(null)
   const inView = useInView(container, {

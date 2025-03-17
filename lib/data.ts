@@ -1,11 +1,11 @@
 export const stack = [
   {
-    value: 'reactExpress',
-    label: 'React + Express'
-  },
-  {
     value: 'next.js',
     label: 'Next.js'
+  },
+  {
+    value: 'reactExpress',
+    label: 'React + Express'
   },
   {
     value: 'angularExpress',
