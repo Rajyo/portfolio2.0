@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
-    
+
     !checkNewPortfolio &&
       setTimeout(() => {
         setIsLoading(false)
@@ -32,6 +32,7 @@ export default function Home() {
       {isLoading && checkNewPortfolio && (
         <CheckNewPortfolio setCheckNewPortfolio={setCheckNewPortfolio} />
       )}
+      
       <AnimatePresence mode='wait'>
         {isLoading && !checkNewPortfolio && <Preloader />}
       </AnimatePresence>

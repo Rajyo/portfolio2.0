@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import dynamic from 'next/dynamic'
@@ -24,6 +23,8 @@ const fontSans = Inter({
   variable: '--font-sans',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 })
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 export const metadata: Metadata = {
   title: {
@@ -99,7 +100,7 @@ export default function RootLayout({
           </SmoothScroll>
         </ThemeProvider>
         <Analytics />
-        <SpeedInsights />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!} />
       </body>
     </html>
   )
